@@ -3,8 +3,8 @@
  $connectionOptions = array(
      "Database" => "Data-Rod-Input", // update me
      "Uid" => "admin-rods", // update me
-     "PWD" => "roods-pwd@1",
-     "CharacterSet" => "UTF-8"
+     "PWD" => "roods-pwd@1", // update me
+     'charset'  => 'utf8'
  );
  //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
