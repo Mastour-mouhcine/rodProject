@@ -1,7 +1,10 @@
 <?php
  $serverName = "rods-data-server-01.database.windows.net"; // update me
- $connectionOptions = array("DataBase"=>"Data-Rod-Input","UID"=>"admin-rods","PWD"=>"roods-pwd@1",
- 'CharacterSet' => 'UTF-8');
+ $connectionOptions = array(
+     "Database" => "Data-Rod-Input", // update me
+     "Uid" => "admin-rods", // update me
+     "PWD" => "roods-pwd@1" // update me
+ );
  //Establishes the connection
  $conn = sqlsrv_connect($serverName, $connectionOptions);
  $tsql= "SELECT * FROM [dbo].[Import_Zoho_Compte_test]";

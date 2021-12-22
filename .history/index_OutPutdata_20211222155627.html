@@ -8,16 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Rodschinson">
 
-
     <title>Rodschinson</title>
-    <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
+  
    
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
@@ -318,15 +317,13 @@
                                     <th>Lien Vers le Fichier </th> 
                       </tr>
                             </tfoot>
-                         
+          
                         </table>
-                       
+               
                             
                     </div>
-                  
-                <button type="button" class="btn btn-success" onClick="window.location.reload();">Clear Filter</button>
+
                 </div>
-                
 
         </div>
         <!-- End of Main Content -->
@@ -335,7 +332,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>©️ RODSCHINSON INVESTMENT. ALL RIGHTS RESERVED.</span>
+                    <span>© RODSCHINSON INVESTMENT. ALL RIGHTS RESERVED.</span>
                 </div>
             </div>
         </footer>
@@ -358,23 +355,19 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
    <!-- Datatable JS -->
-   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
-<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.11.3/api/fnFilterAll.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.js"></script>
+
 <script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 </body>
 
 <script>
-  
  
 $(document).ready(function(){
-   
-     function newexportaction(e, dt, button, config) {
+   /*  function newexportaction(e, dt, button, config) {
          var self = this;
          var oldStart = dt.settings()[0]._iDisplayStart;
          dt.one('preXhr', function (e, s, data) {
@@ -408,33 +401,18 @@ $(document).ready(function(){
          });
          // Requery the server with the new one-time export settings
          dt.ajax.reload();
-     } 
+     } */
     $('#empTable tfoot th').each( function () {
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
-    
-    var  table  = $('#empTable').DataTable({
-        'search': {
-    'smart': false,
-    'regex': true
-  },
-//   "lengthMenu": [[50, 250, 500, 1000], [50, 250, 500, 1000]],
-            scrollY: "500px",
-            "bProcessing": true,
-            'pageLength': 10,
-'lengthMenu': [[10, 20, 25, 50, -1], [10, 20, 25, 50, 'All']], 
-            sPaginationType: "full_numbers",
-            paging: true,
-            scrollX: true,
+        $('#empTable').DataTable({
             "serverSide": true,
             "processing": true,
             "scrollX": true,
             "paging": true,
             // orderCellsTop: true,
             // fixedHeader: true,
-           
-     
             initComplete: function () {
             // Apply the search
             this.api().columns().every(function () {
@@ -442,48 +420,27 @@ $(document).ready(function(){
                     $('input', this.footer()).keypress(function (e) {
                         if (e.keyCode == 13) { //search only when Enter key is pressed to avoid wasteful calls
                             e.preventDefault(); 
-                          
                             //input is within <form> element which submits form when Enter key is pressed. e.preventDefault() prevents this
-                             //table.search(this.value).draw();
-                             if (that.search() !== this.value) {
-                                 that
+                            if (that.search() !== this.value) {
+                                that
                                     .search(this.value)
-                                    .draw(); 
-                                    // table.search(this.value).draw();
-                                    // oTable.column().search("|",true,false).draw();
+                                    .draw();
                             } 
                         }
-                       
                     });
             } );
-            
-        }, 
- 
+        },
         'ajax': {
                 'url':'serverSide/ConnectionDataBase_001.php',
             },
-            filterType: 'multiselect',
             dom: 'lBfrtip',
-           
              buttons: [
                 {
                     extend: 'excelHtml5',
                     text: 'EXCEL Export',
-                    customizeData: function( e, dt, node, config ) {
-                            $("#empTable").DataTable().search('').draw()
-                        },
-            exportOptions: {
-                modifier: {
-                    selected: true
-                }
-            },
-                    
                     title: '',
 				    filename: 'Data Target all',
-                   "action": newexportaction,
-                   exportOptions: {
-                rows: ':visible'
-}
+                   // "action": newexportaction,
                 },
                 {
                     extend: 'csv',
@@ -491,64 +448,12 @@ $(document).ready(function(){
                     fieldSeparator: ';',
                     title: '',
                     filename: 'Data Target all',
-                    "action": newexportaction,
+                    //"action": newexportaction,
                 },
             ], 
-            
         });
-       
     });
-//     var table = $('#empTable').DataTable({
-//             initComplete: function () {
-//             count = 0;
-//             this.api().columns().every( function () {
-//                 var title = this.header();
-//                 //replace spaces with dashes
-//                 title = $(title).html().replace(/[\W]/g, '-');
-//                 var column = this;
-//                 var select = $('<select id="' + title + '" class="select2" ></select>')
-//                     .appendTo( $(column.footer()).empty() )
-//                     .on( 'change', function () {
-//                       //Get the "text" property from each selected data 
-//                       //regex escape the value and store in array
-//                       var data = $.map( $(this).select2('data'), function( value, key ) {
-//                         return value.text ? '^' + $.fn.dataTable.util.escapeRegex(value.text) + '$' : null;
-//                                  });
-                      
-//                       //if no data selected use ""
-//                       if (data.length === 0) {
-//                         data = [""];
-//                       }
-                      
-//                       //join array into string with regex or (|)
-//                       var val = data.join('|');
-                      
-//                       //search for the option(s) selected
-//                       column
-//                             .search( val ? val : '', true, false )
-//                             .draw();
-//                     } );
- 
-//                 column.data().unique().sort().each( function ( d, j ) {
-//                     select.append( '<option value="'+d+'">'+d+'</option>' );
-//                 } );
-              
-//               //use column title as selector and placeholder
-//               $('#' + title).select2({
-//                 multiple: true,
-//                 closeOnSelect: false,
-//                 placeholder: "Select a " + title
-//               });
-              
-//               //initially clear select otherwise first option is selected
-//               $('.select2').val(null).trigger('change');
-//             } );
-//         }
-//   });
-// } );
-
     $('#Btn_Acceuil').click(function () {
-        
          location.href = "index001.php"; 
     });
     const JSalertWait = (text) => {
@@ -580,5 +485,4 @@ $(document).ready(function(){
       });
    });
 </script>
-
 </html>
