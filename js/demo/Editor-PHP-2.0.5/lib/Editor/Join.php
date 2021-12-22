@@ -577,7 +577,7 @@ class Join extends DataTables\Ext {
 
 				for ( $i=0 ; $i<count($data) ; $i++ ) {
 					$whereIn[] = $pkeyIsJoin ? 
-						str_replace( $idPrefix, '', $data[$i]['ID'] ) :
+						str_replace( $idPrefix, '', $data[$i]['DT_RowId'] ) :
 						$this->_readProp( $readField, $data[$i] );
 				}
 
@@ -616,7 +616,7 @@ class Join extends DataTables\Ext {
 			// Loop over the data and do a join based on the data available
 			for ( $i=0 ; $i<count($data) ; $i++ ) {
 				$rowPKey = $pkeyIsJoin ? 
-					str_replace( $idPrefix, '', $data[$i]['ID'] ) :
+					str_replace( $idPrefix, '', $data[$i]['DT_RowId'] ) :
 					$this->_readProp( $readField, $data[$i] );
 
 				if ( isset( $join[$rowPKey] ) ) {
