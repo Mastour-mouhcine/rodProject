@@ -534,6 +534,8 @@ class SSP {
 
         return $out;
     }
+
+
     /**
      * Return a string from an array or a string
      *
