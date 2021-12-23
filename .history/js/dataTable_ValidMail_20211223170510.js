@@ -161,7 +161,7 @@ $(document).ready(function() {
           $('td', row).css('background-color', '#a2f2ac');
         } else  {
           //$('td', row).css('background-color', '#E6C3C3');
-          $('td', row).css('background-color', '#f5c4c4');
+          $('td', row).css('background-color', '#dbb4b');
         }
       },
       dom: "Bfrtip",

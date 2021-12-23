@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+        header('Location: index.php');
+    } 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,13 +73,13 @@
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
                     </div>
                 </div>
-                <button id="Btn_Acceuil" class="dt-button buttons-pdf buttons-html5">Page d'accueil</button>
+                <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button>    
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Visualisation Data Phingoo</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Import nouvelle source data </h6>
                         </div>
                         <div class="btn btn-info">
                             <input type="file" accept=".xlsx, .xls, .csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
@@ -136,7 +142,7 @@
 
     $('#Btn_Acceuil').click(function () {
         
-         location.href = "index.php"; 
+         location.href = "index001.php"; 
     });
 </script>
 

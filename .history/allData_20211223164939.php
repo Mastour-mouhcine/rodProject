@@ -1,3 +1,10 @@
+
+ <?php
+    session_start();
+    if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+        header('Location: index.php');
+    } 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,21 +20,14 @@
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Swal Alert-->
-    <!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script> 
- -->    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <style>
         td.details-control {
@@ -42,11 +42,8 @@
     </style>
 </head>
 
-<body id="page-top" class="page_top">
-<!-- <div class="notification">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-    <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-</div> -->
+<body id="page-top">
+
 <!-- Page Wrapper -->
 <div id="wrapper">
 
@@ -67,21 +64,31 @@
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
                     </div>
                 </div>
-                <button id="Btn_Acceuil" class="dt-button buttons-pdf buttons-html5">Page d'accueil</button>
 
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Visualisation Data Phingoo</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visualisation data</h6>
                         </div>
                         <div class="btn btn-info">
-                            <input type="file" accept=".xlsx, .xls, .csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
+                            <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
                         </div>
                     </div>
                     <div class="card-body" id="excel_data">
 
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
 
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
@@ -123,7 +130,7 @@
 
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 
-<script type="module" src="js/excelFunctions.js"></script>
+<script src="js/excelFunctions.js"></script>
 
 
 <!-- Page level custom scripts -->
@@ -132,12 +139,6 @@
 </script>
 
 </body>
-<script type="text/javascript">
 
-    $('#Btn_Acceuil').click(function () {
-        
-         location.href = "index.php"; 
-    });
-</script>
 
 </html>
