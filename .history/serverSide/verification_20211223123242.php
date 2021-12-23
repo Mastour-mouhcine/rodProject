@@ -16,7 +16,7 @@ session_start();
       }
       $username = $_POST['username'];
       $password = $_POST['password'];
-      
+      $remember = $_POST['remember'];
       if ($username !== "" && $password !== "") {
          $tsql = "SELECT  * FROM [dbo].[utilisateur] where nom_utilisateur = '$username' and mot_de_passe = '$password' ";
          //$params = array($username, $password);
@@ -29,8 +29,7 @@ session_start();
          //if ($row[0] != 0) // nom d'utilisateur et mot de passe correctes
          if ($row) // nom d'utilisateur et mot de passe correctes
          {
-            $_SESSION['username'] = $username; 
-            $_SESSION['password'] = $password; 
+            
             header('Location: ../index001.php');
             // print("MainPage");
          } else {

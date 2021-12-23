@@ -16,7 +16,7 @@ session_start();
       }
       $username = $_POST['username'];
       $password = $_POST['password'];
-      
+
       if ($username !== "" && $password !== "") {
          $tsql = "SELECT  * FROM [dbo].[utilisateur] where nom_utilisateur = '$username' and mot_de_passe = '$password' ";
          //$params = array($username, $password);
@@ -29,8 +29,24 @@ session_start();
          //if ($row[0] != 0) // nom d'utilisateur et mot de passe correctes
          if ($row) // nom d'utilisateur et mot de passe correctes
          {
-            $_SESSION['username'] = $username; 
-            $_SESSION['password'] = $password; 
+             $_SESSION["member_id"] = $row["member_id"];
+			
+			if(!empty($_POST["remember"])) {
+				   setcookie ("member_login",$_POST["username"],time()+ (10 * 365 * 24 * 60 * 60));
+               $_COOKIE['member_login'] = $_POST['member_login'];      
+               setcookie ("password",$_POST["password"],time()+ (10 * 365 * 24 * 60 * 60));
+               $_COOKIE['password'] = $_POST['password']; 
+			} else {
+				if(isset($_COOKIE["member_login"])) {
+					setcookie ("member_login","");
+               $_COOKIE['member_login'] = '';  
+				}
+            if(isset($_COOKIE["password"])) {
+               setcookie ("password","");
+               $_COOKIE['password'] = '';       
+           }
+			}
+            $_SESSION['username'] = $username;
             header('Location: ../index001.php');
             // print("MainPage");
          } else {

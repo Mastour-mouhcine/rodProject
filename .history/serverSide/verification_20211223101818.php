@@ -6,7 +6,7 @@ $connectionOptions = array(
    "PWD" => "roods-pwd@1" // update me
 );
 session_start();
-   if (isset($_POST['username']) && isset($_POST['password'])) {
+   if (isset($_POST['member_name']) && isset($_POST['password'])) {
       // connexi */on à la base de données
       // Create connection
       /* $conn = new mysqli($servername, $username, $password,$db); */
@@ -14,11 +14,11 @@ session_start();
       if ($conn === false) {
          die(print_r(sqlsrv_errors(), true));
       }
-      $username = $_POST['username'];
+      $member_name = $_POST['member_name'];
       $password = $_POST['password'];
-      
-      if ($username !== "" && $password !== "") {
-         $tsql = "SELECT  * FROM [dbo].[utilisateur] where nom_utilisateur = '$username' and mot_de_passe = '$password' ";
+
+      if ($member_name !== "" && $password !== "") {
+         $tsql = "SELECT  count(*) FROM [dbo].[utilisateur] where nom_utilisateur = '$member_name' and mot_de_passe = '$password' ";
          //$params = array($username, $password);
          $results = sqlsrv_query($conn, $tsql);
          $row = sqlsrv_fetch_array($results);
@@ -26,11 +26,9 @@ session_start();
          if ($results == FALSE)
          echo (sqlsrv_errors());
          //$count = $row[0];
-         //if ($row[0] != 0) // nom d'utilisateur et mot de passe correctes
-         if ($row) // nom d'utilisateur et mot de passe correctes
+         if ($row[0] != 0) // nom d'utilisateur et mot de passe correctes
          {
-            $_SESSION['username'] = $username; 
-            $_SESSION['password'] = $password; 
+            $_SESSION['member_name'] = $member_name;
             header('Location: ../index001.php');
             // print("MainPage");
          } else {
@@ -47,4 +45,3 @@ session_start();
    }
    sqlsrv_close( $conn);// fermer la connexion
 ?>
-
