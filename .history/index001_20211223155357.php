@@ -32,7 +32,7 @@
 <body style="background-image: url('/img/HOME.jpeg'); background-size: cover; display: flex; flex-direction: column;">
     <div>
         <img src="img/RODSCHINSON_LOGO_Big_Positif_1500x818px.png" style="width: 17rem; padding: 1rem"/>
-        <div class="card-footer" style="display: flex;justify-content: right;"><a href="serverSide/LogOut.php" class="btn btn-success">Déconnecter</a></div>
+        <div class="card-footer" style="display: flex;justify-content: center;"><a href="serverSide/LogOut.php" class="btn btn-success">Déconnecter</a></div>
     </div>
     <div  style=" display: flex; justify-content: center; flex-direction: column; align-items: center; background: #ffffff40">
         <div style= "justify-content: center; flex-direction: column; align-items: center; background: #ffffff40">

@@ -16,6 +16,7 @@ session_start();
       }
       $username = $_POST['username'];
       $password = $_POST['password'];
+      $remember = $_POST['remember'];
       
       if ($username !== "" && $password !== "") {
          $tsql = "SELECT  * FROM [dbo].[utilisateur] where nom_utilisateur = '$username' and mot_de_passe = '$password' ";

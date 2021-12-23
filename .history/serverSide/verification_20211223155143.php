@@ -34,11 +34,13 @@ session_start();
             header('Location: ../index001.php');
             // print("MainPage");
          } else {
-            header('Location: ../index.php');
+            //header('Location: ../index.php');
+            $message = "Invalid Login";
             // print("err1"); // utilisateur ou mot de passe incorrect
          }
       } else {
-         header('Location: ../index.php');
+         //header('Location: ../index.php');
+         $message = "Invalid Login";
          //print("err2"); // utilisateur ou mot de passe vide
       }
    } else {
