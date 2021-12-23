@@ -32,9 +32,9 @@
 <body style="background-image: url('/img/HOME.jpeg'); background-size: cover; display: flex; flex-direction: column;">
     <div>
         <img src="img/RODSCHINSON_LOGO_Big_Positif_1500x818px.png" style="width: 17rem; padding: 1rem"/>
-        <div class="card-footer" style="display: flex;justify-content: right;background: transparent;border-style: none!important;"><a href="serverSide/LogOut.php" class="btn btn-success">Déconnecter</a></div>
+        <div class="card-footer" style="display: flex;justify-content: right;background: transparent"><a href="serverSide/LogOut.php" class="btn btn-success">Déconnecter</a></div>
     </div>
-    <div  style=" display: flex; justify-content: center; flex-direction: column; align-items: center; background: transparent">
+    <div  style=" display: flex; justify-content: center; flex-direction: column; align-items: center; background: transparent;border-style: none!important;">
         <div style= "justify-content: center; flex-direction: column; align-items: center; background: transparent">
             <button  onclick="window.location.href='index_Input.html'" class="button button1"><span class="button-content"> <i class="fas fa-database"></i> Marketing(Phingoo)</span></button>
             <button onclick="window.location.href='dataRodschinson.html'"  class="button button2"> <i class="fas fa-database"></i> Operations Data</button>
