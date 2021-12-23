@@ -158,10 +158,10 @@ $(document).ready(function() {
       "fnRowCallback": function(row, aData, iDisplayIndex, iDisplayIndexFull) {
         if (aData['mail_status'] == "valid") {
           //$('td', row).css('background-color', '#69E495');
-          $('td', row).css('background-color', '#a2f2ac');
+          $('td', row).css('background-color', '#b7f7bf');
         } else  {
           //$('td', row).css('background-color', '#E6C3C3');
-          $('td', row).css('background-color', '#f5c4c4');
+          $('td', row).css('background-color', '#f5d3d3');
         }
       },
       dom: "Bfrtip",

@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+        header('Location: index.php');
+    } 
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +45,23 @@
             background: url('img/angle-arrow-double-down.png') no-repeat center center;
             background-size: 15px;
         }
+        .card-body {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        }
     </style>
 </head>
 
@@ -67,25 +90,20 @@
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
                     </div>
                 </div>
-                <button id="Btn_Acceuil" class="dt-button buttons-pdf buttons-html5">Page d'accueil</button>
-
+                
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Visualisation Data Phingoo</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visualisation du tableau de bord</h6>
                         </div>
-                        <div class="btn btn-info">
-                            <input type="file" accept=".xlsx, .xls, .csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
-                        </div>
+                            <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button>
                     </div>
-                    <div class="card-body" id="excel_data">
-
-
+                    <div class="card-body" id="x">
+                        <iframe class="responsive-iframe"
+                            src="https://app.powerbi.com/reportEmbed?reportId=8e6a421e-dacf-4c5c-909c-54d0688b6a95&appId=c16497c6-8db1-446a-8363-f142d1884f43&autoAuth=true&ctid=09092c3f-ce16-4223-9075-69a73d8afa6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtZXVyb3BlLWItcHJpbWFyeS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D"></iframe>
                     </div>
-
                 </div>
-
             </div>
         </div>
         <!-- End of Main Content -->
@@ -122,21 +140,12 @@
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-
-<script type="module" src="js/excelFunctions.js"></script>
-
-
-<!-- Page level custom scripts -->
-<script>
-
-</script>
-
 </body>
 <script type="text/javascript">
 
     $('#Btn_Acceuil').click(function () {
         
-         location.href = "index.php"; 
+         location.href = "index001.php"; 
     });
 </script>
 
