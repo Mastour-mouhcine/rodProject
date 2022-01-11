@@ -27,7 +27,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body style="background-image: url('/img/HOME.jpeg'); background-size: cover; display: flex; flex-direction: column;">
+<body style="background-image: url('/rodProject/img/HOME.jpeg'); background-size: cover; display: flex; flex-direction: column;">
     <div style="width: 100%;overflow: hidden;white-space: nowrap;display: flex;">
         <img src="img/RODSCHINSON_LOGO_Big_Positif_1500x818px.png"  style="width: 17rem; padding: 1rem;"/>
         <div class="card-footer" style="margin-left: auto; margin-right: 0;justify-content: right;background: transparent;border-style: none!important;"><a href="serverSide/LogOut.php" class="btn btn-success" style="background-color: #D3D9E4; color:black;font-weight: 510;">Déconnecter</a></div>
