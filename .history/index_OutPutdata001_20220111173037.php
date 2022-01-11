@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
-        header('Location: index.php');
-    } 
+    // session_start();
+    // if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+        // header('Location: index.php');
+    // } 
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -544,7 +544,7 @@ $(document).ready(function(){
             "bServerSide": true,
             // "responsive":true,
             //"bScrollCollapse" : true,
-            'ajax':'serverSide/ConnectionDataBase_002.php', 
+            'url':'serverSide/ConnectionDataBase_002.php', 
             'pageLength': 100,
             lengthChange: false,
             dom: 'Bfrtip',            
