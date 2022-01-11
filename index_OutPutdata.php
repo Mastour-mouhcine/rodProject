@@ -545,6 +545,7 @@ $(document).ready(function(){
             // "responsive":true,
             //"bScrollCollapse" : true,
             "ajax": "serverSide/ConnectionDataBase_001.php", 
+           
             'pageLength': 100,
             lengthChange: false,
             dom: 'Bfrtip',            
