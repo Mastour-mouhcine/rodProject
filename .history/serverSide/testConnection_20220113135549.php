@@ -9,7 +9,7 @@ catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
 } */
-/* $serverName = "tcp:rods-data-server-01.database.windows.net,1433";
+$serverName = "tcp:rods-data-server-01.database.windows.net,1433";
 $connectionOptions = array(
    "PWD" => "roods-pwd@1",
   "DataBase"=>"Data-Rods",
@@ -33,39 +33,17 @@ try {
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
     die(print_r($e));
-} */
+}
 
 // SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "admin-rods", "pwd" => "roods-pwd@1", "Database" => "Data_Rods", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+/* $connectionInfo = array("UID" => "admin-rods", "pwd" => "roods-pwd@1", "Database" => "Data_Rods", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:rods-data-server-01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if( $conn === false){
     die( print_r( sqlsrv_errors(), true));
 }    
-$sql = "SELECT Count([ID]) FROM [dbo].[data_rods] WHERE [Salutation] LIKE 'heer'";
-$getResults= sqlsrv_query($conn, $sql);
-if ($getResults == FALSE)
-    echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
-    $recordsFiltered = $row[0];
-   echo $recordsFiltered;
-
-   //echo "id: " . $row["Account Number"]. " <br>";
-}
-//print_r($rows[0]);
-// echo json_encode($rows);
-/* $params = array();
-$options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
-$stmt = sqlsrv_query( $conn, $sql , $params, $options );
-$row_count = sqlsrv_num_rows( $stmt );
-   
-if ($row_count === false){
-    echo $row_count;
-}
 else{
-    echo $row_count;
+    echo("Success");
 } */
-
-sqlsrv_close($conn);
 ?>

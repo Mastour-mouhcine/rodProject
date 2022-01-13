@@ -39,7 +39,7 @@
             <button onclick="window.location.href='https://www.airtable.com/'" class="button button3"> <i class="fas fa-folder-minus"></i> Portfolio RODS</button>
         </div>
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
-            <button onclick="window.location.href='dataRodschinson001.php'"  class="button button2"><i class="fas fa-bullseye"></i>  KPIs</button>
+            <button onclick="window.location.href='dataRodschinson001.php'"  class="button button2"><i class="fas fa-database"></i>  KPIs</button>
             <button onclick="window.location.href='https://app.antsroute.com/route/'" class="button button4"> <i class="far fa-handshake"></i> Prise de Rendez Vous</button>
         </div> 
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
@@ -47,8 +47,8 @@
             <button onclick="window.location.href='index_dashboard.php'" class="button button5"> <i class="fas fa-chart-line"></i> Tableau de Bord</button>
         </div> 
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
-            <button onclick="window.location.href='index_targeting_list.php'" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
-            <button onclick="window.location.href='index_prospection.php'" class="button button7"> <i class="fas fa-search"></i> Prospection</button>
+            <button onclick="window.location.href=''" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
+            <button onclick="window.location.href=''" class="button button7"> <i class="fas fa-search"></i> Prospection</button>
         </div> 
 
 

@@ -93,7 +93,7 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Target List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visualisation du tableau de bord</h6>
                         </div>
                             <!-- <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button> -->
                     </div>

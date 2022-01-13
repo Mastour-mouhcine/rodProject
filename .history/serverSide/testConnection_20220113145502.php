@@ -43,7 +43,7 @@ $conn = sqlsrv_connect($serverName, $connectionInfo);
 if( $conn === false){
     die( print_r( sqlsrv_errors(), true));
 }    
-$sql = "SELECT Count([ID]) FROM [dbo].[data_rods] WHERE [Salutation] LIKE 'heer'";
+$sql = "SELECT count([ID]) FROM [dbo].[data_rods]";
 $getResults= sqlsrv_query($conn, $sql);
 if ($getResults == FALSE)
     echo (sqlsrv_errors());

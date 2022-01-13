@@ -83,8 +83,8 @@
 
                 <!-- Page Heading -->
                 <div class="mb-2" style="display: flex; justify-content: flex-start; align-items: center">
-                  <div style="display: flex;">
-                    <a href="index001.php"><img src="img/rod_logo.png"></a>
+                    <div style="display: flex;">
+                        <a href="index001.php"><img src="img/rod_logo.png"></a>
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
                     </div>
                 </div>
@@ -93,14 +93,13 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Target List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Visualisation du tableau de bord</h6>
                         </div>
-                            <!-- <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button> -->
+                           <!--  <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button> -->
                     </div>
                     <div class="card-body" id="x">
-                        <!-- Ici le lien -->
                         <iframe class="responsive-iframe"
-                            src=""></iframe>
+                            src="https://app.powerbi.com/reportEmbed?reportId=8e6a421e-dacf-4c5c-909c-54d0688b6a95&appId=c16497c6-8db1-446a-8363-f142d1884f43&autoAuth=true&ctid=09092c3f-ce16-4223-9075-69a73d8afa6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtZXVyb3BlLWItcHJpbWFyeS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D"></iframe>
                     </div>
                 </div>
             </div>

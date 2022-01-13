@@ -453,63 +453,10 @@
   
  
 $(document).ready(function(){
-    var buttonCommon = {
-        exportOptions: {
-            format: {
-                body: function ( data, row, column, node ) {
-                    // Strip $ from salary column to make it numeric
-                    return column === 5 ?
-                        data.replace( /[$,]/g, '' ) :
-                        data;
-                }
-            }
-        }
-    };
-    
-    
-   
-     function newexportaction(e, dt, button, config) {
-         var self = this;
-         var oldStart = dt.settings()[0]._iDisplayStart;
-         dt.one('preXhr', function (e, s, data) {
-             // Just this once, load all data from the server...
-             data.start = 0;
-             data.length = 2147483647;
-             dt.one('preDraw', function (e, settings) {
-                 // Call the original action function
-                 if (button[0].className.indexOf('buttons-copy') >= 0) {
-                     $.fn.dataTable.ext.buttons.copyHtml5.action.call(self, e, dt, button, config);
-                 } else if (button[0].className.indexOf('buttons-excel') >= 0) {
-                     $.fn.dataTable.ext.buttons.excelHtml5.available(dt, config) ?
-                         $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config) :
-                         $.fn.dataTable.ext.buttons.excelFlash.action.call(self, e, dt, button, config);
-                 } else if (button[0].className.indexOf('buttons-csv') >= 0) {
-                     $.fn.dataTable.ext.buttons.csvHtml5.available(dt, config) ?
-                         $.fn.dataTable.ext.buttons.csvHtml5.action.call(self, e, dt, button, config) :
-                         $.fn.dataTable.ext.buttons.csvFlash.action.call(self, e, dt, button, config);
-                 } 
-                 dt.one('preXhr', function (e, s, data) {
-                     // DataTables thinks the first item displayed is index 0, but we're not drawing that.
-                     // Set the property to what it was before exporting.
-                     settings._iDisplayStart = oldStart;
-                     data.start = oldStart;
-                 });
-                 // Reload the grid with the original page. Otherwise, API functions like table.cell(this) don't work properly.
-                 setTimeout(dt.ajax.reload, 0);
-                 // Prevent rendering of the full data to the DOM
-                 return false;
-             });
-         });
-         // Requery the server with the new one-time export settings
-         dt.ajax.reload();
-     } 
-     
     $('#empTable tfoot th').each( function () {
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
-    
-        
     
     var  table  = $('#empTable').DataTable({
         
@@ -541,359 +488,58 @@ $(document).ready(function(){
             "paging": true,
             "bDeferRender": true,
             "bProcessing": true,
-            "language": {
+            // "processing": true,
+        "language": {
             processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span> '},
+ 
             "bServerSide": true,
             // "responsive":true,
             //"bScrollCollapse" : true,
-            'ajax':'serverSide/ConnectionDataBase_002.php', 
+            "ajax": "serverSide/ConnectionDataBase_001.php", 
+           
             'pageLength': 100,
             lengthChange: false,
-            "columnDefs": [
-            {
-                "targets": [ 1 ],
-                "visible": false,
-          
-            },
-            {
-                "targets": [ 2 ],
-                "visible": false
-            },
-            {
-                "targets": [ 10 ],
-                "visible": false
-            },
-            {
-                "targets": [ 15 ],
-                "visible": false
-            },
-            {
-                "targets": [ 20],
-                "visible": false
-            },
-            {
-                "targets": [ 22 ],
-                "visible": false
-            },
-            {
-                "targets": [ 23 ],
-                "visible": false
-            },
-            {
-                "targets": [ 24 ],
-                "visible": false
-            },
-            {
-                "targets": [ 25 ],
-                "visible": false
-            },
-            {
-                "targets": [ 27 ],
-                "visible": false
-            },
-            {
-                "targets": [ 28 ],
-                "visible": false
-            },
-            {
-                "targets": [ 29 ],
-                "visible": false
-            },
-            {
-                "targets": [ 32 ],
-                "visible": false
-            },
-            {
-                "targets": [ 33 ],
-                "visible": false
-            },
-            {
-                "targets": [ 34 ],
-                "visible": false
-            },
-            {
-                "targets": [ 35 ],
-                "visible": false
-            },
-            {
-                "targets": [ 36 ],
-                "visible": false
-            },
-            {
-                "targets": [ 37 ],
-                "visible": false
-            },
-            {
-                "targets": [ 38 ],
-                "visible": false
-            },
-            {
-                "targets": [ 39 ],
-                "visible": false
-            },
-            {
-                "targets": [ 40 ],
-                "visible": false
-            },
-            {
-                "targets": [ 42 ],
-                "visible": false
-            },
-            {
-                "targets": [ 43 ],
-                "visible": false
-            },
-            {
-                "targets": [ 44],
-                "visible": false
-            },
-            {
-                "targets": [ 45 ],
-                "visible": false
-            },
-            {
-                "targets": [ 46 ],
-                "visible": false
-            },
-            {
-                "targets": [ 47 ],
-                "visible": false
-            },
-            {
-                "targets": [ 48 ],
-                "visible": false
-            },
-            {
-                "targets": [ 49 ],
-                "visible": false
-            },
-            {
-                "targets": [ 50 ],
-                "visible": false
-            },
-            {
-                "targets": [ 51 ],
-                "visible": false
-            },
-            {
-                "targets": [ 52 ],
-                "visible": false
-            },
-            {
-                "targets": [ 53 ],
-                "visible": false
-            },
-            {
-                "targets": [ 54 ],
-                "visible": false
-            },
-            {
-                "targets": [ 55 ],
-                "visible": false
-            },
-            {
-                "targets": [ 56 ],
-                "visible": false
-            },{
-                "targets": [ 57 ],
-                "visible": false
-            },{
-                "targets": [ 58 ],
-                "visible": false
-            },{
-                "targets": [ 59 ],
-                "visible": false
-            },{
-                "targets": [ 60 ],
-                "visible": false
-            },{
-                "targets": [ 61 ],
-                "visible": false
-            },{
-                "targets": [ 62 ],
-                "visible": false
-            },{
-                "targets": [ 63 ],
-                "visible": false
-            },{
-                "targets": [ 64 ],
-                "visible": false
-            },{
-                "targets": [ 65 ],
-                "visible": false
-            },{
-                "targets": [ 66 ],
-                "visible": false
-            },{
-                "targets": [ 67 ],
-                "visible": false
-            },{
-                "targets": [ 68 ],
-                "visible": false
-            },{
-                "targets": [ 69 ],
-                "visible": false
-            },{
-                "targets": [ 70 ],
-                "visible": false
-            },{
-                "targets": [ 71 ],
-                "visible": false
-            },{
-                "targets": [ 72 ],
-                "visible": false
-            },{
-                "targets": [ 73 ],
-                "visible": false
-            },{
-                "targets": [ 74 ],
-                "visible": false
-            },{
-                "targets": [ 75 ],
-                "visible": false
-            },{
-                "targets": [ 76 ],
-                "visible": false
-            },{
-                "targets": [ 77 ],
-                "visible": false
-            },{
-                "targets": [ 78 ],
-                "visible": false
-            },{
-                "targets": [ 79 ],
-                "visible": false
-            },{
-                "targets": [ 80 ],
-                "visible": false
-            },{
-                "targets": [ 81 ],
-                "visible": false
-            },{
-                "targets": [ 82 ],
-                "visible": false
-            },{
-                "targets": [ 83 ],
-                "visible": false
-            },{
-                "targets": [ 84 ],
-                "visible": false
-            },{
-                "targets": [ 85 ],
-                "visible": false
-            },{
-                "targets": [ 86 ],
-                "visible": false
-            },{
-                "targets": [ 87 ],
-                "visible": false
-            },{
-                "targets": [ 88 ],
-                "visible": false
-            },{
-                "targets": [ 89 ],
-                "visible": false
-            },{
-                "targets": [ 90 ],
-                "visible": false
-            },{
-                "targets": [ 91 ],
-                "visible": false
-            },{
-                "targets": [ 92 ],
-                "visible": false
-            },{
-                "targets": [ 93 ],
-                "visible": false
-            },
-            {
-                "targets": [ 94 ],
-                "visible": false
-            },
-            {
-                "targets": [ 95 ],
-                "visible": false
-            },
-            {
-                "targets": [ 96 ],
-                "visible": false
-            },
-            {
-                "targets": [ 97 ],
-                "visible": false
-            },
-            {
-                "targets": [ 98 ],
-                "visible": false
-            },
-            {
-                "targets": [ 99 ],
-                "visible": false
-            },
-            {
-                "targets": [ 100 ],
-                "visible": false
-            },
-            {
-                "targets": [ 101 ],
-                "visible": false
-            },
-            {
-                "targets": [ 102 ],
-                "visible": false
-            },
-            {
-                "targets": [ 104 ],
-                "visible": false
-            },
-            {
-                "targets": [ 105 ],
-                "visible": false
-            },
-            {
-                "targets": [ 106 ],
-                "visible": false
-            },
-        ],
             dom: 'Bfrtip',            
-            colReorder: true,
+            //colReorder: true,
            "buttons" : [
            
-            $.extend( true, {}, buttonCommon,
+            $.extend( true, {},
              {
                     extend: 'excelHtml5',
                     text: 'EXCEL',
                     title: '',
 				    filename: 'Data Target all',
-                   "action": newexportaction,
+                //    "action": newexportaction,
                    page:'all',
                 }),
-                $.extend( true, {}, buttonCommon, 
+                $.extend( true, {}, 
                 {
                     extend: 'csv',
                     text: 'CSV ',
                     fieldSeparator: ';',
                     title: '',
                     filename: 'Data Target all',
-                    "action": newexportaction,
+                    // "action": newexportaction,
                     page:'all',
+                    exportOptions: {
+                        modifier: {
+                    search: 'applied',
+                    order: 'applied'
+                }
+                          }
                 }),
             
            
                  {
-                
         extend: 'colvis',
-        collectionLayout: 'two-column'
                }], 
+            //    columns:[0,1,2,3],
         });
     });
    
     
 
-    $('#Btn_Acceuil').click(function () {
-        
-         location.href = "index001.php"; 
-    });
+   
     const JSalertWait = (text) => {
             Swal.fire({
                 title: 'Traitement en cours',
@@ -923,37 +569,6 @@ $(document).ready(function(){
       });
    });
    
-</script>
-<script>
-// $(document).ready(function() {
-//   var table = $('#example').DataTable({
-//     dom: 'Bfrtip',
-//     columnDefs: [
-//       {
-//         targets: [1, 3],
-//         className: 'noVis'
-//             }
-//         ],
-//     buttons: [
-//       {
-//         extend: 'collection',
-//         text: 'Show columns',
-//         className: 'col',
-//         buttons: []
-//       }]
-//   });
-
-//   table.columns().every(function(index) {
-//     table.button().add('0-' + index, {
-//       action: function(e, dt, button, config) {
-//         table.column(index).visible(table.column(index).visible() ? false : true);
-//         $(button).toggleClass("hidden");
-//       },
-//       text: $(table.column(index).header()).text(),
-//       enabled: $(table.column(index).header()).hasClass('noVis') ? false : true
-//     });
-//   });
-// });
 </script>
 </html>
 
