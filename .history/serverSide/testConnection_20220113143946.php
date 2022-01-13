@@ -45,15 +45,17 @@ if( $conn === false){
 }    
 $sql = "SELECT Count([ID]) FROM [dbo].[data_rods] WHERE [Salutation] LIKE 'heer'";
 $getResults= sqlsrv_query($conn, $sql);
+//echo ("Reading data from table");
+$rows = array();
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
-while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
-    $recordsFiltered = $row[0];
-   echo $recordsFiltered;
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+   //$rows[] = $row;
+   $rows[] = array_map('stripslashes', $row);
 
    //echo "id: " . $row["Account Number"]. " <br>";
 }
-//print_r($rows[0]);
+print_r($rows[0]);
 // echo json_encode($rows);
 /* $params = array();
 $options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );

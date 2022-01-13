@@ -47,8 +47,8 @@
             <button onclick="window.location.href='index_dashboard.php'" class="button button5"> <i class="fas fa-chart-line"></i> Tableau de Bord</button>
         </div> 
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
-            <button onclick="window.location.href='index_targeting_list.php'" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
-            <button onclick="window.location.href='index_prospection.php'" class="button button7"> <i class="fas fa-search"></i> Prospection</button>
+            <button onclick="window.location.href=''" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
+            <button onclick="window.location.href=''" class="button button7"> <i class="fas fa-search"></i> Prospection</button>
         </div> 
 
 

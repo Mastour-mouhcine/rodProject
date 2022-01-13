@@ -45,11 +45,13 @@ if( $conn === false){
 }    
 $sql = "SELECT Count([ID]) FROM [dbo].[data_rods] WHERE [Salutation] LIKE 'heer'";
 $getResults= sqlsrv_query($conn, $sql);
+//echo ("Reading data from table");
+$rows = array();
 if ($getResults == FALSE)
     echo (sqlsrv_errors());
 while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
     $recordsFiltered = $row[0];
-   echo $recordsFiltered;
+   echo $row[0];
 
    //echo "id: " . $row["Account Number"]. " <br>";
 }
