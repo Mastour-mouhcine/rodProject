@@ -251,16 +251,14 @@ class SSP {
 		/* $resFilterLength = self::sql_exec( $db, $bindings,
 			  "SELECT count({$primaryKey}) FROM $table $where" );
 			  $recordsFiltered = $resFilterLength[0][0]; */
-			  $sql = self::sql_exec( $db, $bindings,"SELECT count({$primaryKey}) FROM $table $where");
-			//   $sql = "SELECT count({$primaryKey}) FROM $table $where";
-			  $getResults= sqlsrv_query($db, $sql);
-			  if ($getResults == FALSE)
-				  echo (sqlsrv_errors());
-			  while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
-				 $recordsFiltered = $row[0];
-			  }
 		// $recordsFiltered = count($resFilterLength);
-		
+		$sql = "SELECT count({$primaryKey}) FROM $table $where";
+		$getResults= sqlsrv_query($db, $sql);
+		if ($getResults == FALSE)
+			echo (sqlsrv_errors());
+		while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
+		   $recordsFiltered = $row[0];
+		}
 		// Total data set length
 		//$resTotalLength = self::sql_exec( $db,"SET NOCOUNT ON SELECT COUNT({$primaryKey}) FROM $table" );
 		// $resTotalLength = self::sql_exec( $db,"SELECT TOP 1 {$primaryKey} FROM $table ORDER BY {$primaryKey} DESC" );
@@ -276,7 +274,7 @@ class SSP {
 		  "draw"            => intval( $request['draw'] ),
 		  "recordsTotal"    => intval( $recordsTotal ),
 		//   "recordsFiltered" => intval( $recordsTotal ),
-		 "recordsFiltered" => intval( $recordsFiltered ),
+			"recordsFiltered" => intval( $recordsFiltered ),
 		  "data"            => self::data_output( $columns, $data )
 		  );
 	  }
