@@ -251,14 +251,6 @@ class SSP {
 		/* $resFilterLength = self::sql_exec( $db, $bindings,
 			  "SELECT count({$primaryKey}) FROM $table $where" );
 			  $recordsFiltered = $resFilterLength[0][0]; */
-			  $sql = self::sql_exec( $db, $bindings,"SELECT count({$primaryKey}) FROM $table $where");
-			//   $sql = "SELECT count({$primaryKey}) FROM $table $where";
-			  $getResults= sqlsrv_query($db, $sql);
-			  if ($getResults == FALSE)
-				  echo (sqlsrv_errors());
-			  while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_NUMERIC)) {
-				 $recordsFiltered = $row[0];
-			  }
 		// $recordsFiltered = count($resFilterLength);
 		
 		// Total data set length
