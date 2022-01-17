@@ -539,12 +539,12 @@ var newExportAction = function (e, dt, button, config) {
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": true,
+                "visible": false,
           
             },
             {
                 "targets": [ 2 ],
-                "visible": false
+                "visible": true
             },
             {
                 "targets": [ 10 ],

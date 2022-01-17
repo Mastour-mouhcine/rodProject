@@ -2,8 +2,8 @@
 <?php
 
 
-// $table = 'data_rods_test';
-$table = 'data_rods';
+$table = 'data_rods_test';
+// $table = 'data_rods';
 
 $primaryKey = 'ID';
 $serverName = "tcp:rods-data-server-01.database.windows.net,1433";

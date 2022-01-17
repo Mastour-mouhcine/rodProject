@@ -458,7 +458,9 @@ $(document).ready(function(){
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
-    var oldExportAction = function (self, e, dt, button, config) {
+    
+    var  table  = $('#empTable').DataTable({
+        var oldExportAction = function (self, e, dt, button, config) {
     if (button[0].className.indexOf('buttons-excel') >= 0) {
         if ($.fn.dataTable.ext.buttons.excelHtml5.available(dt, config)) {
             $.fn.dataTable.ext.buttons.excelHtml5.action.call(self, e, dt, button, config);
@@ -502,8 +504,7 @@ var newExportAction = function (e, dt, button, config) {
     // Requery the server with the new one-time export settings
     dt.ajax.reload();
 };
-    var  table  = $('#empTable').DataTable({
-        
+/********************************* */
             initComplete: function () {
             // Apply the search
             this.api().columns().every(function () {
@@ -534,12 +535,12 @@ var newExportAction = function (e, dt, button, config) {
             // "responsive":true,
             //"bScrollCollapse" : true,
             "ajax": "serverSide/ConnectionDataBase_001.php", 
-            'pageLength': 100,
+            pageLength: 25,
             lengthChange: false,
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": true,
+                "visible": false,
           
             },
             {

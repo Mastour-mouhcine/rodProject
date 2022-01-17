@@ -539,7 +539,7 @@ var newExportAction = function (e, dt, button, config) {
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": true,
+                "visible": false,
           
             },
             {
@@ -860,7 +860,6 @@ var newExportAction = function (e, dt, button, config) {
                     title: '',
                     filename: 'Data Target all',
                     // "action": newexportaction,
-                    action: newExportAction
                 },
             
            
