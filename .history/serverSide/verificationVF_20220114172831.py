@@ -83,7 +83,7 @@ writer = pd.ExcelWriter("/var/www/html/rodProject/serverSide/Verification.xlsx")
 #writer = pd.ExcelWriter("Verification.xlsx")
 df.to_excel(writer, 'data')
 writer.save()
-dat= pd.read_excel(r'C:\Users\AskLabex\Desktop\Script Python\Verification.xlsx', sheet_name='data')
+#dat= pd.read_excel(r'C:\Users\AskLabex\Desktop\Script Python\Verification.xlsx', sheet_name='data')
 mycursor1.execute('''
         CREATE TABLE Mail_s (
             Email varchar(50) NOT NULL,

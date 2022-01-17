@@ -454,10 +454,6 @@
  
 $(document).ready(function(){
     // IfExistRowDataBase();
-    $('#empTable tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-    } );
     var oldExportAction = function (self, e, dt, button, config) {
     if (button[0].className.indexOf('buttons-excel') >= 0) {
         if ($.fn.dataTable.ext.buttons.excelHtml5.available(dt, config)) {
@@ -502,6 +498,12 @@ var newExportAction = function (e, dt, button, config) {
     // Requery the server with the new one-time export settings
     dt.ajax.reload();
 };
+/********************************* */
+    $('#empTable tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+    
     var  table  = $('#empTable').DataTable({
         
             initComplete: function () {
@@ -534,12 +536,14 @@ var newExportAction = function (e, dt, button, config) {
             // "responsive":true,
             //"bScrollCollapse" : true,
             "ajax": "serverSide/ConnectionDataBase_001.php", 
-            'pageLength': 100,
+           
+            lengthMenu: [[25, 100, -1], [25, 100, "All"]],
+            pageLength: 25,
             lengthChange: false,
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": true,
+                "visible": false,
           
             },
             {
@@ -860,7 +864,12 @@ var newExportAction = function (e, dt, button, config) {
                     title: '',
                     filename: 'Data Target all',
                     // "action": newexportaction,
-                    action: newExportAction
+                    exportOptions: {
+                modifier: {
+                    search: 'applied',
+                    order: 'applied'
+                }
+            }
                 },
             
            
