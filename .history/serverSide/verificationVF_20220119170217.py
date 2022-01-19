@@ -50,7 +50,7 @@ options.add_argument('--disable-gpu')  # applicable to windows os only
 options.add_argument('start-maximized') #
 options.add_argument('disable-infobars')
 options.add_argument('--enable-extensions')
-driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver",chrome_options=options)
+driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver',chrome_options=options)
 #driver = webdriver.Chrome(chrome_options=options, executable_path=ChromeDriverManager().install())
 data.replace('', np.nan, inplace=True)
 data=data.dropna(how='any',axis=0)
