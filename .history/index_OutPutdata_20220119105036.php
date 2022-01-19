@@ -384,7 +384,7 @@
                          
                         </table>
                        
-                            
+                        <!-- <div class="dataTables_info" id="empTable_info" role="status" aria-live="polite"><span id = "id_rowNumber"></span></div> -->
                     </div>
                   
                 <button type="button" class="btn btn-success" onClick="window.location.reload();">Clear Filter</button>
@@ -453,26 +453,11 @@
   
  
 $(document).ready(function(){
-    var buttonCommon = {
-        exportOptions: {
-            format: {
-                body: function ( data, row, column, node ) {
-                    // Strip $ from salary column to make it numeric
-                    return column === 5 ?
-                        data.replace( /[$,]/g, '' ) :
-                        data;
-                }
-            }
-        }
-    };
-     
+    // IfExistRowDataBase();
     $('#empTable tfoot th').each( function () {
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
-    
-        
-    
     var  table  = $('#empTable').DataTable({
         
             initComplete: function () {
@@ -482,15 +467,10 @@ $(document).ready(function(){
                     $('input', this.footer()).keypress(function (e) {
                         if (e.keyCode == 13) { //search only when Enter key is pressed to avoid wasteful calls
                             e.preventDefault(); 
-                          
-                            //input is within <form> element which submits form when Enter key is pressed. e.preventDefault() prevents this
-                             //table.search(this.value).draw();
                              if (that.search() !== this.value) {
                                  that
                                     .search(this.value)
                                     .draw(); 
-                                    // table.search(this.value).draw();
-                                    // oTable.column().search("|",true,false).draw();
                             } 
                         }
                        
@@ -503,18 +483,19 @@ $(document).ready(function(){
             "paging": true,
             "bDeferRender": true,
             "bProcessing": true,
-            "language": {
+            // "processing": true,
+        "language": {
             processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span> '},
             "bServerSide": true,
             // "responsive":true,
             //"bScrollCollapse" : true,
-            'ajax':'serverSide/ConnectionDataBase_002.php', 
+            "ajax": "serverSide/ConnectionDataBase_001.php", 
             'pageLength': 100,
             lengthChange: false,
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": false,
+                "visible": true,
           
             },
             {
@@ -817,7 +798,7 @@ $(document).ready(function(){
                 "visible": false
             },
         ],
-             dom: 'Bfrtip',            
+            dom: 'Bfrtip',            
             //colReorder: true,
            "buttons" : [
              {
@@ -840,15 +821,23 @@ $(document).ready(function(){
                  {
         extend: 'colvis',
                }], 
+            //    columns:[0,1,2,3],
         });
     });
    
     
-
-    $('#Btn_Acceuil').click(function () {
-        
-         location.href = "index001.php"; 
+ /*    const IfExistRowDataBase = () => {
+  let nbr_row;
+    $.ajax({
+      url: "serverSide/NumberOfRows.php",
+      success: function (result) {
+        nbr_row = result; 
+        $('#id_rowNumber').empty();
+        $('#id_rowNumber').append("Il y a  "+" "+result+" "+ "enregistrements filtrer");
+      },
     });
+}; */
+   
     const JSalertWait = (text) => {
             Swal.fire({
                 title: 'Traitement en cours',
@@ -878,37 +867,6 @@ $(document).ready(function(){
       });
    });
    
-</script>
-<script>
-// $(document).ready(function() {
-//   var table = $('#example').DataTable({
-//     dom: 'Bfrtip',
-//     columnDefs: [
-//       {
-//         targets: [1, 3],
-//         className: 'noVis'
-//             }
-//         ],
-//     buttons: [
-//       {
-//         extend: 'collection',
-//         text: 'Show columns',
-//         className: 'col',
-//         buttons: []
-//       }]
-//   });
-
-//   table.columns().every(function(index) {
-//     table.button().add('0-' + index, {
-//       action: function(e, dt, button, config) {
-//         table.column(index).visible(table.column(index).visible() ? false : true);
-//         $(button).toggleClass("hidden");
-//       },
-//       text: $(table.column(index).header()).text(),
-//       enabled: $(table.column(index).header()).hasClass('noVis') ? false : true
-//     });
-//   });
-// });
 </script>
 </html>
 
