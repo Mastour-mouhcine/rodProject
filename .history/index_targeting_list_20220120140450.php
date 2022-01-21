@@ -100,7 +100,7 @@
                     <div class="card-body" id="x">
                         <!-- Ici le lien -->
                         <iframe class="responsive-iframe"
-                            src="https://app.powerbi.com/reportEmbed?reportId=54debe21-3d45-4c22-87d0-3775e703ac9e&autoAuth=true&ctid=09092c3f-ce16-4223-9075-69a73d8afa6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtZXVyb3BlLWItcHJpbWFyeS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D"></iframe>
+                            src="https://app.powerbi.com/groups/2d2589f3-d328-4070-ab2c-e2cc3feabd45/reports/54debe21-3d45-4c22-87d0-3775e703ac9e/ReportSectiona124c6302f160548a954"></iframe>
                     </div>
                 </div>
             </div>
