@@ -85,22 +85,12 @@ writer = pd.ExcelWriter("/var/www/html/rodProject/serverSide/Verification.xlsx")
 df.to_excel(writer, 'data')
 writer.save()
 dat= pd.read_excel('/var/www/html/rodProject/serverSide/Verification.xlsx', sheet_name='data')
-# execute("""IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Mail_s' AND xtype='U')
-#         CREATE TABLE Mail_s (
-#         Email varchar(50) NOT NULL,
-#         Status nvarchar(50) NOT NULL
-#         )""")
-mycursor1.execute("""IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Mail_s' AND xtype='U')
-         CREATE TABLE Mail_s (
-         Email varchar(50) NOT NULL,
-         Status nvarchar(50) NOT NULL
-         )""")
-# mycursor1.execute('''
-#         CREATE TABLE Mail_s (
-#             Email varchar(50) NOT NULL,
-#             Status nvarchar(50) NOT NULL
-#             )
-#                ''')
+mycursor1.execute('''
+        CREATE TABLE Mail_s (
+            Email varchar(50) NOT NULL,
+            Status nvarchar(50) NOT NULL
+            )
+               ''')
 for row in dat.itertuples():
     mycursor1.execute('''
                 INSERT INTO Mail_s (Email, Status)
