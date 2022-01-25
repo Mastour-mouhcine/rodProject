@@ -128,7 +128,7 @@ Indien u trouwens zelf bepaalde activa te koop heeft die onze Belgische of inter
 
 Met vriendelijke groeten,\n\n'''+''''\nPaul FREEMAN\n'''+'''
 Head Manager of Global Real Estate and M&A'''
-            send_to =str(liste1[i][0])
+            send_to =srt(liste1[i][0])
             send_mail(send_from,send_to,subject,html,files,server,port,username='paul.freeman@rodschinson.com',password='Lan03993',isTls=True)
     except:
         pass
