@@ -32,7 +32,6 @@ mycursor1.execute("SELECT mail_direct from data_input_test")
 liste1=[]
 myresult1 = mycursor1.fetchall()
 
-myresult1 = mycursor1.fetchall()
 #mydb.commit()
 for x in myresult1:
     liste1.append(x)
@@ -51,6 +50,7 @@ options.add_argument('start-maximized') #
 options.add_argument('disable-infobars')
 options.add_argument('--enable-extensions')
 #driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver",chrome_options=options)
+#driver = webdriver.Chrome(executable_path=r"C:\Users\CHANCHAF\.wdm\drivers\chromedriver\win32\96.0.4664.45\chromedriver.exe",chrome_options=options)
 driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",chrome_options=options)
 #driver = webdriver.Chrome(chrome_options=options, executable_path=ChromeDriverManager().install())
 data.replace('', np.nan, inplace=True)
@@ -77,6 +77,8 @@ for row in data['mail_direct']:
         pass
 
 df=pd.DataFrame(liste1,columns=['Email','Status'])
+
+data=data.dropna(how='any',axis=0)
 import os
 #os.remove("data_input.xlsx")
 #os.remove("Verification.xlsx")
@@ -90,24 +92,32 @@ import os
 #         Email varchar(50) NOT NULL,
 #         Status nvarchar(50) NOT NULL
 #         )""")
-# mycursor1.execute("""IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Mail_s' AND xtype='U')
-#          CREATE TABLE Mail_s (
-#          Email varchar(50) NOT NULL,
-#          Status nvarchar(50) NOT NULL
-#          )""")
-mycursor1.execute('''
-        CREATE TABLE Mail_s (
-            Email varchar(50) NOT NULL,
-            Status nvarchar(50) NOT NULL
-            )
-               ''')
-for row in df.itertuples():
+mycursor1.execute("""TRUNCATE TABLE Mail_s """)
+
+mycursor1.execute("""IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Mail_s' AND xtype='U')
+          CREATE TABLE Mail_s (
+          Email varchar(255) NOT NULL,
+          Status nvarchar(255) NOT NULL
+          )""")
+#mycursor1.execute('''
+#        CREATE TABLE Mail_s (
+#            Email varchar(255) NOT NULL,
+#            Status nvarchar(255) NOT NULL
+#            )
+#               ''')
+
+for row in liste1:
+    s=str(row[0]).replace(",", "")
+    y=s.replace(")", "")
+    d=y.replace("(", "")
+    c=d.replace(" ", "")
+    k=c.replace("'", "")
     mycursor1.execute('''
                 INSERT INTO Mail_s (Email, Status)
                 VALUES (?,?)
                 ''',
-                row.Email,
-                row.Status     
+                k,
+                str(row[1])     
                 )
 mycursor1.execute('''UPDATE t2 SET t2.mail_status = t1.Status FROM dbo.data_input_test t2 JOIN dbo.Mail_s t1 ON t2.mail_direct = t1.Email; ''')
 mydb.commit()
