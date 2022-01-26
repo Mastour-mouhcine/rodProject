@@ -115,7 +115,7 @@ $(document).ready(function() {
     },
       columns: [
         {
-          data: null, 
+          data: 'check',
           defaultContent: "",
           className: "select-checkbox",
           orderable: false,

@@ -278,14 +278,14 @@
             Swal.fire(status, message, type);
         };
         //
-        const JSalertAfterValidate = (status, message, type, urlPage) => {
-            // var url = 'index_Input.php';
-            var url = urlPage;
-            // var url = 'index_OutPutMailValid.php';
+        const JSalertAfterValidate = (status, message, type) => {
+            var url = 'index_Input.php';
+            // var url = 'index_OutPutMailValid.php';  
             //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
-                window.open(url, '_self');
+                window.open(url, '__self');
             });
+
         };
         //auto close timer
         const JSalertWait = (text) => {
@@ -307,7 +307,8 @@
                             url: "serverSide/EnvoiMail.php",
                             success: function (result) {
                                 if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
+                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
                                 };

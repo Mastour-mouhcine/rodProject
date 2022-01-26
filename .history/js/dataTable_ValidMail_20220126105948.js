@@ -119,6 +119,9 @@ $(document).ready(function() {
           defaultContent: "",
           className: "select-checkbox",
           orderable: false,
+          'render': function (data, type, full, meta) {
+            return '<input type="checkbox" />';
+        }
         },
           { data: "nom" },
           { data: "prenom" },

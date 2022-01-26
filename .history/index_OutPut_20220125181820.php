@@ -60,12 +60,10 @@
 
                 <!-- Page Heading -->
                 <div class="mb-2" style="display: flex; justify-content: flex-start; align-items: center">
-                    <div>
-                        <img src="img/rod_logo.png">
-                    </div>
-                    <div>
+                    <div style="display: flex;">
+                        <a href="index001.php"><img src="img/rod_logo.png"></a>
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
-                    </div>
+                     </div>
                 </div>
 
                 <!-- DataTales Example -->
@@ -80,7 +78,7 @@
                             <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
                         </div> -->
                         <!-- Je l'ai ajouté -->
-                        <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button>
+                        <button id="btn_envoyer_mail" disabled class="btn btn-success" >Envoyer les emails</button> 
 
                     </div>
                     <div class="card-body" id="x">
@@ -257,10 +255,20 @@
 
     <!-- Page Index_OutPut Mail -->
     <script type="text/javascript">
-
-        $('#Btn_Acceuil').click(function () {
-              location.href = "index001.php";  
-        });
+         //Number Of rows if exist
+         const IfExistRowDataBase = () => {
+        let nbr_row;
+            $.ajax({
+            url: "serverSide/NumberOfRowsSendMail.php",
+            success: function (result) {
+                nbr_row = result; 
+                if(nbr_row != 0){
+                document.getElementById('btn_envoyer_mail').disabled=true;
+                }
+            },
+            });
+        };
+        IfExistRowDataBase();              //call function
     </script>
 
 

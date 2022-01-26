@@ -242,11 +242,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="//cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-        <!-- Swal Alert-->
-    <!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script> -->    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     
     <!-- Filtre table -->
     <script src="//cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
@@ -259,61 +255,10 @@
 
     <!-- Page Index_OutPut Mail -->
     <script type="text/javascript">
-         //Number Of rows if exist
-         const IfExistRowDataBase = () => {
-        let nbr_row;
-            $.ajax({
-            url: "serverSide/NumberOfRowsSendMail.php",
-            success: function (result) {
-                nbr_row = result; 
-                if(nbr_row != 0){
-                document.getElementById('btn_envoyer_mail').disabled=false;
-                }
-            },
-            });
-        };
-        IfExistRowDataBase();              //call function
-        //Alert management 
-    const JSalert = (status, message, type) => {
-            Swal.fire(status, message, type);
-        };
-        //
-        const JSalertAfterValidate = (status, message, type, urlPage) => {
-            // var url = 'index_Input.php';
-            var url = urlPage;
-            // var url = 'index_OutPutMailValid.php';
-            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
-            Swal.fire(status, message, type).then(function () {
-                window.open(url, '_self');
-            });
-        };
-        //auto close timer
-        const JSalertWait = (text) => {
-            Swal.fire({
-                title: 'Traitement en cours',
-                html: text,
-                //timerProgressBar: false,
-                didOpen: () => {
-                    Swal.showLoading()
-                },
-            })
-        };
-        $("#btn_envoyer_mail").click(function (e) {
-                        e.preventDefault();
-                        JSalertWait("Envoi d'emails");
-                        //Ouvrir lien when click ok
-                        //JSalertAfterValidate("Succès", "Les mails ont été bien vérifiés !","success");
-                        $.ajax({
-                            url: "serverSide/EnvoiMail.php",
-                            success: function (result) {
-                                if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
-                                } else {
-                                    JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
-                                };
-                            },
-                        });
-                    });
+
+        $('#Btn_Acceuil').click(function () {
+              location.href = "index001.php";  
+        });
     </script>
 
 

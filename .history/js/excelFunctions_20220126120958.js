@@ -210,7 +210,7 @@ const onValiderMail = () => {
 const onImportListe = () => {
   $("#btn_liste_importe").click(function (e) {
     e.preventDefault();
-    location.href = "index_validmails.php"; 
+    IfExistRowDataBase();
   });
 }; 
 const addRowsToExistingTable = (sheet_data) => {

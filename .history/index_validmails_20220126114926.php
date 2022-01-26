@@ -223,9 +223,12 @@
         };
         //
         const JSalertAfterValidate = (status, message, type, urlPage) => {
+            // var url = 'index_Input.php';
             var url = urlPage;
+            // var url = 'index_OutPutMailValid.php';
+            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
-                window.open(url, '_self');
+                window.open(url, '__self');
             });
 
         };
@@ -260,7 +263,7 @@
             });
                 $("#btn_valider_mail_zoho").click(function (e) {
                         e.preventDefault();
-                        JSalertWait('Vérification de données');
+                        /* JSalertWait('Vérification de données');
                         //Ouvrir lien when click ok
                         //JSalertAfterValidate("Succès", "Les mails ont été bien vérifiés !","success");
                         $.ajax({
@@ -273,7 +276,9 @@
                                     JSalert("Erreur", "Une erreur est survenue lors de la vérificaiton des emails !", "error");
                                 };
                             },
-                        });
+                        }); */
+                        JSalertAfterValidate("Succès", "Les emails ont été bien vérifiés !","success","index_validmails.php");
+
                     });
                     $("#btn_envoyer_mail").click(function (e) {
                         e.preventDefault();
@@ -284,7 +289,8 @@
                             url: "serverSide/EnvoiMail.php",
                             success: function (result) {
                                 if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
+                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_Input.php");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
                                 };
