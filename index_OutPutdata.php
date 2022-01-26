@@ -16,7 +16,8 @@
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
 
-    <title>Rodschinson</title>
+    <title >Rodschinson</title>
+    <link rel = "icon" href ="img/logoContent.jpg" type = "image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.css"/>
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
    
