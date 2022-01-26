@@ -15,7 +15,7 @@
     <meta name="author" content="Rodschinson">
 
     <title >Rodschinson</title>
-    <link rel = "icon" href ="img/logoContent.jpg" type = "image/x-icon">
+    <link rel = "icon" href ="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type = "image/x-icon">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link

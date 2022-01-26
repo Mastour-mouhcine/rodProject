@@ -7,8 +7,7 @@
 <html>
     <head>
        <meta charset="utf-8">
-       <title >Rodschinson</title>
-        <link rel = "icon" href ="img/logoContent.jpg" type = "image/x-icon">
+       <meta content="logoContent.png" itemprop="image">
         <!-- importer le fichier de style -->
         <link rel="stylesheet" href="css/style001.css" media="screen" type="text/css" />
         <style>

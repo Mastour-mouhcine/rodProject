@@ -16,8 +16,7 @@
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
 
-    <title >Rodschinson</title>
-    <link rel = "icon" href ="img/logoContent.jpg" type = "image/x-icon">
+    <title>Rodschinson</title>
     <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.css"/>
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
@@ -246,7 +245,7 @@ var table=	$('#import_zoho_contact1').DataTable( {
 		columns : [
             {
           data: null,
-          defaultContent: "Envoyé",
+          defaultContent: " Valider",
           className: "select-checkbox",
           orderable: false,
         },
@@ -257,7 +256,19 @@ var table=	$('#import_zoho_contact1').DataTable( {
 			
 		],
     
-    
+    columnDefs: [
+        { "sClass": "my_class", "aTargets": [0] },
+       
+                            {
+                                targets: 0,
+                                render: function (data, type, row) {
+                                    if (type === 'display') {
+                                        return '<input id="inputmail1"type="checkbox" checked disabled="true"  class="editor-active">';
+                                    }
+                                    return data;
+                                }
+                            }
+                        ]
                
     
     

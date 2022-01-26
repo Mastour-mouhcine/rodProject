@@ -15,7 +15,7 @@
     <meta name="author" content="Rodschinson">
 
     <title >Rodschinson</title>
-    <link rel = "icon" href ="img/logoContent.jpg" type = "image/x-icon">
+    <link rel = "icon" href ="/img/logoContent.png" type = "image/x-icon">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
