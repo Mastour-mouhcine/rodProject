@@ -211,21 +211,21 @@
                 nbr_row = result; 
                 if(nbr_row != 0){
                 document.getElementById('btn_data_visualisation').disabled=false;
-                document.getElementById('btn_envoyer_mail').disabled=false;
                 }
             },
             });
         };
-        IfExistRowDataBase();              //call function
+        IfExistRowDataBase();              //Appel du fonction 
     //Alert management 
     const JSalert = (status, message, type) => {
             Swal.fire(status, message, type);
         };
         //
-        const JSalertAfterValidate = (status, message, type, urlPage) => {
-            var url = urlPage;
+        const JSalertAfterValidate = (status, message, type) => {
+            var url = 'index_Input.php';
+            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
-                window.open(url, '_self');
+                window.open(url, '_blank');
             });
 
         };
@@ -248,9 +248,7 @@
                     url: "serverSide/Convert_inPut.php",
                     success: (result) => {
                         if (result.trim() == "script ok") {
-                            /* JSalert("Succès", "Les donnèes ont été bien converties !", "success");
-                            location.href = "index_validmails.php";  */
-                            JSalertAfterValidate("Succès", "Les emails ont été bien vérifiés !","success","index_validmails.php");
+                            JSalert("Succès", "Les donnèes ont été bien converties !", "success");
                         } else {
                             JSalert("Erreur", "Une erreur est survenue lors de la convertion !", "error");
                         };
@@ -267,8 +265,8 @@
                             url: "serverSide/ValidationMail.php",
                             success: function (result) {
                                 if (result.trim() === "verification est bonne") {
-                                    // JSalert("Succès", "Les emails ont été bien vérifiés !", "success");
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien vérifiés !","success","index_validmails.php");
+                                    JSalert("Succès", "Les emails ont été bien vérifiés !", "success");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de la vérificaiton des emails !", "error");
                                 };
@@ -284,7 +282,8 @@
                             url: "serverSide/EnvoiMail.php",
                             success: function (result) {
                                 if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
+                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
                                 };

@@ -223,7 +223,10 @@
         };
         //
         const JSalertAfterValidate = (status, message, type, urlPage) => {
+            // var url = 'index_Input.php';
             var url = urlPage;
+            // var url = 'index_OutPutMailValid.php';
+            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });
@@ -276,7 +279,7 @@
                         });
                     });
                     $("#btn_envoyer_mail").click(function (e) {
-                        e.preventDefault();
+                       /*  e.preventDefault();
                         JSalertWait("Envoi d'emails");
                         //Ouvrir lien when click ok
                         //JSalertAfterValidate("Succès", "Les mails ont été bien vérifiés !","success");
@@ -289,7 +292,9 @@
                                     JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
                                 };
                             },
-                        });
+                        }); */
+                        JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
+
                     });
             $('#btn_data_visualisation').click(function () {
         

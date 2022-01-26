@@ -143,8 +143,8 @@
                             <div> 
                                 <button id="btn_valider_mail_zoho" class="btn btn-success">Vérifier les emails</button> 
                                 <button id="btn_convert_zoho" class="btn btn-success" >Convertir vers Zoho</button> 
-                                <button id="btn_data_visualisation" disabled class="btn btn-success" >Visualiser les données Zoho</button> 
-                                <button id="btn_envoyer_mail" disabled class="btn btn-success" >Envoyer les emails</button> 
+                                <button id="btn_data_visualisation" class="btn btn-success" >Visualiser les données Zoho</button> 
+                                <button id="btn_envoyer_mail" class="btn btn-success" >Envoyer les emails</button> 
                             </div> 
                         </div> 
                     </div>
@@ -202,30 +202,16 @@
     <script src="js/dataTable_ValidMail.js" type="text/javascript" ></script>
     <!-- Page Index_OutPut Mail -->
     <script type="text/javascript">
-        //Number Of rows if exist
-        const IfExistRowDataBase = () => {
-        let nbr_row;
-            $.ajax({
-            url: "serverSide/NumberOfRowsSendMail.php",
-            success: function (result) {
-                nbr_row = result; 
-                if(nbr_row != 0){
-                document.getElementById('btn_data_visualisation').disabled=false;
-                document.getElementById('btn_envoyer_mail').disabled=false;
-                }
-            },
-            });
-        };
-        IfExistRowDataBase();              //call function
     //Alert management 
     const JSalert = (status, message, type) => {
             Swal.fire(status, message, type);
         };
         //
-        const JSalertAfterValidate = (status, message, type, urlPage) => {
-            var url = urlPage;
+        const JSalertAfterValidate = (status, message, type) => {
+            var url = 'index_Input.php';
+            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
-                window.open(url, '_self');
+                window.open(url, '_blank');
             });
 
         };
@@ -240,7 +226,6 @@
                 },
             })
         };
-        
         $("#btn_convert_zoho").click(function (e) {
                 e.preventDefault();
                 JSalertWait('Conversion de données');
@@ -248,9 +233,8 @@
                     url: "serverSide/Convert_inPut.php",
                     success: (result) => {
                         if (result.trim() == "script ok") {
-                            /* JSalert("Succès", "Les donnèes ont été bien converties !", "success");
-                            location.href = "index_validmails.php";  */
-                            JSalertAfterValidate("Succès", "Les emails ont été bien vérifiés !","success","index_validmails.php");
+                            JSalert("Succès", "Les donnèes ont été bien converties !", "success");
+                            location.href = "index_OutPut.php";
                         } else {
                             JSalert("Erreur", "Une erreur est survenue lors de la convertion !", "error");
                         };
@@ -267,8 +251,8 @@
                             url: "serverSide/ValidationMail.php",
                             success: function (result) {
                                 if (result.trim() === "verification est bonne") {
-                                    // JSalert("Succès", "Les emails ont été bien vérifiés !", "success");
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien vérifiés !","success","index_validmails.php");
+                                    JSalert("Succès", "Les emails ont été bien vérifiés !", "success");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de la vérificaiton des emails !", "error");
                                 };
@@ -284,7 +268,8 @@
                             url: "serverSide/EnvoiMail.php",
                             success: function (result) {
                                 if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_OutPutMailValid.php");
+                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success");
+
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
                                 };
@@ -293,7 +278,7 @@
                     });
             $('#btn_data_visualisation').click(function () {
         
-        location.href = "index_OutPut.php"; 
+        location.href = "serverSide/Convert_inPut.php"; 
             });
     </script>
 </body>

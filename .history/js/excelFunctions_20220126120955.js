@@ -28,7 +28,6 @@ const IfExistRowDataBase = () => {
         $('#id_rowNumber').append("Il y a  "+" "+result+" "+ "enregistrements actuellement dans la base");
         if(nbr_row != 0){
           document.getElementById('btn_validerMail').disabled=false;
-          document.getElementById('btn_liste_importe').disabled=false;
         }
       },
     });
@@ -210,7 +209,7 @@ const onValiderMail = () => {
 const onImportListe = () => {
   $("#btn_liste_importe").click(function (e) {
     e.preventDefault();
-    location.href = "index_validmails.php"; 
+    IfExistRowDataBase();
   });
 }; 
 const addRowsToExistingTable = (sheet_data) => {

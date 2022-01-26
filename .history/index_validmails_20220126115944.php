@@ -223,7 +223,10 @@
         };
         //
         const JSalertAfterValidate = (status, message, type, urlPage) => {
+            // var url = 'index_Input.php';
             var url = urlPage;
+            // var url = 'index_OutPutMailValid.php';
+            //var win = window.open('/nosnihcsdosCorp/index_validmails.php', '_blank');
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });

@@ -103,7 +103,7 @@ $(document).ready(function() {
       processing: true,
       pageLength: 10,
       ajax: {
-        url: "serverSide/ConnectionValidateMail.php",
+        url: "serverSide/ListMailValidated.php",
        //url: "serverSide/staff.php",
         dataSrc: "",
       },
@@ -115,7 +115,7 @@ $(document).ready(function() {
     },
       columns: [
         {
-          data: null, 
+          data: null,
           defaultContent: "",
           className: "select-checkbox",
           orderable: false,
