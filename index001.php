@@ -34,7 +34,7 @@
     </div>
     <div  style=" display: flex; justify-content: center; flex-direction: column; align-items: center; background: transparent">
         <div style= "justify-content: center; flex-direction: column; align-items: center; background: transparent">
-            <button  onclick="window.location.href='index_Input.php'" class="button button1"><span class="button-content"> <i class="fas fa-bullhorn"></i> Marketing(Phingoo)</span></button>
+            <button  onclick="window.location.href='index_Input.php'" class="button button1"><span class="button-content"> <i class="fas fa-bullhorn"></i> Prospection(Phingoo)</span></button>
             <button onclick="window.location.href='dataRodschinson.php'"  class="button button2"> <i class="fas fa-server"></i> Operations Data</button>
             <button onclick="window.location.href='https://www.airtable.com/'" class="button button3"> <i class="fas fa-folder-minus"></i> Portfolio RODS</button>
         </div>
@@ -48,7 +48,7 @@
         </div> 
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
             <button onclick="window.location.href='index_targeting_list.php'" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
-            <button onclick="window.location.href='index_prospection.php'" class="button button7"> <i class="fas fa-search"></i> Prospection</button>
+            <button onclick="window.location.href='index_prospection.php'" class="button button7"> <i class="fas fa-search"></i> Segmentation</button>
         </div> 
 
 
