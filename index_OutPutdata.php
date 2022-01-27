@@ -16,7 +16,8 @@
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
 
 
-    <title>Rodschinson</title>
+    <title >Rodschinson</title>
+    <link rel = "icon" href ="img/LogoMain.jpg" type = "image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.css"/>
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
    
@@ -458,7 +459,6 @@ $(document).ready(function(){
         var title = $(this).text();
         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
     } );
-    
     var  table  = $('#empTable').DataTable({
         
             initComplete: function () {
@@ -491,13 +491,12 @@ $(document).ready(function(){
             // "responsive":true,
             //"bScrollCollapse" : true,
             "ajax": "serverSide/ConnectionDataBase_001.php", 
-           
             'pageLength': 100,
             lengthChange: false,
             "columnDefs": [
             {
                 "targets": [ 1 ],
-                "visible": false,
+                "visible": true,
           
             },
             {
@@ -814,7 +813,7 @@ $(document).ready(function(){
                     text: 'CSV ',
                     fieldSeparator: ';',
                     title: '',
-                    filename: 'Data Target all',
+                    filename: 'Data Target all'
                 },
             
            
