@@ -81,7 +81,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Visualisation Data Phingoo</h6>
                         </div>
                         <div class="btn btn-info">
-                            <input type="file" accept=".csv" id="excel_file" />
+                            <input type="file" accept=".xlsx, .xls, .csv" id="excel_file" />
                         </div>
                     </div>
                     <div class="card-body" id="excel_data">
