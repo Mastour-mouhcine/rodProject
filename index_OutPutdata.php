@@ -158,114 +158,114 @@
 
                             <thead class="">
                             <tr>                              
-                                     
-                                          <th>DIVISION</th>
-                                          <th>Salutation </th>
-                                           <th>Salutaion Email</th> 
-                                          <th>First Name</th>
-                                          <th>Last Name</th> 
-                                          <th>Sexe</th>
-                                          <th>EMAIL</th>
-                                          <th>Preferred Language</th>
-                                           <th>Phone Account</th>
-                                          <th>Mobile</th>
-                                          <th>FAX</th>
-                                          <th>Account Name</th>
-                                          <th>Account Number</th>
-                                          <th>Identifiant Source</th>
-                                          <th>Pays</th>
-                                          <th>Billing Code</th>
-                                          <th>Région</th>
-                                          <th>Billing City</th>
-                                          <th>Billing Province</th>
-                                          <th>Billing Street</th>
-                                        <th>Tranding Name</th>
-                                          <th>Code d'activité</th>
-                                          <th>RSZ1</th>
-                                          <th>RSZ2</th>
-                                          <th>RSZ3</th>
-                                          <th>SECTION</th>
-                                          <th>Description</th>
-                                          <th>VAT Number</th>
-                                          <th>Date d'immatriculation</th>
-                                          <th>Site Internet</th>
-                                          <th>Score de solvabilité</th>
-                                           <th>Definition du Score</th>
-                                          <th>Score international</th>
-                                          <th>Limite de credit</th>
-                                          <th>Catégorie juridique</th>
-                                          <th>Employés</th>
-                                          <th>Devise</th>
-                                          <th>Chiffres d'affaires</th>
-                                          <th>Bénéfices</th>
-                                          <th>Bénéfice avant impôts  </th>
-                                          <th>Total des immobilisations</th>
-                                          <th>Total des actifs courants</th>
-                                          <th>Total des passifs courants</th>
-                                          <th>Total des passifs a long terme</th>
-                                          <th>Fonds d'actionnaires</th>
-                                          <th>Fond de roulement</th>
-                                          <th>Ratio de liquidité général</th>
-                                          <th> Marge bénéficiaire avant impôt</th>
-                                          <th>Return on Total Assets Employed</th>
-                                          <th>Ratio d'endettement total</th>
-                                          <th>Ratio d'endettement</th>
-                                          <th>Capital social</th>
-                                        <th>Forme juridique</th>
-                                          <th>Dirigeant 1 Nom </th>
-                                          <th>Dirigeant 1 Prénom </th>
-                                          <th>Dirigeant 1 date de naissance</th>
-                                          <th>Dirigeant 1 Fonction</th>
-                                          <th>Dirigeant 1 Date de fonction </th>
-                                          <th>Dirigeant 2 Nom </th>
-                                          <th>Dirigeant 2 Prénom </th>
-                                          <th>Dirigeant 2 date de naissance </th>
-                                          <th>Dirigeant 2 Fonction</th>
-                                          <th>Dirigeant 2 Date de Fonction</th>
-                                          <th>Dirigeant 3 Nom</th>
-                                          <th>Dirigeant 3 Prénom</th>
-                                          <th>Dirigeant 3 date de naissance</th>
-                                          <th>Dirigeant 3 Fonction</th>
-                                          <th>Dirigeant 3  Date de fonction</th>
-                                          <th>Dirigeant 4 Nom</th>
-                                        <th>Dirigeant 4 Prénom</th>
-                                          <th>Dirigeant 4 date de naissance</th>
-                                          <th>Dirigeant 4 Fonction</th>
-                                          <th>Dirigeant 4 Date de Fonction</th>
-                                          <th>Dirigeant 5 Nom</th>
-                                          <th>Dirigeant 5 Prénom</th>
-                                          <th>Dirigeant 5 Date de naissance</th>
-                                          <th>Dirigeant 5 Fonction</th>
-                                          <th>Dirigeant 5 Date de Fonction</th>
-                                          <th>Dirigeant 6 Nom</th>
-                                          <th>Dirigeant 6 Prénom</th>
-                                          <th>Dirigeant 6 Date de naissance</th>
-                                          <th>Dirigeant 6 Fonction</th>
-                                          <th>Dirigeant 6 Date de Fonction</th>
-                                          <th>Dirigeant 7 Nom</th>
-                                          <th>Dirigeant 7 Prénom</th>
-                                          <th>Dirigeant 7 Date de naissance</th>
-                                          <th>Dirigeant 7 Fonction</th>
-                                          <th>Dirigeant 7 Date de Fonction</th>
-                                          <th>Dirigeant 8 Nom</th>
-                                          <th>Dirigeant 8 Prénom</th>
-                                          <th>Dirigeant 8 Date de naissance</th>
-                                          <th>Dirigeant 8 Fonction</th>
-                                          <th>Dirigeant 8 Date de Fonction</th>
-                                          <th>Dirigeant 9 Nom</th>
-                                          <th>Dirigeant 9 Prénom</th>
-                                          <th>Dirigeant 9 Date de naissance</th>
-                                          <th>Dirigeant 9 Fonction</th>
-                                          <th>Dirigeant 9 date de fonction</th>
-                                          <th>Dirigeant 10 Nom</th>
-                                          <th>Dirigeant 10 Prénom</th>
-                                          <th>Dirigeant 10 Date de naissance</th>
-                                          <th>Dirigeant 10 Fonction</th>
-                                          <th>Dirigeant 10 Date Fonction</th>
-                                          <th>Nom du Fichier</th>
-                                          <th>Date du Fichier</th>
-                                          <th>Lien Vers le Fichier </th>  
-                                           <th>ID</th>    
+                                 <th>DIVISION</th>
+                                <th>Salutation</th>
+                                <th>Salutaion email</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Sexe</th>
+                                <th>EMAIL</th>
+                                <th>Preferred Language</th>
+                                <th>Phone Account</th>
+                                <th>Mobile</th>
+                                <th>FAX</th>
+                                <th>Account Name</th>
+                                <th>Account Number</th>
+                                <th>Identifiant Source</th>
+                                <th>Pays</th>
+                                <th>Billing Code</th>
+                                <th>Billing City</th>
+                                <th>Billing Province</th>
+                                <th>Billing Street</th>
+                                <th>Trading Name</th>
+                                <th>RSZ1</th>
+                                <th>RSZ2</th>
+                                <th>RSZ3</th>
+                                <th>SECTION</th>
+                                <th>Description</th>
+                                <th>VAT Number</th>
+                                <th>Date d'immatriculation</th>
+                                <th>Site Internet</th>
+                                <th>Definition du score</th>
+                                <th>Score international</th>
+                                <th>Devise</th>
+                                <th>Chiffres d'affaires</th>
+                                <th>Total des immobilisations</th>
+                                <th>Total des actifs courants</th>
+                                <th>Total des passifs courants</th>
+                                <th>Fonds d'actionnaires</th>
+                                <th>Fonds de roulement</th>
+                                <th>Return on Total Assets Employed</th>
+                                <th>Ratio d'endettement total</th>
+                                <th>Ratio d'endettement</th>
+                                <th>Capital social</th>
+                                <th>Forme juridique</th>
+                                <th>Dirigeant 1 Nom</th>
+                                <th>Dirigeant 1 date de naissance</th>
+                                <th>Dirigeant 1 Fonction</th>
+                                <th>Dirigeant 1 Date de fonction</th>
+                                <th>Dirigeant 2 Nom</th>
+                                <th>Dirigeant 2 date de naissance</th>
+                                <th>Dirigeant 2 Fonction</th>
+                                <th>Dirigeant 2 Date de fonction</th>
+                                <th>Dirigeant 3 Nom</th>
+                                <th>Dirigeant 3 Fonction</th>
+                                <th>Dirigeant 3 Date de fonction</th>
+                                <th>Dirigeant 4 Nom</th>
+                                <th>Dirigeant 3 date de naissance</th>
+                                <th>Dirigeant 4 date de naissance</th>
+                                <th>Dirigeant 4 Fonction</th>
+                                <th>Dirigeant 4 Date de fonction</th>
+                                <th>Dirigeant 5 Nom</th>
+                                <th>Dirigeant 5 date de naissance</th>
+                                <th>Dirigeant 5 Fonction</th>
+                                <th>Dirigeant 5 Date de fonction</th>
+                                <th>Dirigeant 6 Nom</th>
+                                <th>Dirigeant 6 date de naissance</th>
+                                <th>Dirigeant 6 Fonction</th>
+                                <th>Dirigeant 6 Date de fonction</th>
+                                <th>Dirigeant 7 Nom</th>
+                                <th>Dirigeant 7 date de naissance</th>
+                                <th>Dirigeant 7 Fonction</th>
+                                <th>Dirigeant 7 Date de fonction</th>
+                                <th>Dirigeant 8 Nom</th>
+                                <th>Dirigeant 8 date de naissance</th>
+                                <th>Dirigeant 8 Fonction</th>
+                                <th>Dirigeant 8 Date de fonction</th>
+                                <th>Dirigeant 9 Nom</th>
+                                <th>Dirigeant 9 date de naissance</th>
+                                <th>Dirigeant 9 Fonction</th>
+                                <th>Dirigeant 9 Date de fonction</th>
+                                <th>Dirigeant 10 Nom</th>
+                                <th>Dirigeant 10 date de naissance</th>
+                                <th>Dirigeant 10 Fonction</th>
+                                <th>Dirigeant 10 Date de fonction</th>
+                                <th>Nom Fichier</th>
+                                <th>Date du Ficher</th>
+                                <th>Lien Vers le Fichier</th>
+                                <th>__FileName</th>
+                                <th>Région</th>
+                                <th>Code d'activité</th>
+                                <th>Score de solvabilité</th>
+                                <th>Limite de crédit</th>
+                                <th>Catégorie juridique</th>
+                                <th>Employés</th>
+                                <th>Bénéfices</th>
+                                <th>Bénéfice avant impôts</th>
+                                <th>Total des passifs à long terme</th>
+                                <th>Ratio de liquidité général</th>
+                                <th>Marge bénéficiaire avant impôt</th>
+                                <th>Dirigeant 1 Prénom</th>
+                                <th>Dirigeant 2 Prénom</th>
+                                <th>Dirigeant 3 Prénom</th>
+                                <th>Dirigeant 4 Prénom</th>
+                                <th>Dirigeant 5 Prénom</th>
+                                <th>Dirigeant 6 Prénom</th>
+                                <th>Dirigeant 7 Prénom</th>
+                                <th>Dirigeant 8 Prénom</th>
+                                <th>Dirigeant 9 Prénom</th>
+                                <th>Dirigeant 10 Prénom</th>
+                                <th>ID</th>  
                             </tr>
                             </thead>
                             <tbody class="text-center">
@@ -273,113 +273,114 @@
                             <tfoot>
                                 <tr>                              
                                      
-                                    <th>DIVISION</th>
-                                    <th>Salutation </th>
-                                    <th> Salutaion Email</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Sexe</th>
-                                    <th>EMAIL</th>
-                                    <th>Preferred Language</th>
-                                     <th>Phone Account</th>
-                                    <th>Mobile</th>
-                                    <th>FAX</th>
-                                    <th>Account Name</th>
-                                    <th>Account Number</th>
-                                    <th>Identifiant Source</th>
-                                    <th>Pays</th>
-                                    <th>Billing Code</th>
-                                    <th>Région</th>
-                                    <th>Billing City</th>
-                                    <th>Billing Province</th>
-                                    <th>Billing Street</th>
-                                   <th>Tranding Name</th>
-                                    <th>Code d'activité</th>
-                                    <th>RSZ1</th>
-                                    <th>RSZ2</th>
-                                    <th>RSZ3</th>
-                                    <th>SECTION</th>
-                                    <th>Description</th>
-                                    <th>VAT Number</th>
-                                    <th>Date d'immatriculation</th>
-                                    <th>Site Internet</th>
-                                    <th>Score de solvabilité</th>
-                                    <th>Definition du Score</th>
-                                    <th>Score international</th>
-                                    <th>Limite de credit</th>
-                                    <th>Catégorie juridique</th>
-                                    <th>Employés</th>
-                                    <th>Devise</th>
-                                    <th>Chiffres d'affaires</th>
-                                    <th>Bénéfices</th>
-                                    <th>Bénéfice avant impôts  </th>
-                                    <th>Total des immobilisations</th>
-                                    <th>Total des actifs courants</th>
-                                    <th>Total des passifs courants</th>
-                                    <th>Total des passifs a long terme</th>
-                                    <th>Fonds d'actionnaires</th>
-                                    <th>Fond de roulement</th>
-                                    <th>Ratio de liquidité général</th>
-                                    <th> Marge bénéficiaire avant impôt</th>
-                                    <th>Return on Total Assets Employed</th>
-                                    <th>Ratio d'endettement total</th>
-                                    <th>Ratio d'endettement</th>
-                                    <th>Capital social</th>
-                                    <th>Forme juridique</th>
-                                   <th>Dirigeant 1 Nom </th>
-                                    <th>Dirigeant 1 Prénom </th>
-                                    <th>Dirigeant 1 date de naissance</th>
-                                    <th>Dirigeant 1 Fonction</th>
-                                    <th>Dirigeant 1 Date de fonction </th>
-                                    <th>Dirigeant 2 Nom </th>
-                                    <th>Dirigeant 2 Prénom </th>
-                                    <th>Dirigeant 2 date de naissance </th>
-                                    <th>Dirigeant 2 Fonction</th>
-                                    <th>Dirigeant 2 Date de Fonction</th>
-                                    <th>Dirigeant 3 Nom</th>
-                                    <th>Dirigeant 3 Prénom</th>
-                                    <th>Dirigeant 3 date de naissance</th>
-                                    <th>Dirigeant 3 Fonction</th>
-                                    <th>Dirigeant 3  Date de fonction</th>
-                                    <th>Dirigeant 4 Nom</th>
-                                     <th>Dirigeant 4 Prénom</th>
-                                    <th>Dirigeant 4 date de naissance</th>
-                                    <th>Dirigeant 4 Fonction</th>
-                                    <th>Dirigeant 4 Date de Fonction</th>
-                                    <th>Dirigeant 5 Nom</th>
-                                    <th>Dirigeant 5 Prénom</th>
-                                    <th>Dirigeant 5 Date de naissance</th>
-                                    <th>Dirigeant 5 Fonction</th>
-                                    <th>Dirigeant 5 Date de Fonction</th>
-                                    <th>Dirigeant 6 Nom</th>
-                                    <th>Dirigeant 6 Prénom</th>
-                                    <th>Dirigeant 6 Date de naissance</th>
-                                    <th>Dirigeant 6 Fonction</th>
-                                    <th>Dirigeant 6 Date de Fonction</th>
-                                    <th>Dirigeant 7 Nom</th>
-                                    <th>Dirigeant 7 Prénom</th>
-                                    <th>Dirigeant 7 Date de naissance</th>
-                                    <th>Dirigeant 7 Fonction</th>
-                                    <th>Dirigeant 7 Date de Fonction</th>
-                                    <th>Dirigeant 8 Nom</th>
-                                    <th>Dirigeant 8 Prénom</th>
-                                    <th>Dirigeant 8 Date de naissance</th>
-                                    <th>Dirigeant 8 Fonction</th>
-                                    <th>Dirigeant 8 Date de Fonction</th>
-                                    <th>Dirigeant 9 Nom</th>
-                                    <th>Dirigeant 9 Prénom</th>
-                                    <th>Dirigeant 9 Date de naissance</th>
-                                    <th>Dirigeant 9 Fonction</th>
-                                    <th>Dirigeant 9 date de fonction</th>
-                                    <th>Dirigeant 10 Nom</th>
-                                    <th>Dirigeant 10 Prénom</th>
-                                    <th>Dirigeant 10 Date de naissance</th>
-                                    <th>Dirigeant 10 Fonction</th>
-                                    <th>Dirigeant 10 Date Fonction</th>
-                                    <th>Nom du Fichier</th>
-                                    <th>Date du Fichier</th>
-                                    <th>Lien Vers le Fichier </th> 
-                                    <th>ID</th>  
+                                <th>DIVISION</th>
+                                <th>Salutation</th>
+                                <th>Salutaion email</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Sexe</th>
+                                <th>EMAIL</th>
+                                <th>Preferred Language</th>
+                                <th>Phone Account</th>
+                                <th>Mobile</th>
+                                <th>FAX</th>
+                                <th>Account Name</th>
+                                <th>Account Number</th>
+                                <th>Identifiant Source</th>
+                                <th>Pays</th>
+                                <th>Billing Code</th>
+                                <th>Billing City</th>
+                                <th>Billing Province</th>
+                                <th>Billing Street</th>
+                                <th>Trading Name</th>
+                                <th>RSZ1</th>
+                                <th>RSZ2</th>
+                                <th>RSZ3</th>
+                                <th>SECTION</th>
+                                <th>Description</th>
+                                <th>VAT Number</th>
+                                <th>Date d'immatriculation</th>
+                                <th>Site Internet</th>
+                                <th>Definition du score</th>
+                                <th>Score international</th>
+                                <th>Devise</th>
+                                <th>Chiffres d'affaires</th>
+                                <th>Total des immobilisations</th>
+                                <th>Total des actifs courants</th>
+                                <th>Total des passifs courants</th>
+                                <th>Fonds d'actionnaires</th>
+                                <th>Fonds de roulement</th>
+                                <th>Return on Total Assets Employed</th>
+                                <th>Ratio d'endettement total</th>
+                                <th>Ratio d'endettement</th>
+                                <th>Capital social</th>
+                                <th>Forme juridique</th>
+                                <th>Dirigeant 1 Nom</th>
+                                <th>Dirigeant 1 date de naissance</th>
+                                <th>Dirigeant 1 Fonction</th>
+                                <th>Dirigeant 1 Date de fonction</th>
+                                <th>Dirigeant 2 Nom</th>
+                                <th>Dirigeant 2 date de naissance</th>
+                                <th>Dirigeant 2 Fonction</th>
+                                <th>Dirigeant 2 Date de fonction</th>
+                                <th>Dirigeant 3 Nom</th>
+                                <th>Dirigeant 3 Fonction</th>
+                                <th>Dirigeant 3 Date de fonction</th>
+                                <th>Dirigeant 4 Nom</th>
+                                <th>Dirigeant 3 date de naissance</th>
+                                <th>Dirigeant 4 date de naissance</th>
+                                <th>Dirigeant 4 Fonction</th>
+                                <th>Dirigeant 4 Date de fonction</th>
+                                <th>Dirigeant 5 Nom</th>
+                                <th>Dirigeant 5 date de naissance</th>
+                                <th>Dirigeant 5 Fonction</th>
+                                <th>Dirigeant 5 Date de fonction</th>
+                                <th>Dirigeant 6 Nom</th>
+                                <th>Dirigeant 6 date de naissance</th>
+                                <th>Dirigeant 6 Fonction</th>
+                                <th>Dirigeant 6 Date de fonction</th>
+                                <th>Dirigeant 7 Nom</th>
+                                <th>Dirigeant 7 date de naissance</th>
+                                <th>Dirigeant 7 Fonction</th>
+                                <th>Dirigeant 7 Date de fonction</th>
+                                <th>Dirigeant 8 Nom</th>
+                                <th>Dirigeant 8 date de naissance</th>
+                                <th>Dirigeant 8 Fonction</th>
+                                <th>Dirigeant 8 Date de fonction</th>
+                                <th>Dirigeant 9 Nom</th>
+                                <th>Dirigeant 9 date de naissance</th>
+                                <th>Dirigeant 9 Fonction</th>
+                                <th>Dirigeant 9 Date de fonction</th>
+                                <th>Dirigeant 10 Nom</th>
+                                <th>Dirigeant 10 date de naissance</th>
+                                <th>Dirigeant 10 Fonction</th>
+                                <th>Dirigeant 10 Date de fonction</th>
+                                <th>Nom Fichier</th>
+                                <th>Date du Ficher</th>
+                                <th>Lien Vers le Fichier</th>
+                                <th>__FileName</th>
+                                <th>Région</th>
+                                <th>Code d'activité</th>
+                                <th>Score de solvabilité</th>
+                                <th>Limite de crédit</th>
+                                <th>Catégorie juridique</th>
+                                <th>Employés</th>
+                                <th>Bénéfices</th>
+                                <th>Bénéfice avant impôts</th>
+                                <th>Total des passifs à long terme</th>
+                                <th>Ratio de liquidité général</th>
+                                <th>Marge bénéficiaire avant impôt</th>
+                                <th>Dirigeant 1 Prénom</th>
+                                <th>Dirigeant 2 Prénom</th>
+                                <th>Dirigeant 3 Prénom</th>
+                                <th>Dirigeant 4 Prénom</th>
+                                <th>Dirigeant 5 Prénom</th>
+                                <th>Dirigeant 6 Prénom</th>
+                                <th>Dirigeant 7 Prénom</th>
+                                <th>Dirigeant 8 Prénom</th>
+                                <th>Dirigeant 9 Prénom</th>
+                                <th>Dirigeant 10 Prénom</th>
+                                <th>ID</th>
                       </tr>
                             </tfoot>
                          
@@ -796,6 +797,10 @@ $(document).ready(function(){
             },
             {
                 "targets": [ 106 ],
+                "visible": false
+            },
+            {
+                "targets": [ 107 ],
                 "visible": false
             },
         ],
