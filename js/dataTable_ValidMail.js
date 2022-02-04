@@ -94,6 +94,9 @@ $(document).ready(function() {
             label: "Status Mail",
             name: "mail_status",
             type:"hidden"
+          },{
+            label: "Collegue",
+            name: "collegue",
           }
         ]
       });
@@ -147,6 +150,7 @@ $(document).ready(function() {
           { data: "prenom2" },
           { data: "nom2" },
           { data: "mail_status" },
+          { data: "collegue" },
         ],
       select: {
         style: "os",

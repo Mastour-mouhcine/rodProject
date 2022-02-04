@@ -134,6 +134,8 @@
                                 <th>prenom2</th>
                                 <th>nom2</th>
                                 <th>mail_status</th>
+                                <th>collegue</th>
+                                
                             </tr>
                             </thead>
                         </table>

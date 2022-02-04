@@ -52,6 +52,7 @@ Editor::inst( $db, 'data_input_test', 'DT_RowId' )
         Field::inst('prenom2'),
         Field::inst('nom2'),
         Field::inst('mail_status'),
+        Field::inst('collegue'),
         )
         ->debug(true)
         ->process( $_POST )
