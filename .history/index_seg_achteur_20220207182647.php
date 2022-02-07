@@ -63,7 +63,10 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-        
+        td{
+            padding: 10px;
+            border-collapse: collapse;
+        }
         .dropdown {
   position: relative;
   display: inline-block;

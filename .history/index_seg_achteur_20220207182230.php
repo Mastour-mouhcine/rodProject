@@ -63,7 +63,10 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-        
+        td{
+            padding: 10px;
+            border-collapse: collapse;
+        }
         .dropdown {
   position: relative;
   display: inline-block;
@@ -210,76 +213,76 @@
                                 <tr>     
                                              <td> 
                                                 <input type="checkbox" id="resid-1-choice" name="residentiel" value="Residentiel">
-                                                <label>Residentiel</label>
+                                                <label>RESIDENTIEL</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="Commer-2-choice" name="commercial" value="Commercial">
-                                                <label>Commercial</label>
+                                                <label>COMMERCIAL</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="Bure-3-choice" name="bureaux" value="Bureaux">
-                                                <label>Bureaux</label>
+                                                <label>BUREAUX</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="mix-4-choice" name="mixte" value="Mixte">
-                                                <label>Mixte</label>
+                                                <label>MIXTE</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-pat-5-choice" name="rod_pat" value="ROD_PATRIMONIAL">
-                                                <label>Rod Patrimonial</label>
+                                                <label>ROD PATRIMONIAL</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="renovation-6-choice" name="renovation" value="Renovation">
-                                                <label>Renovation</label>
+                                                <label>RENOVATION</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="construction-7-choice" name="construction" value="Construction">
-                                                <label>Construction</label>
+                                                <label>CONSTRUCTION</label>
                                             </td>
                                 </tr>
                                 <tr>
-                                    <th>Brand</th>
+                                    <th>BRAND</th>
                                 </tr>
                                 <tr>     
                                              <td> 
                                                 <input type="checkbox" id="rod-pharma-1-choice" name="rod_pharma" value="ROD_PHARMACIES">
-                                                <label>Rod Pharmacies</label>
+                                                <label>ROD PHARMACIES</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-event-2-choice" name="rod_event" value="ROD_EVENTSPACES">
-                                                <label>Rod Eventspaces</label>
+                                                <label>ROD EVENTSPACES</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-fnb-3-choice" name="rod_fnb" value="ROD_FNB">
-                                                <label>Rod FNB</label>
+                                                <label>ROD FNB</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-med-4-choice" name="rod_med" value="ROD_MEDICAL">
-                                                <label>Rod Medical</label>
+                                                <label>ROD MEDICAL</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-reta-5-choice" name="rod_reta" value="ROD_RETAIL">
-                                                <label>Rod Retail</label>
+                                                <label>ROD RETAIL</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-spo-spa-6-choice" name="rod_spo_spa" value="ROD_SPORT_SPACES">
-                                                <label>Rod Sport Spaces</label>
+                                                <label>ROD SPORT SPACES</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-hot-7-choice" name="rod_hot" value="ROD_HOTELS">
-                                                <label>Rod Hotels</label>
+                                                <label>ROD HOTELS</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-resort-8-choice" name="rod_resort" value="ROD_RESORTS">
-                                                <label>Rod Resorts</label>
+                                                <label>ROD RESORTS</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="rod-indu-logi-9-choice" name="rod_indu_logi" value="ROD_INDUSTRIAL_LOGISTICS">
-                                                <label>Rod Industrial Logistics</label>
+                                                <label>ROD INDUSTRIAL LOGISTICS</label>
                                             </td>  
                                             <td>
                                                 <input type="checkbox" id="rod-senior-10-choice" name="rod_senior" value="ROD SENIORS">
-                                                <label>Rod Seniors</label>
+                                                <label>ROD SENIORS</label>
                                             </td>  
                                     </tr>
                             </table>

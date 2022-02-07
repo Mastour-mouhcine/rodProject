@@ -27,9 +27,7 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
         <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"> -->
-        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">  
+        
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"> -->
@@ -63,7 +61,6 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-        
         .dropdown {
   position: relative;
   display: inline-block;
@@ -157,10 +154,13 @@
                         <div class="card-body" id="">
                             <div class="card-body" >
                                         <button type="button" class="btn btn-success" id="clear-choices">Vider les choix</button>                                                
-                        <table id="selections_seg">
+                        <table id="selections_seg" style="width:60%;border-spacing: 15px;">
+                            <thead>
                                 <tr>
                                     <th>Segments</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>
                                         <input type="checkbox" id="seg-1-choice" name="seg1" value="0-500">
@@ -191,97 +191,27 @@
                                         <label>> 40M$ </label>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>Secteur</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="rend-1-choice" name="rend" value="Rendement">
-                                                <label>Rendement</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rend-2-choice" name="dev" value="Developpement">
-                                                <label>Developpement</label>
-                                            </td>
-                                </tr>
-                                <tr>
-                                    <th>Sous Secteurs</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="resid-1-choice" name="residentiel" value="Residentiel">
-                                                <label>Residentiel</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Commer-2-choice" name="commercial" value="Commercial">
-                                                <label>Commercial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Bure-3-choice" name="bureaux" value="Bureaux">
-                                                <label>Bureaux</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="mix-4-choice" name="mixte" value="Mixte">
-                                                <label>Mixte</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-pat-5-choice" name="rod_pat" value="ROD_PATRIMONIAL">
-                                                <label>Rod Patrimonial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="renovation-6-choice" name="renovation" value="Renovation">
-                                                <label>Renovation</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="construction-7-choice" name="construction" value="Construction">
-                                                <label>Construction</label>
-                                            </td>
-                                </tr>
-                                <tr>
-                                    <th>Brand</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="rod-pharma-1-choice" name="rod_pharma" value="ROD_PHARMACIES">
-                                                <label>Rod Pharmacies</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-event-2-choice" name="rod_event" value="ROD_EVENTSPACES">
-                                                <label>Rod Eventspaces</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-fnb-3-choice" name="rod_fnb" value="ROD_FNB">
-                                                <label>Rod FNB</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-med-4-choice" name="rod_med" value="ROD_MEDICAL">
-                                                <label>Rod Medical</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-reta-5-choice" name="rod_reta" value="ROD_RETAIL">
-                                                <label>Rod Retail</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-spo-spa-6-choice" name="rod_spo_spa" value="ROD_SPORT_SPACES">
-                                                <label>Rod Sport Spaces</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-hot-7-choice" name="rod_hot" value="ROD_HOTELS">
-                                                <label>Rod Hotels</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-resort-8-choice" name="rod_resort" value="ROD_RESORTS">
-                                                <label>Rod Resorts</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-indu-logi-9-choice" name="rod_indu_logi" value="ROD_INDUSTRIAL_LOGISTICS">
-                                                <label>Rod Industrial Logistics</label>
-                                            </td>  
-                                            <td>
-                                                <input type="checkbox" id="rod-senior-10-choice" name="rod_senior" value="ROD SENIORS">
-                                                <label>Rod Seniors</label>
-                                            </td>  
+                            </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Secteur</th>
                                     </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Sous-secteur</th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Région</th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Brand</th>
+                                    </tr>
+                                </thead>
                             </table>
                         </div>
                         </div>
@@ -374,41 +304,15 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
-    <!-- <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script> -->
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
-<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> 
     <script  >
         $(document).ready(function() {
             var table=	$('#DataTable_segment').DataTable( {
-                "fixedHeader": true,
                 scrollY: "400px",
                 "scrollX": true,
                 pageLength: 50,
                 "bProcessing": true,
                 "responsive": true,
                 "autoWidth": true,
-                "lengthChange": false,
-                dom: 'Bfrtip',
-  buttons: [
-    {
-               extend: 'excelHtml5',
-               text: 'Exporter la liste en Excel',
-               title: '',
-	            filename: 'Data Target all',
-             
-                }
-  ],
-            //     "dom": 'Blfrtip',
-            //    " buttons ": [
-            //  {
-            //    extend: 'excelHtml5',
-            //    text: 'EXCEL',
-            //    title: '',
-	        //     filename: 'Data Target all',
-             
-            //     }], 
                 columnDefs: [{
                     defaultContent: "",
                     orderable: true,
@@ -429,12 +333,10 @@
                     ,initComplete: function() {
                         this.api().rows().select();
                     },
-                // dom: 'lfirtp',
-              
-      
+                dom: 'lfirtp',
                 "ajax" : {
                     "url":"serverSide/SrvS_Seg_Achteur.php",
-                    dataSrc : ""
+                    "dataSrc" : ""
                 },
                 columns : [
                     {"data":""},
@@ -678,6 +580,7 @@
                 },
             })
         };
+        /**************************************************************************************************** */
     </script>
 </body>
 </html>

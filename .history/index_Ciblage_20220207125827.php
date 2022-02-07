@@ -361,20 +361,20 @@ div.container {
                 label: "Salutation",
                 name: "Salutation"
             },{
-                label: "Salutation_Email",
-                name: "Salutation_Email"
+                label: "Salutation Email",
+                name: "Salutation Email"
             },{
                 label: "Last Name",
-                name: "Last_Name"
+                name: "Last Name"
             },{
                 label: "First Name",
-                name: "First_Name"
+                name: "First Name"
             },{
                 label: "Sexe",
                 name: "Sexe"
             },{
                 label: "Preferred Language",
-                name: "Preferred_Language"
+                name: "Preferred Language"
             },{
                 label: "Email",
                 name: "Email"
@@ -453,12 +453,12 @@ div.container {
                     {"data":"company"}, 
                     {"data":"DT_RowId"},
                     {"data":"Salutation"},
-                    {"data":"Salutation_Email"},
-                    {"data":"Last_Name"},
-                    {"data":"First_Name"},
+                    {"data":"Salutation Email"},
+                    {"data":"Last Name"},
+                    {"data":"First Name"},
                     {"data":"Sexe"},
                     {"data":"Title"},
-                    {"data":"Preferred_Language"},
+                    {"data":"Preferred Language"},
                     {"data":"Email"},
                     {"data":"Phone"},
                     {"data":"Mobile"},

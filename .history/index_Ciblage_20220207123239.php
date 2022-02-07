@@ -31,18 +31,19 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"> -->
-    <!--DataTable Editable-->
-    <link href="//cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" rel="stylesheet">
-    <link href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Swal Alert-->
+
+
+     <!-- Swal Alert-->
+    
     <!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
     <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script> 
     -->    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 <!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
 
     <!-- <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
     <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
@@ -58,7 +59,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
-  
+    
     <style>
         .dropdown {
   position: relative;
@@ -165,7 +166,6 @@ div.container {
                         <table  id="Datable_cible_segment_input" class='table display dataTable nowrap ' cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th> </th>
                                     <th>City </th>
                                     <th>company </th> 
                                     <th>ID </th>
@@ -327,17 +327,6 @@ div.container {
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
-      <!--DataTable Editable Js-->
-    <!-- <script src="//code.jquery.com/jquery-1.9.1.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
-    <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-    <script type="text/javascript" src="js/demo/Editor-2.0.5/js/dataTables.editor.min.js"></script>
-    <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
-    
     <script  >
    $(document).ready(function(){
     let editor;
@@ -355,26 +344,26 @@ div.container {
                 label: "Company",
                 name: "company"
             },{
-                label: "DT_RowId",
-                name: "DT_RowId"
+                label: "ID",
+                name: "ID"
             },{
                 label: "Salutation",
                 name: "Salutation"
             },{
-                label: "Salutation_Email",
-                name: "Salutation_Email"
+                label: "Salutation Email",
+                name: "Salutation Email"
             },{
                 label: "Last Name",
-                name: "Last_Name"
+                name: "Last Name"
             },{
                 label: "First Name",
-                name: "First_Name"
+                name: "First Name"
             },{
                 label: "Sexe",
                 name: "Sexe"
             },{
                 label: "Preferred Language",
-                name: "Preferred_Language"
+                name: "Preferred Language"
             },{
                 label: "Email",
                 name: "Email"
@@ -443,22 +432,16 @@ div.container {
                     "dataSrc" : ""
                 },
                 columns : [
-                    {
-                        data: null, 
-                        defaultContent: "",
-                        className: "select-checkbox",
-                        orderable: false,
-                    },
                     {"data":"City"},
                     {"data":"company"}, 
                     {"data":"DT_RowId"},
                     {"data":"Salutation"},
-                    {"data":"Salutation_Email"},
-                    {"data":"Last_Name"},
-                    {"data":"First_Name"},
+                    {"data":"Salutation Email"},
+                    {"data":"Last Name"},
+                    {"data":"First Name"},
                     {"data":"Sexe"},
                     {"data":"Title"},
-                    {"data":"Preferred_Language"},
+                    {"data":"Preferred Language"},
                     {"data":"Email"},
                     {"data":"Phone"},
                     {"data":"Mobile"},
@@ -479,11 +462,6 @@ div.container {
                     {"data":"Secteur"},
                     {"data":"Solvabilite"},
             ],	
-            select: {
-                style: "os",
-                selector: "td:first-child",
-            },
-            select: true,
             dom: "Bfrtip",
             buttons: [
                 {
@@ -493,7 +471,7 @@ div.container {
                 formTitle: "Modifier l'enregistrementfier ",
                 formButtons: ["Modifier"],
                 },
-            ],
+            
         });
     });
     </script>

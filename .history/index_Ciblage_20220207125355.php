@@ -165,7 +165,6 @@ div.container {
                         <table  id="Datable_cible_segment_input" class='table display dataTable nowrap ' cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th> </th>
                                     <th>City </th>
                                     <th>company </th> 
                                     <th>ID </th>
@@ -361,20 +360,20 @@ div.container {
                 label: "Salutation",
                 name: "Salutation"
             },{
-                label: "Salutation_Email",
-                name: "Salutation_Email"
+                label: "Salutation Email",
+                name: "Salutation Email"
             },{
                 label: "Last Name",
-                name: "Last_Name"
+                name: "Last Name"
             },{
                 label: "First Name",
-                name: "First_Name"
+                name: "First Name"
             },{
                 label: "Sexe",
                 name: "Sexe"
             },{
                 label: "Preferred Language",
-                name: "Preferred_Language"
+                name: "Preferred Language"
             },{
                 label: "Email",
                 name: "Email"
@@ -443,22 +442,16 @@ div.container {
                     "dataSrc" : ""
                 },
                 columns : [
-                    {
-                        data: null, 
-                        defaultContent: "",
-                        className: "select-checkbox",
-                        orderable: false,
-                    },
                     {"data":"City"},
                     {"data":"company"}, 
                     {"data":"DT_RowId"},
                     {"data":"Salutation"},
-                    {"data":"Salutation_Email"},
-                    {"data":"Last_Name"},
-                    {"data":"First_Name"},
+                    {"data":"Salutation Email"},
+                    {"data":"Last Name"},
+                    {"data":"First Name"},
                     {"data":"Sexe"},
                     {"data":"Title"},
-                    {"data":"Preferred_Language"},
+                    {"data":"Preferred Language"},
                     {"data":"Email"},
                     {"data":"Phone"},
                     {"data":"Mobile"},
@@ -479,11 +472,6 @@ div.container {
                     {"data":"Secteur"},
                     {"data":"Solvabilite"},
             ],	
-            select: {
-                style: "os",
-                selector: "td:first-child",
-            },
-            select: true,
             dom: "Bfrtip",
             buttons: [
                 {
