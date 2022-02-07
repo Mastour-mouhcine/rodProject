@@ -48,7 +48,7 @@
         </div> 
         <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
             <button onclick="window.location.href='index_targeting_list.php'" class="button button6"> <i class="fas fa-bullseye"></i> Targeting List</button>
-            <button onclick="window.location.href='Segmentation_Actif_Acheteur.php'" class="button button7"> <i class="fas fa-search"></i> Segmentation</button>
+            <button onclick="window.location.href='index_segmantation.php'" class="button button7"> <i class="fas fa-search"></i> Segmentation</button>
         </div> 
 
 

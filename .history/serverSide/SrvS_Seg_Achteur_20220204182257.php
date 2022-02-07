@@ -7,7 +7,7 @@
     if( $conn === false){
         die( print_r( sqlsrv_errors(), true));
     }     
-    $tsql= "SELECT *FROM [dbo].[Segmentation1]";
+    $tsql= "SELECT *FROM [dbo].[Segmentation_test]";
     $getResults= sqlsrv_query($conn, $tsql);
     //echo ("Reading data from table");
     $rows = array();

@@ -248,11 +248,11 @@ class SSP {
 		/* $resFilterLength = self::sql_exec( $db, $bindings,
 			  "SET NOCOUNT ON SELECT [".implode("], [", self::pluck($columns, 'db'))."] FROM $table $where " );
 		$recordsFiltered = count($resFilterLength); */
-		/* $resFilterLength = self::sql_exec( $db, $bindings,
+		$resFilterLength = self::sql_exec( $db, $bindings,
 			  "SELECT count({$primaryKey}) FROM $table $where" );
 			  $recordsFiltered = $resFilterLength[0][0];
 		 $recordsFiltered = count($resFilterLength);
-		 */
+		
 		// Total data set length
 		//$resTotalLength = self::sql_exec( $db,"SET NOCOUNT ON SELECT COUNT({$primaryKey}) FROM $table" );
 		// $resTotalLength = self::sql_exec( $db,"SELECT TOP 1 {$primaryKey} FROM $table ORDER BY {$primaryKey} DESC" );
@@ -267,8 +267,8 @@ class SSP {
 		return array(
 		  "draw"            => intval( $request['draw'] ),
 		  "recordsTotal"    => intval( $recordsTotal ),
-		  "recordsFiltered" => intval( $recordsTotal ),
-		// "recordsFiltered" => intval( $recordsFiltered ),
+		//   "recordsFiltered" => intval( $recordsTotal ),
+		"recordsFiltered" => intval( $recordsFiltered ),
 		  "data"            => self::data_output( $columns, $data )
 		  );
 	  }

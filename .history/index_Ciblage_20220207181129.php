@@ -453,7 +453,7 @@ div.container {
                     {"data":"company"}, 
                     {"data":"DT_RowId"},
                     {"data":"Salutation"},
-                    {"data":"Salutation_Email"},
+                    {"data":"Salutation Email"},
                     {"data":"Last_Name"},
                     {"data":"First_Name"},
                     {"data":"Sexe"},
