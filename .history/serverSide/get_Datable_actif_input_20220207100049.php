@@ -7,7 +7,7 @@
     if( $conn === false){
         die( print_r( sqlsrv_errors(), true));
     }     
-    $tsql= "SELECT *FROM [dbo].[Seg_Input]";
+    $tsql= "SELECT *FROM [dbo].[Actifs_input]";
     $getResults= sqlsrv_query($conn, $tsql);
     //echo ("Reading data from table");
     $rows = array();
