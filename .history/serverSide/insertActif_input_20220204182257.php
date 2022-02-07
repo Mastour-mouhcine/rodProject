@@ -83,7 +83,7 @@ $connectionOptions = array(
       $gdc = $item["Gestionnaire de compte "];
       $cons_rc = $item["24/11/2021 consignes RC"];
       $pub_res_soc = $item["PUBLICATION RESEAUX SOCIAUX"];
-      $bn = "";
+      $bn = $item["BN"];
       $id_seg = $item["ID_Seg"];
       $sql = "INSERT INTO Actifs_input ([No],[STATUT],[Priorité call]
       ,[ACTIF],[DOSSIER NOM],[date dernier contact],[REF],[REF_old],[TITRE FR],[TITRE NL],[COMMUNE immoweb],[COMMUNE],[PROVINCE],[REGION],[PAYS],[PRIX]
