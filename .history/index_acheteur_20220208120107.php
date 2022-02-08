@@ -395,7 +395,7 @@
                 "autoWidth": true,
                 "lengthChange": false,
                 dom: 'Bfrtip',
-            buttons: [
+  buttons: [
               {
                 extend: 'excelHtml5',
                 text: 'Exporter la liste en Excel',
@@ -428,11 +428,11 @@
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
-                        },
-                    order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                        },/* 
+                    order: [[ 1, 'asc' ]]
+                    ,initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       
@@ -622,8 +622,7 @@
             $('#Btn_Enregistrer').click( function () {
                 // /alert( table.rows('.selected').data().length +' row(s) selected' );
                 const Mydata = table.rows('.selected').data().toArray();
-                console.log(Mydata);
-                /* $.ajax({
+                $.ajax({
                     type: "post",
                     url: "serverSide/insert_acteur_input.php",
                     data: {data : Mydata},
@@ -634,7 +633,7 @@
                     JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
                 };
                     },
-                }); */
+                });
             } );
             $('#Btn_suivant').click( function () {
                 

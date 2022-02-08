@@ -395,7 +395,7 @@
                 "autoWidth": true,
                 "lengthChange": false,
                 dom: 'Bfrtip',
-            buttons: [
+  buttons: [
               {
                 extend: 'excelHtml5',
                 text: 'Exporter la liste en Excel',
@@ -428,11 +428,11 @@
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
-                        },
-                    order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                        },/* 
+                    order: [[ 1, 'asc' ]]
+                    ,initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       

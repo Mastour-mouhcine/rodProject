@@ -419,7 +419,7 @@ import webbrowser
 length =len(liste4)
 for i in range(length):
     if liste4[i][1]=='French':
-        if liste4[i][7]is not None :
+        if liste4[i][7]is not None or liste4[i][7] is not Empty:
             subject='Suite à l\'échange téléphonique'
             html = str(liste4[i][2])+' '+str(liste4[i][3])+' '+str(liste4[i][4])+','+'''\n\n <html><body><p>Comme présenté lors de votre récent appel téléphonique avec '''+str(liste4[i][7])+''', notre société, Rodschinson Investment (www.rodschinson.com) a une couverture internationale et est spécialisée en  </p>
 <p>immobilier d’investissement et en fusions et acquisitions de sociétés.</p>

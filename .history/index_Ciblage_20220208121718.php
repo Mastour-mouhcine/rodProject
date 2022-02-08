@@ -497,22 +497,6 @@ div.container {
                 },
             ],
         });
-        $("#Btn_selected").click(function (e) {
-                        e.preventDefault();
-                        JSalertWait("Envoi d'emails");
-                        //Ouvrir lien when click ok
-                        //JSalertAfterValidate("Succès", "Les mails ont été bien vérifiés !","success");
-                        $.ajax({
-                            url: "serverSide/",
-                            success: function (result) {
-                                if (result.trim() === "mail est envoyer avec succée") {
-                                    JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                                } else {
-                                    JSalert("Erreur", "Une erreur est survenue lors de l'envoi des emails !", "error");
-                                };
-                            },
-                        });
-                    });
     });
     </script>
      <script  >
