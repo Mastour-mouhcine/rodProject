@@ -440,7 +440,7 @@
                     {"data":""},
                     {"data":"City"},
                     {"data":"company"}, 
-                    {"data":"ID",'visible' : false},
+                    {"data":"DT_RowId",'visible' : false},
                     {"data":"Salutation"},
                     {"data":"Salutation_Email"},
                     {"data":"Last_Name"},

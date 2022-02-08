@@ -52,7 +52,7 @@ $Solvabilité = $item["Solvabilite"];
     $sql = "INSERT INTO [dbo].[Seg_Input] (
       [City]
       ,[company]
-      ,[DT_RowId]
+      ,[ID]
       ,[Salutation]
       ,[Salutation_Email]
       ,[Last_Name]
