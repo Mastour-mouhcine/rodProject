@@ -430,9 +430,9 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       
@@ -520,6 +520,9 @@
             
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
+                    initComplete: function() {
+                        table.api().rows().select();
+                    },
                     seg_1_col = 18;
                     table.draw();
                 }else {

@@ -430,9 +430,9 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       

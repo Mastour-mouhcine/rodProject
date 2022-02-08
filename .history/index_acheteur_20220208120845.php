@@ -520,6 +520,9 @@
             
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
+                    initComplete: function() {
+                        table.api().rows().select();
+                    },
                     seg_1_col = 18;
                     table.draw();
                 }else {
