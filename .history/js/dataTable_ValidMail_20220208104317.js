@@ -94,9 +94,6 @@ $(document).ready(function() {
             label: "Status Mail",
             name: "mail_status",
             type:"hidden"
-          },{
-            label: "Collegue",
-            name: "collegue",
           }
         ]
       });
