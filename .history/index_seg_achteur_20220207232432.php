@@ -618,14 +618,15 @@
             $('#Btn_Enregistrer').click( function () {
                 // /alert( table.rows('.selected').data().length +' row(s) selected' );
                 const Mydata = table.rows('.selected').data().toArray();
-                $.ajax({
+                console.log(Mydata);
+               /*  $.ajax({
                     type: "post",
                     url: "serverSide/insert_acteur_input.php",
                     data: {data : Mydata},
                     success: (data) => {
                         alert(data);
                     },
-                });
+                }); */
             } );
             $('#Btn_suivant').click( function () {
                 

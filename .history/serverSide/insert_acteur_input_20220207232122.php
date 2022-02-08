@@ -20,7 +20,7 @@ $dataArray = $_POST['data'];
 foreach($dataArray as $item) {
 $City = $item["City"];
 $company = $item["company"];
-$ID = $item["ID"];
+$ID = $item["DT_RowId"];
 $Salutation = $item["Salutation"];
 $Salutation_Email = $item["Salutation_Email"];
 $Last_Name = $item["Last_Name"];
@@ -52,7 +52,7 @@ $Solvabilité = $item["Solvabilite"];
     $sql = "INSERT INTO [dbo].[Seg_Input] (
       [City]
       ,[company]
-      ,[DT_RowId]
+      ,[ID]
       ,[Salutation]
       ,[Salutation_Email]
       ,[Last_Name]

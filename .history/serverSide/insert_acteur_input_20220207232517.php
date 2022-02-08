@@ -20,7 +20,7 @@ $dataArray = $_POST['data'];
 foreach($dataArray as $item) {
 $City = $item["City"];
 $company = $item["company"];
-$ID = $item["ID"];
+$ID = $item["DT_RowId"];
 $Salutation = $item["Salutation"];
 $Salutation_Email = $item["Salutation_Email"];
 $Last_Name = $item["Last_Name"];
