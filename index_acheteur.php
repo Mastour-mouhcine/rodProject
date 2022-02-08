@@ -61,7 +61,11 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
-    
+    <!-- Swal Alert-->
+    <!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script> -->    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
         
         .dropdown {
@@ -424,11 +428,11 @@
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
-                        },
+                        },/* 
                     order: [[ 1, 'asc' ]]
                     ,initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       
@@ -623,7 +627,11 @@
                     url: "serverSide/insert_acteur_input.php",
                     data: {data : Mydata},
                     success: (data) => {
-                        alert(data);
+                        if(data.trim() === "New Records Created Successfully" ){ 
+                            JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
+                } else {
+                    JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
+                };
                     },
                 });
             } );

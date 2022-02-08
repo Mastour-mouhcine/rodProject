@@ -392,7 +392,7 @@ var table=	$('#DataTable_actif').DataTable( {
                     data: {data : Mydata},
                     success: (data) => {
                         if(data.trim() === "New Records Created Successfully" ){ 
-                            JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
+                    JSalertAfterValidate("Succès", "Les donnèes ont été bien enregistrées !","success");
                     } else {
                         JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
                     };
