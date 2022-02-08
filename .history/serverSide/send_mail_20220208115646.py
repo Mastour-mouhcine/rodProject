@@ -181,7 +181,7 @@ port=587
 length =len(liste1)
 for i in range(length):
     if liste1[i][1]=='French':
-        if liste1[i][7]is not None:
+        if liste3[i][7]is not None:
             subject='Suite à l\'échange téléphonique'
             html = str(liste1[i][2])+' '+str(liste1[i][3])+' '+str(liste1[i][4])+','+'''\n\n <html><body><p>Comme présenté lors de notre récent appel téléphonique avec '''+str(liste1[i][7])+''', notre société, Rodschinson Investment (www.rodschinson.com) a une couverture internationale et est spécialisée en </p>
 <p>immobilier d’investissement et en fusions et acquisitions de sociétés.</p>
