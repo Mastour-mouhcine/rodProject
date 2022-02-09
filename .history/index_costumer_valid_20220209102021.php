@@ -281,6 +281,7 @@ const JSalert = (status, message, type) => {
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });
+
         };
         //auto close timer
         const JSalertWait = (text) => {

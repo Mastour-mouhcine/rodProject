@@ -19,8 +19,9 @@
     <title >Rodschinson</title>
     <link rel = "icon" href ="img/LogoMain.jpg" type = "image/x-icon">
     <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.css"/>
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
+    <link href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css" rel="stylesheet">
+
    
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -56,16 +57,15 @@
     <script src="https://nightly.datatables.net/buttons/js/buttons.colVis.js?_=c6b24f8a56e04fcee6105a02f4027462"></script>    -->
 
       <!-- Datatable CSS -->
-   
+      <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+    <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-  .red {
-  background-color: red !important;
-}
        div.dt-button-collection .dt-button {
+           
         
   position: relative;
 }
@@ -137,11 +137,8 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                            <h6 class="m-0 font-weight-bold text-primary">Rapport Des Mails Envoyée</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Liste des Actifs</h6>
                         </div>
-
-
-
                         <!-- Bouton excel -->
                         <!-- <div class="btn btn-info">
                             <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="excel_file" />
@@ -154,22 +151,26 @@
 
                     </div>
                     <div class="card-body" id="">
-                        
+                    <form id="data_actif">
                    <!-- Toggle column: <a class="toggle-vis" data-column="0">DIVISION</a> - <a class="toggle-vis" data-column="1">Salutation</a> - <a class="toggle-vis" data-column="2">Salutation</a> - <a class="toggle-vis" data-column="3">Age</a> - <a class="toggle-vis" data-column="4">Start date</a> - <a class="toggle-vis" data-column="5">Salary</a> -->
-                        <table  id="import_zoho_contact1" class='table display dataTable nowrap ' cellspacing="0" width="100%">
+                        <table  id="DataTable_actif" class='table display dataTable nowrap ' cellspacing="0" width="100%">
 
                         <thead>
-                                 <tr>
-                                    <th width="10%">Status Mail</th>
-                                    <th>Last Name</th>
-                                    <th>First Name</th>
-                                    <th>Email</th>
-                                 </tr>
-                         </thead>
+                                <tr>
+                                <th></th>
+                                <th>Reference</th>
+                                <th>No</th>
+                                <th>STATUT</th>
+                                <th>Priorité call</th>
+                                <th>ACTIF</th>
+                                </tr>
+                                </thead>
                         </table>
+                        </form>
                         <div style="display: flex; justify-content: flex-end; align-items: center"> 
                             <div> 
-                            <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Purger La Liste</Table></Table></button>
+                            <button id="Btn_Enregistrer" class="btn btn-success" style="margin-top:10%;">Enregistrer</button>
+                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;"> Suivant</button>
                             </div> 
                         </div> 
                         <!-- <div class="dataTables_info" id="empTable_info" role="status" aria-live="polite"><span id = "id_rowNumber"></span></div> -->
@@ -209,66 +210,76 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
+
    <!-- Datatable JS -->
-   <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>  -->
-<!-- <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.11.3/api/fnFilterAll.js"></script> -->
 <script  src="https://cdn.datatables.net/v/bs4/jq-3.6.0/jszip-2.5.0/dt-1.11.3/b-2.0.1/b-colvis-2.0.1/b-html5-2.0.1/fc-4.0.1/datatables.min.js"></script>
-<!-- <script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script> -->
-<!-- <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script> -->
-<!-- <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.colVis.min.js"></script> -->
-<!-- <script src="plugin/jquery-2.2.3.min.js"></script> -->
-                                                                                                                                                                                                                                                                                        
-<!-- <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script> -->
-<!-- <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script> -->
-
-<!-- <script src=""></script>
-
-<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
- -->
-
-
-<!-- src="js/dataTable_OutPut001.js" type="text/javascript" -->
-<!-- <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script> -->
+<!-- search panel -->
+<link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="js/demo/Editor-2.0.5/js/dataTables.editor.min.js"></script>
+<script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 <script  >
 $(document).ready(function() {
-var table=	$('#import_zoho_contact1').DataTable( {
+var table=	$('#DataTable_actif').DataTable( {
+         scrollY: "400px",
 		"scrollX": true,
+        pageLength: 50,
 		"bProcessing": true,
 		"responsive": true,
       "autoWidth": true,
-		dom: 'Bfrtip',  
+      'columnDefs': [
+         {
+            'targets': 0,
+            'checkboxes': {
+               'selectRow': true
+            }
+         }
+      ],
+      'select': {
+         'style': 'multi'
+      },
+      'order': [[1, 'asc']],
 		"ajax" : {
-			"url":"serverSide/Mail-Conn-segmentation.php",
+			// "url":"serverSide/Seg_Actif.php?var_segmentation="+seg+"&var_secteur="+sec+"&var_brand="+brd,
+			"url":"ActifCmb.php",
 			"dataSrc" : ""
 		},
-        "columnDefs": [{
-    "targets": 0,
-    "createdCell": function (td, cellData, rowData, row, col) {
-       cellData 
-            $(td).css('background-color', '#3DFD28').css('color', '#ffffff');
-        
-    }
-}],
 		columns : [
-            {
-          data: null,
-          defaultContent: "Envoyé",
-          className: "select-checkbox",
-          orderable: false,
-        },
-
-	{"data":"Last_Name"},
-	{"data":"First_Name"},
-    {"data":"Email"},
-			
-		],
+             {"data":""},
+                {"data":"Reference"},
+                {"data":"No"},
+                {"data":"STATUT"},
+                {"data":"Priorité call"},
+                {"data":"ACTIF"},
+		],		
 	} );
-   
+    $('#DataTable_actif tbody').on( 'click', 'tr', function () {
+                    $(this).toggleClass('selected');
+                } );
+    $('#Btn_Enregistrer').click( function () {
+                const Mydata = table.rows('.selected').data().toArray();
+                $.ajax({
+                    type: "post",
+                    url: "serverSide/insertActif_input.php",
+                    data: {data : Mydata},
+                    success: (data) => {
+                        if(data.trim() === "New Records Created Successfully" ){ 
+                            JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
+                    } else {
+                        JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
+                    };
+                    },
+                });
+    } );
+    $('#Btn_suivant').click( function () {
+                window.open("index_Ciblage.php", '_blank');
+            } );
 } );
-
 const JSalert = (status, message, type) => {
             Swal.fire(status, message, type);
         };
@@ -281,6 +292,7 @@ const JSalert = (status, message, type) => {
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });
+
         };
         //auto close timer
         const JSalertWait = (text) => {
@@ -293,27 +305,13 @@ const JSalert = (status, message, type) => {
                 },
             })
         };
-   $("#Btn_Truncate").click(function (e) {
-                e.preventDefault();
-                JSalertWait('Supression des Mails Valid');
-                $.ajax({
-                    url: "serverSide/ScriptSupression.php",
-                    success: (result) => {
-                        if (result.trim() == "Terminer") {
-                            JSalertAfterValidate("Succès", "Les Mails ont été bien Supprimer  !", "success","index_Input.php");
-                        } else {
-                            JSalert("Erreur", "Une erreur est survenue lors de la Supression !", "error");
-                        };
-
-                    },
-                }); 
-            });
-
-
-
-
+           
+</script>
+<script>
 
 </script>
+
+
 
 </body>
 

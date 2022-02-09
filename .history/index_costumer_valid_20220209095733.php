@@ -235,6 +235,7 @@
 <script  >
 $(document).ready(function() {
 var table=	$('#import_zoho_contact1').DataTable( {
+	
 		"scrollX": true,
 		"bProcessing": true,
 		"responsive": true,
@@ -265,6 +266,9 @@ var table=	$('#import_zoho_contact1').DataTable( {
     {"data":"Email"},
 			
 		],
+        
+
+		
 	} );
    
 } );
@@ -281,6 +285,7 @@ const JSalert = (status, message, type) => {
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });
+
         };
         //auto close timer
         const JSalertWait = (text) => {

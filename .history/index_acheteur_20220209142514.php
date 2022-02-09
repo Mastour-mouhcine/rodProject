@@ -20,6 +20,7 @@
     <link rel = "icon" href ="img/LogoMain.jpg" type = "image/x-icon">
     <!-- Checkbox -->
     <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
    
     <!-- Custom fonts for this template-->
@@ -405,6 +406,16 @@
                 
                     }
              ],
+             
+            //     "dom": 'Blfrtip',
+            //    " buttons ": [
+            //  {
+            //    extend: 'excelHtml5',
+            //    text: 'EXCEL',
+            //    title: '',
+	        //     filename: 'Data Target all',
+             
+            //     }], 
                 columnDefs: [
                     {
                         defaultContent: "",
@@ -412,20 +423,20 @@
                         className: 'select-checkbox',
                         targets: 0,
                         selectRow: true,
-                    }/* ,
+                    },
                     {
                         "targets": [2],
                         "visible": true,
                         "searchable": false
-                    } */],
+                    }],
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       
@@ -515,6 +526,7 @@
                 if($(this).is(':checked')){
                     seg_1_col = 18;
                     table.draw();
+                    table.rows().search( '0-500' ).select();
                 }else {
                     seg_1_col = 'e';
                     table.draw();
