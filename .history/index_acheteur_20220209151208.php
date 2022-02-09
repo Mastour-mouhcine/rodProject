@@ -405,6 +405,16 @@
                 
                     }
              ],
+             
+            //     "dom": 'Blfrtip',
+            //    " buttons ": [
+            //  {
+            //    extend: 'excelHtml5',
+            //    text: 'EXCEL',
+            //    title: '',
+	        //     filename: 'Data Target all',
+             
+            //     }], 
                 columnDefs: [
                     {
                         defaultContent: "",
@@ -423,9 +433,9 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       

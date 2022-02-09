@@ -160,6 +160,7 @@
 
                         <thead>
                                  <tr>
+                                    <th>Date Time</th>
                                     <th width="10%">Status Mail</th>
                                     <th>Last Name</th>
                                     <th>First Name</th>

@@ -405,6 +405,16 @@
                 
                     }
              ],
+             
+            //     "dom": 'Blfrtip',
+            //    " buttons ": [
+            //  {
+            //    extend: 'excelHtml5',
+            //    text: 'EXCEL',
+            //    title: '',
+	        //     filename: 'Data Target all',
+             
+            //     }], 
                 columnDefs: [
                     {
                         defaultContent: "",
@@ -412,6 +422,14 @@
                         className: 'select-checkbox',
                         targets: 0,
                         selectRow: true,
+                        'checkboxes': {
+                        'selectRow': true
+                        },
+                            'createdCell':  function (td, cellData, rowData, row, col){
+                            if(rowData[18] === '0-500'){
+                            this.api().cell(td).checkboxes.select();
+                        }
+                        }
                     }/* ,
                     {
                         "targets": [2],
@@ -423,9 +441,9 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       

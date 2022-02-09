@@ -235,6 +235,7 @@
 <script  >
 $(document).ready(function() {
 var table=	$('#import_zoho_contact1').DataTable( {
+	
 		"scrollX": true,
 		"bProcessing": true,
 		"responsive": true,
@@ -244,14 +245,6 @@ var table=	$('#import_zoho_contact1').DataTable( {
 			"url":"serverSide/Mail-Conn-segmentation.php",
 			"dataSrc" : ""
 		},
-        "columnDefs": [{
-    "targets": 0,
-    "createdCell": function (td, cellData, rowData, row, col) {
-       cellData 
-            $(td).css('background-color', '#3DFD28').css('color', '#ffffff');
-        
-    }
-}],
 		columns : [
             {
           data: null,
@@ -265,6 +258,9 @@ var table=	$('#import_zoho_contact1').DataTable( {
     {"data":"Email"},
 			
 		],
+        
+
+		
 	} );
    
 } );
@@ -281,6 +277,7 @@ const JSalert = (status, message, type) => {
             Swal.fire(status, message, type).then(function () {
                 window.open(url, '_self');
             });
+
         };
         //auto close timer
         const JSalertWait = (text) => {

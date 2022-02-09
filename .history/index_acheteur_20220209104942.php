@@ -18,7 +18,6 @@
 
     <title >Rodschinson</title>
     <link rel = "icon" href ="img/LogoMain.jpg" type = "image/x-icon">
-    <!-- Checkbox -->
     <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
     <!-- <link href=" https://datatables.net/plug-ins/api/fnFilterClear"> -->
    
@@ -405,6 +404,15 @@
                 
                     }
              ],
+            //     "dom": 'Blfrtip',
+            //    " buttons ": [
+            //  {
+            //    extend: 'excelHtml5',
+            //    text: 'EXCEL',
+            //    title: '',
+	        //     filename: 'Data Target all',
+             
+            //     }], 
                 columnDefs: [
                     {
                         defaultContent: "",
@@ -412,20 +420,20 @@
                         className: 'select-checkbox',
                         targets: 0,
                         selectRow: true,
-                    }/* ,
+                    },
                     {
                         "targets": [2],
                         "visible": true,
                         "searchable": false
-                    } */],
+                    }],
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    initComplete: function() {
+                    /* initComplete: function() {
                         this.api().rows().select();
-                    },
+                    }, */
                 // dom: 'lfirtp',
               
       
@@ -503,6 +511,10 @@
                     {"data":"Solvabilite"},
             ],		
             } );
+            function SelectRows() {
+                var table_seg=	$('#DataTable_segment').DataTable();
+                table_seg.rows().select();
+                    }
             let seg_1_col = 'e';
             let seg_2_col = 'e';
             let seg_3_col = 'e';
@@ -513,6 +525,7 @@
             
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
+                    SelectRows();
                     seg_1_col = 18;
                     table.draw();
                 }else {
