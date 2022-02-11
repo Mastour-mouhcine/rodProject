@@ -7,15 +7,8 @@
     if( $conn === false){
         die( print_r( sqlsrv_errors(), true));
     }  
-  
-    $tsql= "SELECT 
-     [Last_Name]
-    ,[First_Name]
-    ,[Email]
-    ,[Phone]
-    ,[Mobile]
-    ,[date_time]
-FROM [dbo].[Seg_Input] ";
+
+    $tsql= "  UPDATE[dbo].[Seg_Input] SET [date_time]= GETDATE();";
     $getResults= sqlsrv_query($conn, $tsql);
     //echo ("Reading data from table");
     $rows = array();

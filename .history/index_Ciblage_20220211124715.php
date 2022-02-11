@@ -284,9 +284,8 @@ div.container {
                         </table>
                         <div style="display: flex; justify-content: flex-end; align-items: center"> 
                        <div> 
-                            <button id="Btn_verif_mail" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
-                            <button id="Btn_send_mail" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
-                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;">Suivant</button>
+                            <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
+                            <button id="Btn_selected" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
                         </div> 
                         </div> 
                     </div>
@@ -499,55 +498,10 @@ div.container {
                 },
             ],
         });
-        $("#Btn_verif_mail").click(function (e) {
-                        e.preventDefault();
-                        JSalertWait("Vérification d'emails");
-                        //Ouvrir lien when click ok
-                        //JSalertAfterValidate("Succès", "Les mails ont été bien vérifiés !","success");
-                        $.ajax({
-                            url: "serverSide/Cible_Verif_Mail.php",
-                            success: function (result) {
-                                if (result.trim() === "verification est bonne") {
-                                    JSalert("Succès", "Les emails ont été bien vérifiées !","success");
-                                } else {
-                                    JSalert("Erreur", "Une erreur est survenue lors de vérification des emails !", "error");
-                                };
-                            },
-                        });
-        });
-        $("#Btn_suivant").click(function (e) {
-                        e.preventDefault();
-                        $.ajax({
-                            url: "serverSide/Mail-Conn-segmentation2.php",
-                        });
-                        window.open("index_costumer_valid.php", '_self');
-        });
-        $("#Btn_send_mail").click(function (e) {
-                        e.preventDefault();
-                        
-        });
-                    
+        $("#Btn_selected").click(function (e) {
+                       alert("hi");
+                    });
     });
-    const JSalert = (status, message, type) => {
-            Swal.fire(status, message, type);
-        };
-
-        const JSalertAfterValidate = (status, message, type, urlPage) => {
-            Swal.fire(status, message, type).then(function () {
-                window.open(urlPage, '_self');
-            });
-        };
-
-        //auto close timer
-        const JSalertWait = (text) => {
-            Swal.fire({
-                title: 'Traitement en cours',
-                html: text,
-                didOpen: () => {
-                    Swal.showLoading()
-                },
-            })
-        };
     </script>
      <script  >
    $(document).ready(function(){

@@ -520,7 +520,7 @@ div.container {
                         $.ajax({
                             url: "serverSide/Mail-Conn-segmentation2.php",
                         });
-                        window.open("index_costumer_valid.php", '_self');
+                        window.open("index_costumer_valid.php", '_blank');
         });
         $("#Btn_send_mail").click(function (e) {
                         e.preventDefault();

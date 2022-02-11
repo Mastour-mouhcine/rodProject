@@ -30,7 +30,7 @@
         <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"> -->
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">   -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">  
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"> -->
@@ -376,17 +376,15 @@
     <link href="https://cdn.datatables.net/searchpanes/1.4.0/css/searchPanes.dataTables.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                <!-- https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js -->
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
     <!-- <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script> -->
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> 
-   
-   <script  >
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> 
+    <script  >
         $(document).ready(function() {
             var table=	$('#DataTable_segment').DataTable( {
                 "fixedHeader": true,
@@ -398,27 +396,15 @@
                 "autoWidth": true,
                 "lengthChange": false,
                 dom: 'Bfrtip',
-                buttons: [
-                {
-                    extend: 'excelHtml5',
-                    text: 'Exporter la liste en Excel',
-                    title: '',
-                        filename: 'Data Target all',
-                    
-                    },
-                    {
-                    text: 'sélectionner tout',
-                    action: function () {
-                        table.rows({ search: 'applied' }).select()
+            buttons: [
+              {
+                extend: 'excelHtml5',
+                text: 'Exporter la liste en Excel',
+                title: '',
+                    filename: 'Data Target all',
+                
                     }
-                    },
-                    {
-                        text: 'Ne rien sélectionner',
-                        action: function () {
-                            table.rows().deselect();
-                        }
-                    }
-                ],
+             ],
                 columnDefs: [
                     {
                         defaultContent: "",
@@ -426,17 +412,28 @@
                         className: 'select-checkbox',
                         targets: 0,
                         selectRow: true,
-                    }],
+                    }/* ,
+                    {
+                        "targets": [2],
+                        "visible": true,
+                        "searchable": false
+                    } */],
                     select: {
                             style:    'multi',
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Achteur.php",
-                        dataSrc : ""
-                    },
-                  columns : [
+                    /* initComplete: function() {
+                        this.api().rows().select();
+                    }, */
+                // dom: 'lfirtp',
+              
+      
+                "ajax" : {
+                    "url":"serverSide/SrvS_Seg_Achteur.php",
+                    dataSrc : ""
+                },
+                columns : [
                     {"data":""},
                     {"data":"City"},
                     {"data":"company"}, 
@@ -504,9 +501,14 @@
                     {"data":"Brand_3"},
                     {"data":"Secteur"},
                     {"data":"Solvabilite"},
-                    ],		
+            ],		
             } );
-           
+            var indexes = table
+      .rows()
+      .indexes()
+      .filter( function ( value, index ) {
+        return '0-500' === table.row(value).data()[18];
+      } );
             let seg_1_col = 'e';
             let seg_2_col = 'e';
             let seg_3_col = 'e';
@@ -519,6 +521,7 @@
                 if($(this).is(':checked')){
                     seg_1_col = 18;
                     table.draw();
+                    table.rows( indexes ).data()select();
                 }else {
                     seg_1_col = 'e';
                     table.draw();
@@ -528,7 +531,6 @@
                 if($(this).is(':checked')){
                     seg_2_col = 19;
                     table.draw();
-                    console.log(table.page.info());
                 } else {
                     seg_2_col = 'e';
                     table.draw();
@@ -580,6 +582,19 @@
                 }
             });
 
+            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
+                return (
+                    searchData[seg_1_col] === '0-500'
+                    || searchData[seg_2_col] === '500-1M'
+                    || searchData[seg_3_col] === '1M-2M'
+                    || searchData[seg_4_col] === '2M-5M'
+                    || searchData[seg_5_col] === '5M-10M'
+                    || searchData[seg_6_col] === '10M-40M'
+                    || searchData[seg_7_col] === '40M >'
+                    || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
+                );
+            });
+
             $('#clear-choices').on("click", function () {
                 $('#seg-1-choice').prop('checked',false);
                 $('#seg-2-choice').prop('checked',false);
@@ -600,26 +615,14 @@
                 table.draw();
             });
 
-            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
-                return (
-                    searchData[seg_1_col] === '0-500'
-                    || searchData[seg_2_col] === '500-1M'
-                    || searchData[seg_3_col] === '1M-2M'
-                    || searchData[seg_4_col] === '2M-5M'
-                    || searchData[seg_5_col] === '5M-10M'
-                    || searchData[seg_6_col] === '10M-40M'
-                    || searchData[seg_7_col] === '40M >'
-                    || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
-                );
-            });
-
             $('#DataTable_segment tbody').on( 'click', 'tr', function () {
                 $(this).toggleClass('selected');
             } );
 
             $('#Btn_Enregistrer').click( function () {
+                // /alert( table.rows('.selected').data().length +' row(s) selected' );
                 const Mydata = table.rows('.selected').data().toArray();
-                JSalertWait();
+                console.log(Mydata);
                 $.ajax({
                     type: "post",
                     url: "serverSide/insert_acteur_input.php",
@@ -627,13 +630,12 @@
                     success: (data) => {
                         if(data.trim() === "New Records Created Successfully" ){ 
                             JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
-                    } else {
-                            JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
-                    };
+                } else {
+                    JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
+                };
                     },
                 });
             } );
-            
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';

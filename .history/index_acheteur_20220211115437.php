@@ -385,8 +385,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> 
-   
-   <script  >
+    <script  >
         $(document).ready(function() {
             var table=	$('#DataTable_segment').DataTable( {
                 "fixedHeader": true,
@@ -432,11 +431,17 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Achteur.php",
-                        dataSrc : ""
-                    },
-                  columns : [
+                    /* initComplete: function() {
+                        this.api().rows().select();
+                    }, */
+                // dom: 'lfirtp',
+                    
+      
+                "ajax" : {
+                    "url":"serverSide/SrvS_Seg_Achteur.php",
+                    dataSrc : ""
+                },
+                columns : [
                     {"data":""},
                     {"data":"City"},
                     {"data":"company"}, 
@@ -504,7 +509,7 @@
                     {"data":"Brand_3"},
                     {"data":"Secteur"},
                     {"data":"Solvabilite"},
-                    ],		
+            ],		
             } );
            
             let seg_1_col = 'e';
@@ -599,7 +604,7 @@
                 table.columns().search( '' );
                 table.draw();
             });
-
+            
             $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
                 return (
                     searchData[seg_1_col] === '0-500'
@@ -619,7 +624,6 @@
 
             $('#Btn_Enregistrer').click( function () {
                 const Mydata = table.rows('.selected').data().toArray();
-                JSalertWait();
                 $.ajax({
                     type: "post",
                     url: "serverSide/insert_acteur_input.php",
@@ -633,7 +637,6 @@
                     },
                 });
             } );
-            
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';

@@ -385,8 +385,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script> 
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script> 
-   
-   <script  >
+    <script  >
         $(document).ready(function() {
             var table=	$('#DataTable_segment').DataTable( {
                 "fixedHeader": true,
@@ -432,11 +431,17 @@
                             selector: 'td:first-child'
                         },
                     order: [[ 1, 'asc' ]],
-                    "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Achteur.php",
-                        dataSrc : ""
-                    },
-                  columns : [
+                    /* initComplete: function() {
+                        this.api().rows().select();
+                    }, */
+                // dom: 'lfirtp',
+                    
+      
+                "ajax" : {
+                    "url":"serverSide/SrvS_Seg_Achteur.php",
+                    dataSrc : ""
+                },
+                columns : [
                     {"data":""},
                     {"data":"City"},
                     {"data":"company"}, 
@@ -504,7 +509,7 @@
                     {"data":"Brand_3"},
                     {"data":"Secteur"},
                     {"data":"Solvabilite"},
-                    ],		
+            ],		
             } );
            
             let seg_1_col = 'e';
@@ -599,24 +604,7 @@
                 table.columns().search( '' );
                 table.draw();
             });
-
-            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
-                return (
-                    searchData[seg_1_col] === '0-500'
-                    || searchData[seg_2_col] === '500-1M'
-                    || searchData[seg_3_col] === '1M-2M'
-                    || searchData[seg_4_col] === '2M-5M'
-                    || searchData[seg_5_col] === '5M-10M'
-                    || searchData[seg_6_col] === '10M-40M'
-                    || searchData[seg_7_col] === '40M >'
-                    || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
-                );
-            });
-
-            $('#DataTable_segment tbody').on( 'click', 'tr', function () {
-                $(this).toggleClass('selected');
-            } );
-
+            
             $('#Btn_Enregistrer').click( function () {
                 const Mydata = table.rows('.selected').data().toArray();
                 JSalertWait();
@@ -634,6 +622,23 @@
                 });
             } );
             
+            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
+                return (
+                    searchData[seg_1_col] === '0-500'
+                    || searchData[seg_2_col] === '500-1M'
+                    || searchData[seg_3_col] === '1M-2M'
+                    || searchData[seg_4_col] === '2M-5M'
+                    || searchData[seg_5_col] === '5M-10M'
+                    || searchData[seg_6_col] === '10M-40M'
+                    || searchData[seg_7_col] === '40M >'
+                    || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
+                );
+            });
+
+            $('#DataTable_segment tbody').on( 'click', 'tr', function () {
+                $(this).toggleClass('selected');
+            } );
+
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';
