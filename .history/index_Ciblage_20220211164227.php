@@ -473,10 +473,10 @@ div.container {
                 "bProcessing": true,
                 "responsive": true,
                 "autoWidth": true,
-                order: [[ 30, 'asc' ],[ 1, 'asc' ]], //added 
+                /* order: [[ 27, 'asc' ],[ 1, 'asc' ]], //added 
                 fixedColumns:   {
                     left: 1,
-                },
+                }, */
         "ajax" : {
                     "url":"serverSide/get_Datable_cible_segment_input.php",
                     "dataSrc" : ""
