@@ -287,6 +287,7 @@ div.container {
                        <div> 
                             <button id="Btn_verif_mail" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
                             <button id="Btn_send_mail" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
+                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;">Suivant</button>
                         </div> 
                         </div> 
                     </div>
@@ -342,37 +343,6 @@ div.container {
     <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
     
     <script  >
-        var MyRequestsCompleted = (function() {
-        var numRequestToComplete, 
-            requestsCompleted, 
-            callBacks, 
-            singleCallBack; 
-
-        return function(options) {
-            if (!options) options = {};
-
-            numRequestToComplete = options.numRequest || 0;
-            requestsCompleted = options.requestsCompleted || 0;
-            callBacks = [];
-            var fireCallbacks = function () {
-                // alert("we're all complete");
-                for (var i = 0; i < callBacks.length; i++) callBacks[i]();
-            };
-            if (options.singleCallback) callBacks.push(options.singleCallback);
-            this.addCallbackToQueue = function(isComplete, callback) {
-                if (isComplete) requestsCompleted++;
-                if (callback) callBacks.push(callback);
-                if (requestsCompleted == numRequestToComplete) fireCallbacks();
-            };
-            this.requestComplete = function(isComplete) {
-                if (isComplete) requestsCompleted++;
-                if (requestsCompleted == numRequestToComplete) fireCallbacks();
-            };
-            this.setCallback = function(callback) {
-                callBacks.push(callBack);
-            };
-        };
-        })();
    $(document).ready(function(){
     let editor;
     editor = new $.fn.dataTable.Editor({
@@ -560,30 +530,17 @@ div.container {
                             },
                         });
         });
-        $('#Btn_send_mail').click(function() {
-        var requestCallback = new MyRequestsCompleted({
-            numRequest: 2,
-            singleCallback: function(){
-                // alert( "I'm the callback");
-            }
+        $("#Btn_suivant").click(function (e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: "serverSide/Mail-Conn-segmentation2.php",
+                        });
+                        window.open("index_costumer_valid.php", '_self');
         });
-        $.ajax({
-            url: 'serverSide/Mail-Conn-segmentation2.php',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-            }
+        $("#Btn_send_mail").click(function (e) {
+                        e.preventDefault();
+                        
         });
-        $.ajax({
-            // url: 'serverSide/',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
-                
-            } 
-        });
-        
-});
                     
     });
     const JSalert = (status, message, type) => {
@@ -606,8 +563,6 @@ div.container {
                 },
             })
         };
-
-        
     </script>
      <script  >
    $(document).ready(function(){

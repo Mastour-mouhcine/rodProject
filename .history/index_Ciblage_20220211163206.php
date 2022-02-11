@@ -560,7 +560,7 @@ div.container {
                             },
                         });
         });
-        $('#Btn_send_mail').click(function() {
+       /*  $('#Btn_send_mail').click(function() {
         var requestCallback = new MyRequestsCompleted({
             numRequest: 2,
             singleCallback: function(){
@@ -574,15 +574,15 @@ div.container {
             }
         });
         $.ajax({
-            // url: 'serverSide/',
+            /* url: 'serverSide/',
             success: function(data) {
                 requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
+                JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
                 
-            } 
-        });
-        
+            } */
+            window.open("index_costumer_valid.php", '_self');
+        }); */
+    
 });
                     
     });

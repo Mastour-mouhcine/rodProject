@@ -574,15 +574,15 @@ div.container {
             }
         });
         $.ajax({
-            // url: 'serverSide/',
+            /* url: 'serverSide/',
             success: function(data) {
                 requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
+                JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
                 
-            } 
+            } */
+            window.open("index_costumer_valid.php", '_self');
         });
-        
+    
 });
                     
     });
