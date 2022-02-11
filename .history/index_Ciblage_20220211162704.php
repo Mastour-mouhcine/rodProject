@@ -287,6 +287,7 @@ div.container {
                        <div> 
                             <button id="Btn_verif_mail" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
                             <button id="Btn_send_mail" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
+                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;">Suivant</button>
                         </div> 
                         </div> 
                     </div>
@@ -560,30 +561,17 @@ div.container {
                             },
                         });
         });
-        $('#Btn_send_mail').click(function() {
-        var requestCallback = new MyRequestsCompleted({
-            numRequest: 2,
-            singleCallback: function(){
-                // alert( "I'm the callback");
-            }
+        $("#Btn_suivant").click(function (e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: "serverSide/Mail-Conn-segmentation2.php",
+                        });
+                        window.open("index_costumer_valid.php", '_self');
         });
-        $.ajax({
-            url: 'serverSide/Mail-Conn-segmentation2.php',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-            }
+        $("#Btn_send_mail").click(function (e) {
+                        e.preventDefault();
+                        
         });
-        $.ajax({
-            // url: 'serverSide/',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
-                
-            } 
-        });
-        
-});
                     
     });
     const JSalert = (status, message, type) => {

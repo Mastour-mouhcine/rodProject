@@ -195,7 +195,6 @@ div.container {
                                     <th>Brand 3</th>
                                     <th>Secteur 1</th>
                                     <th>Solvabilité</th>
-                                    <th>Status mail</th>
                                 </tr>
                             </thead>
                         </table>
@@ -287,6 +286,7 @@ div.container {
                        <div> 
                             <button id="Btn_verif_mail" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
                             <button id="Btn_send_mail" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
+                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;">Suivant</button>
                         </div> 
                         </div> 
                     </div>
@@ -342,37 +342,6 @@ div.container {
     <script type="text/javascript" src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
     
     <script  >
-        var MyRequestsCompleted = (function() {
-        var numRequestToComplete, 
-            requestsCompleted, 
-            callBacks, 
-            singleCallBack; 
-
-        return function(options) {
-            if (!options) options = {};
-
-            numRequestToComplete = options.numRequest || 0;
-            requestsCompleted = options.requestsCompleted || 0;
-            callBacks = [];
-            var fireCallbacks = function () {
-                // alert("we're all complete");
-                for (var i = 0; i < callBacks.length; i++) callBacks[i]();
-            };
-            if (options.singleCallback) callBacks.push(options.singleCallback);
-            this.addCallbackToQueue = function(isComplete, callback) {
-                if (isComplete) requestsCompleted++;
-                if (callback) callBacks.push(callback);
-                if (requestsCompleted == numRequestToComplete) fireCallbacks();
-            };
-            this.requestComplete = function(isComplete) {
-                if (isComplete) requestsCompleted++;
-                if (requestsCompleted == numRequestToComplete) fireCallbacks();
-            };
-            this.setCallback = function(callback) {
-                callBacks.push(callBack);
-            };
-        };
-        })();
    $(document).ready(function(){
     let editor;
     editor = new $.fn.dataTable.Editor({
@@ -466,17 +435,13 @@ div.container {
             }
         ]
       });
-      var  table  = $('#Datable_cible_segment_input').DataTable({
+    var  table  = $('#Datable_cible_segment_input').DataTable({
                  scrollY: "400px",
                 "scrollX": true,
                 pageLength: 50,
                 "bProcessing": true,
                 "responsive": true,
                 "autoWidth": true,
-                /* order: [[ 27, 'asc' ],[ 1, 'asc' ]], //added 
-                fixedColumns:   {
-                    left: 1,
-                }, */
         "ajax" : {
                     "url":"serverSide/get_Datable_cible_segment_input.php",
                     "dataSrc" : ""
@@ -490,7 +455,7 @@ div.container {
                     },
                     {"data":"City"},
                     {"data":"company"}, 
-                    {"data":"DT_RowId",'visible' : false},
+                    {"data":"DT_RowId"},
                     {"data":"Salutation"},
                     {"data":"Salutation_Email"},
                     {"data":"Last_Name"},
@@ -512,27 +477,17 @@ div.container {
                     {"data":"Segment_5",'visible' : false},
                     {"data":"Segment_6",'visible' : false},
                     {"data":"Segment_7",'visible' : false},
-                    {"data":"Brand_1",'visible' : false},
-                    {"data":"Brand_2",'visible' : false},
-                    {"data":"Brand_3",'visible' : false},
-                    {"data":"Secteur",'visible' : false},
+                    {"data":"Brand_1,'visible' : false"},
+                    {"data":"Brand_2,'visible' : false"},
+                    {"data":"Brand_3,'visible' : false"},
+                    {"data":"Secteur"},
                     {"data":"Solvabilite"},
-                    {"data":"mail_status",'visible':false},
             ],	
             select: {
                 style: "os",
                 selector: "td:first-child",
             },
             select: true,
-            "fnRowCallback": function(row, aData, iDisplayIndex, iDisplayIndexFull) {
-            if (aData['mail_status'] == "Valid") {
-            //$('td', row).css('background-color', '#69E495');
-            $('td', row).css('background-color', '#a2f2ac');
-            } else  {
-            //$('td', row).css('background-color', '#E6C3C3');
-            $('td', row).css('background-color', '#f5c4c4');
-            }
-            },
             dom: "Bfrtip",
             buttons: [
                 {
@@ -560,30 +515,17 @@ div.container {
                             },
                         });
         });
-        $('#Btn_send_mail').click(function() {
-        var requestCallback = new MyRequestsCompleted({
-            numRequest: 2,
-            singleCallback: function(){
-                // alert( "I'm the callback");
-            }
+        $("#Btn_suivant").click(function (e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: "serverSide/Mail-Conn-segmentation2.php",
+                        });
+                        window.open("index_costumer_valid.php", '_self');
         });
-        $.ajax({
-            url: 'serverSide/Mail-Conn-segmentation2.php',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-            }
+        $("#Btn_send_mail").click(function (e) {
+                        e.preventDefault();
+                        
         });
-        $.ajax({
-            // url: 'serverSide/',
-            success: function(data) {
-                requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
-                
-            } 
-        });
-        
-});
                     
     });
     const JSalert = (status, message, type) => {
@@ -606,8 +548,6 @@ div.container {
                 },
             })
         };
-
-        
     </script>
      <script  >
    $(document).ready(function(){
@@ -623,75 +563,75 @@ div.container {
                 },
                 columns : [
                     {"data":"No"},
-                    {"data":"STATUT"},
-                    {"data":"Priorité call"},
-                    {"data":"ACTIF"},
-                    {"data":"DOSSIER NOM"},
-                    {"data":"date dernier contact"},
-                    {"data":"REF"},
-                    {"data":"REF_old"},
-                    {"data":"TITRE FR"},
-                    {"data":"TITRE NL"},
-                    {"data":"COMMUNE immoweb"},
-                    {"data":"COMMUNE"},
-                    {"data":"PROVINCE"},
-                    {"data":"REGION"},
-                    {"data":"PAYS"},
-                    {"data":"PRIX"},
-                    {"data":"Région ordre dans liste2"},
-                    {"data":"Secteur ordre dans liste2"},
-                    {"data":"SECTEUR FR"},
-                    {"data":"SECTEUR NL"},
-                    {"data":"REGLE LC"},
-                    {"data":"BROKERS CONSIGNE"},
-                    {"data":"stop"},
-                    {"data":"DESCRIPTION FR"},
-                    {"data":"DESCRIPTION NL"},
-                    {"data":"DESCRIPTION EN"},
-                    {"data":"detail FR"},
-                    {"data":"detail NL"},
-                    {"data":"BLACKLIST"},
-                    {"data":"NOM DOSSIER"},
-                    {"data":"COMPTE"},
-                    {"data":"VAT"},
-                    {"data":"CLIENT"},
-                    {"data":"MAIL"},
-                    {"data":"MAIL2"},
-                    {"data":"GSM"},
-                    {"data":"TEL"},
-                    {"data":"TEL2"},
-                    {"data":"DURÉE CONTRAT (MOIS)"},
-                    {"data":"DEBUT CONTRAT"},
-                    {"data":"FIN CONTRAT"},
-                    {"data":"TYPE CONTRAT"},
-                    {"data":"% COMISSION"},
-                    {"data":"LANGUAGE"},
-                    {"data":"Gmaps"},
-                    {"data":"WHISE"},
-                    {"data":"WHISE OK"},
-                    {"data":"mot clé"},
-                    {"data":"TITRE ZOHO SELECT"},
-                    {"data":"dans zoho select"},
-                    {"data":"CIBLAGE RENDEMENT"},
-                    {"data":"CIBLAGE PROMOTION"},
-                    {"data":"GROS"},
-                    {"data":"CIBLAGE"},
-                    {"data":"ciblage prox"},
-                    {"data":"04/10/2021 consignes RC"},
-                    {"data":"10/11/2021 consignes RC ciblages etc"},
-                    {"data":"09/07/2021 consignes RC"},
-                    {"data":"Suite 09/07/2021 consignes RC2"},
-                    {"data":"Suite 09/07/2021 consignes RC3"},
-                    {"data":"Remarques "},
-                    {"data":"Date"},
-                    {"data":"Gestionnaire de compte "},
-                    {"data":"24/11/2021 consignes RC"},
-                    {"data":"PUBLICATION RESEAUX SOCIAUX"},
-                    {"data":"BN"},
-                    {"data":"ID_Seg"},
-                                ],	
-                                
-                                
+{"data":"STATUT"},
+{"data":"Priorité call"},
+{"data":"ACTIF"},
+{"data":"DOSSIER NOM"},
+{"data":"date dernier contact"},
+{"data":"REF"},
+{"data":"REF_old"},
+{"data":"TITRE FR"},
+{"data":"TITRE NL"},
+{"data":"COMMUNE immoweb"},
+{"data":"COMMUNE"},
+{"data":"PROVINCE"},
+{"data":"REGION"},
+{"data":"PAYS"},
+{"data":"PRIX"},
+{"data":"Région ordre dans liste2"},
+{"data":"Secteur ordre dans liste2"},
+{"data":"SECTEUR FR"},
+{"data":"SECTEUR NL"},
+{"data":"REGLE LC"},
+{"data":"BROKERS CONSIGNE"},
+{"data":"stop"},
+{"data":"DESCRIPTION FR"},
+{"data":"DESCRIPTION NL"},
+{"data":"DESCRIPTION EN"},
+{"data":"detail FR"},
+{"data":"detail NL"},
+{"data":"BLACKLIST"},
+{"data":"NOM DOSSIER"},
+{"data":"COMPTE"},
+{"data":"VAT"},
+{"data":"CLIENT"},
+{"data":"MAIL"},
+{"data":"MAIL2"},
+{"data":"GSM"},
+{"data":"TEL"},
+{"data":"TEL2"},
+{"data":"DURÉE CONTRAT (MOIS)"},
+{"data":"DEBUT CONTRAT"},
+{"data":"FIN CONTRAT"},
+{"data":"TYPE CONTRAT"},
+{"data":"% COMISSION"},
+{"data":"LANGUAGE"},
+{"data":"Gmaps"},
+{"data":"WHISE"},
+{"data":"WHISE OK"},
+{"data":"mot clé"},
+{"data":"TITRE ZOHO SELECT"},
+{"data":"dans zoho select"},
+{"data":"CIBLAGE RENDEMENT"},
+{"data":"CIBLAGE PROMOTION"},
+{"data":"GROS"},
+{"data":"CIBLAGE"},
+{"data":"ciblage prox"},
+{"data":"04/10/2021 consignes RC"},
+{"data":"10/11/2021 consignes RC ciblages etc"},
+{"data":"09/07/2021 consignes RC"},
+{"data":"Suite 09/07/2021 consignes RC2"},
+{"data":"Suite 09/07/2021 consignes RC3"},
+{"data":"Remarques "},
+{"data":"Date"},
+{"data":"Gestionnaire de compte "},
+{"data":"24/11/2021 consignes RC"},
+{"data":"PUBLICATION RESEAUX SOCIAUX"},
+{"data":"BN"},
+{"data":"ID_Seg"},
+            ],	
+              
+            
         });
     });
     </script>

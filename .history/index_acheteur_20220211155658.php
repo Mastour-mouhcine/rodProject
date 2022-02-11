@@ -202,11 +202,11 @@
                                 <tr>     
                                              <td> 
                                                 <input type="checkbox" id="rend-1-choice" name="rend" value="CONSTRUCTION">
-                                                <label>CONSTRUCTION</label>
+                                                <label>Rendement</label>
                                             </td>
                                             <td>
                                                 <input type="checkbox" id="dev-1-choice" name="dev" value="RENOVATION">
-                                                <label>RENOVATION</label>
+                                                <label>Developpement</label>
                                             </td>
                                 </tr>
                                 <tr>
@@ -502,7 +502,7 @@
                     {"data":"Brand_1",'visible' : false},
                     {"data":"Brand_2",'visible' : false},
                     {"data":"Brand_3",'visible' : false},
-                    {"data":"Secteur"/* ,'visible' : false */},
+                    {"data":"Secteur",'visible' : false},
                     {"data":"Solvabilite"},
                     ],		
             } );
@@ -639,8 +639,8 @@
             });
             $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
                 return (
-                    searchData[secteur_1_col] === 'CONSTRUCTION'
-                    || searchData[secteur_2_col] === 'RENOVATION'
+                    searchData[secteur_1_col] === 'Rendement'
+                    || searchData[secteur_2_col] === 'Developpement'
                     || (secteur_1_col === 'e' && secteur_2_col === 'e' )
                 );
             });
