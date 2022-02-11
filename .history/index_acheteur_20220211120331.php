@@ -599,6 +599,23 @@
                 table.columns().search( '' );
                 table.draw();
             });
+            
+            $('#Btn_Enregistrer').click( function () {
+                const Mydata = table.rows('.selected').data().toArray();
+                JSalertWait();
+                $.ajax({
+                    type: "post",
+                    url: "serverSide/insert_acteur_input.php",
+                    data: {data : Mydata},
+                    success: (data) => {
+                        if(data.trim() === "New Records Created Successfully" ){ 
+                            JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
+                    } else {
+                            JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
+                    };
+                    },
+                });
+            } );
 
             $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
                 return (
@@ -617,23 +634,6 @@
                 $(this).toggleClass('selected');
             } );
 
-            $('#Btn_Enregistrer').click( function () {
-                const Mydata = table.rows('.selected').data().toArray();
-                JSalertWait();
-                $.ajax({
-                    type: "post",
-                    url: "serverSide/insert_acteur_input.php",
-                    data: {data : Mydata},
-                    success: (data) => {
-                        if(data.trim() === "New Records Created Successfully" ){ 
-                            JSalert("Succès", "Les donnèes ont été bien enregistrées !","success");
-                    } else {
-                            JSalert("Erreur", "Une erreur est survenue lors de la sauvegarde !","error");
-                    };
-                    },
-                });
-            } );
-            
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';

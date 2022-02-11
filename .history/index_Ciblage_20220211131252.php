@@ -517,9 +517,9 @@ div.container {
         });
         $("#Btn_suivant").click(function (e) {
                         e.preventDefault();
-                        $.ajax({
+                        /* $.ajax({
                             url: "serverSide/Mail-Conn-segmentation2.php",
-                        });
+                        }); */
                         window.open("index_costumer_valid.php", '_self');
         });
         $("#Btn_send_mail").click(function (e) {

@@ -172,7 +172,7 @@
                         </table>
                         <div style="display: flex; justify-content: flex-end; align-items: center"> 
                             <div> 
-                            <!-- <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Purger La Liste</Table></Table></button> -->
+                            <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Purger La Liste</Table></Table></button>
                             </div> 
                         </div> 
                         <!-- <div class="dataTables_info" id="empTable_info" role="status" aria-live="polite"><span id = "id_rowNumber"></span></div> -->
@@ -315,6 +315,21 @@ const JSalert = (status, message, type) => {
                 },
             })
         };
+   $("#Btn_Truncate").click(function (e) {
+                e.preventDefault();
+                JSalertWait('Supression des Mails Valid');
+                $.ajax({
+                    url: "serverSide/ScriptSupression.php",
+                    success: (result) => {
+                        if (result.trim() == "Terminer") {
+                            JSalertAfterValidate("Succès", "Les Mails ont été bien Supprimer  !", "success","index_Input.php");
+                        } else {
+                            JSalert("Erreur", "Une erreur est survenue lors de la Supression !", "error");
+                        };
+
+                    },
+                }); 
+            });
 
 
 

@@ -284,9 +284,8 @@ div.container {
                         </table>
                         <div style="display: flex; justify-content: flex-end; align-items: center"> 
                        <div> 
-                            <button id="Btn_verif_mail" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
-                            <button id="Btn_send_mail" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
-                            <button id="Btn_suivant" class="btn btn-success" style="margin-top:10%;">Suivant</button>
+                            <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Vérification d'email</button>
+                            <button id="Btn_selected" class="btn btn-success" style="margin-top:10%;">Envoyer Les e-mails</button>
                         </div> 
                         </div> 
                     </div>
@@ -499,7 +498,7 @@ div.container {
                 },
             ],
         });
-        $("#Btn_verif_mail").click(function (e) {
+        $("#Btn_selected").click(function (e) {
                         e.preventDefault();
                         JSalertWait("Vérification d'emails");
                         //Ouvrir lien when click ok
@@ -507,25 +506,14 @@ div.container {
                         $.ajax({
                             url: "serverSide/Cible_Verif_Mail.php",
                             success: function (result) {
-                                if (result.trim() === "verification est bonne") {
+                                if (result.trim() === "mail est vérifier avec succée") {
                                     JSalert("Succès", "Les emails ont été bien vérifiées !","success");
                                 } else {
                                     JSalert("Erreur", "Une erreur est survenue lors de vérification des emails !", "error");
                                 };
                             },
                         });
-        });
-        $("#Btn_suivant").click(function (e) {
-                        e.preventDefault();
-                        $.ajax({
-                            url: "serverSide/Mail-Conn-segmentation2.php",
-                        });
-                        window.open("index_costumer_valid.php", '_self');
-        });
-        $("#Btn_send_mail").click(function (e) {
-                        e.preventDefault();
-                        
-        });
+                    });
                     
     });
     const JSalert = (status, message, type) => {
