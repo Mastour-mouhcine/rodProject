@@ -15,7 +15,7 @@
     // $string_brand ='';
     // Condition 1 si champ selectionné 
     if ($result_seg != '') {
-        $string_seg = " and [ID_Seg] in(". $result_seg . ") ";
+        $string_seg = " WHERE [ID_Seg] in(". $result_seg . ") ";
     }
     // if ($result_sect != 'undefined') {
     //     $string_sect = " AND [Last Name] in(". $result_sect . ") ";
@@ -102,7 +102,7 @@
     ,[ROD INDUSTRIAL LOGISTICS]
     ,[NOTE LAILA]
     ,[ID_Seg]
-    FROM [dbo].[Actifs_test] where [ACTIF]='YES'  $string_seg";
+    FROM [dbo].[Actifs_test] where [ACTIF]='YES' $string_seg";
     $getResults= sqlsrv_query($conn, $tsql);
     //echo ("Reading data from table");
     $rows = array();
