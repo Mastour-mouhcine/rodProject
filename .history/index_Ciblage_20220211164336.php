@@ -473,7 +473,7 @@ div.container {
                 "bProcessing": true,
                 "responsive": true,
                 "autoWidth": true,
-                order: [[ 30, 'asc' ],[ 1, 'asc' ]], //added 
+                order: [[ 28, 'asc' ],[ 1, 'asc' ]], //added 
                 fixedColumns:   {
                     left: 1,
                 },
