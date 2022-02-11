@@ -172,7 +172,7 @@
                         </table>
                         <div style="display: flex; justify-content: flex-end; align-items: center"> 
                             <div> 
-                            <button id="Btn_Purger" class="btn btn-success" style="margin-top:20%;">Purger La Liste</Table></Table></button>
+                            <button id="Btn_Truncate" class="btn btn-success" style="margin-top:10%;">Purger La Liste</Table></Table></button>
                             </div> 
                         </div> 
                         <!-- <div class="dataTables_info" id="empTable_info" role="status" aria-live="polite"><span id = "id_rowNumber"></span></div> -->
@@ -316,21 +316,7 @@ const JSalert = (status, message, type) => {
             })
         };
 
-        $("#Btn_Purger").click(function (e) {
-                e.preventDefault();
-                JSalertWait('FIN');
-                $.ajax({
-                    url: "serverSide/Suppression_Seg_input.php",
-                    success: (result) => {
-                        if (result.trim() == "Terminer") {
-                            JSalertAfterValidate("Succès", "La Liste Mails a été bien Purger  !", "success","index001.php");
-                        } else {
-                            JSalert("Erreur", "Une erreur est survenue lors de la Supression !", "error");
-                        };
 
-                    },
-                }); 
-            });
 
 
 

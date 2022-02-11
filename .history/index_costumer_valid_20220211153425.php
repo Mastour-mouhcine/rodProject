@@ -316,21 +316,7 @@ const JSalert = (status, message, type) => {
             })
         };
 
-        $("#Btn_Purger").click(function (e) {
-                e.preventDefault();
-                JSalertWait('FIN');
-                $.ajax({
-                    url: "serverSide/Suppression_Seg_input.php",
-                    success: (result) => {
-                        if (result.trim() == "Terminer") {
-                            JSalertAfterValidate("Succès", "La Liste Mails a été bien Purger  !", "success","index001.php");
-                        } else {
-                            JSalert("Erreur", "Une erreur est survenue lors de la Supression !", "error");
-                        };
 
-                    },
-                }); 
-            });
 
 
 
