@@ -593,7 +593,7 @@
             });
             $('#dev-1-choice').click(function(){
                 if($(this).is(':checked')){
-                    secteur_2_col = 28;
+                    secteur_2_col = 29;
                     table.draw();
                 } else {
                     secteur_2_col = 'e';
@@ -639,9 +639,14 @@
             });
             $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
                 return (
-                    searchData[secteur_1_col] === 'Rendement'
-                    || searchData[secteur_2_col] === 'Developpement'
-                    || (secteur_1_col === 'e' && secteur_2_col === 'e' )
+                    searchData[seg_1_col] === '0-500'
+                    || searchData[seg_2_col] === '500-1M'
+                    || searchData[seg_3_col] === '1M-2M'
+                    || searchData[seg_4_col] === '2M-5M'
+                    || searchData[seg_5_col] === '5M-10M'
+                    || searchData[seg_6_col] === '10M-40M'
+                    || searchData[seg_7_col] === '40M >'
+                    || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
                 );
             });
 
