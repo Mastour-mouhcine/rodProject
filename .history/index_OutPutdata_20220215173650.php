@@ -808,13 +808,15 @@ $(document).ready(function(){
             },
         ],
             dom: 'Bfrtip',            
+            //colReorder: true,
            "buttons" : [
              {
                     extend: 'excelHtml5',
                     text: 'EXCEL',
                     title: '',
 				    filename: 'Data Target all',
-                  
+                //    "action": newexportaction,
+                   page:'all',
                 },
                 {
                     extend: 'csv',
@@ -828,11 +830,22 @@ $(document).ready(function(){
                  {
         extend: 'colvis',
                }], 
+            //    columns:[0,1,2,3],
         });
     });
    
     
- 
+ /*    const IfExistRowDataBase = () => {
+  let nbr_row;
+    $.ajax({
+      url: "serverSide/NumberOfRows.php",
+      success: function (result) {
+        nbr_row = result; 
+        $('#id_rowNumber').empty();
+        $('#id_rowNumber').append("Il y a  "+" "+result+" "+ "enregistrements filtrer");
+      },
+    });
+}; */
    
     const JSalertWait = (text) => {
             Swal.fire({
