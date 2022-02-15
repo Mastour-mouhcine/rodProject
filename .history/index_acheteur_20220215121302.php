@@ -433,7 +433,7 @@
                         },
                     order: [[ 1, 'asc' ]],
                     "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Acheteur.php",
+                        "url":"serverSide/SrvS_Seg_Achteur.php",
                         dataSrc : ""
                     },
                   columns : [
@@ -690,10 +690,11 @@
                 if($('#seg-7-choice:checked').is(':checked')){
                     string_segment += "'7',";
                 }
+               console.log(string_segment.slice(0, -1));
                /* console.log(string_segment.slice(0, -1));
                 console.log(string_segment.slice(0, -1));*/
-                localStorage.setItem("Segmentation_query", JSON.parse(JSON.stringify(string_segment.slice(0, -1)))); 
-                window.open("index_Actif.php", '_self');
+               /*  localStorage.setItem("Segmentation_query", JSON.parse(JSON.stringify(string_segment.slice(0, -1)))); 
+                window.open("index_Actif.php", '_self'); */
             } );
         } );
 

@@ -433,7 +433,7 @@
                         },
                     order: [[ 1, 'asc' ]],
                     "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Acheteur.php",
+                        "url":"serverSide/SrvS_Seg_Achteur.php",
                         dataSrc : ""
                     },
                   columns : [
@@ -669,25 +669,25 @@
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';
-                if($('#seg-1-choice:checked').is(':checked')){
+                if($('#seg-1-choice:checked').is(':checked'){
                     string_segment += "'1',";
                 }
-                if($('#seg-2-choice:checked').is(':checked')){
+                if($('#seg-2-choice:checked').is(':checked'){
                     string_segment += "'2',";
                 }
-                if($('#seg-3-choice:checked').is(':checked')){
+                if($('#seg-3-choice:checked').is(':checked'){
                     string_segment += "'3',";
                 }
-                if($('#seg-4-choice:checked').is(':checked')){
+                if($('#seg-4-choice:checked').is(':checked'){
                     string_segment += "'4',";
                 }
-                if($('#seg-5-choice:checked').is(':checked')){
+                if($('#seg-5-choice:checked').is(':checked'){
                     string_segment += "'5',";
                 }
-                if($('#seg-6-choice:checked').is(':checked')){
+                if($('#seg-6-choice:checked').is(':checked'){
                     string_segment += "'6',";
                 }
-                if($('#seg-7-choice:checked').is(':checked')){
+                if($('#seg-7-choice:checked').is(':checked'){
                     string_segment += "'7',";
                 }
                /* console.log(string_segment.slice(0, -1));

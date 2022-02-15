@@ -164,129 +164,38 @@
                                         <button type="button" class="btn btn-success" id="clear-choices">Vider les choix</button>                                                
                         <table id="selections_seg">
                                 <tr>
-                                    <th>Segments</th>
+                                    <th>Prix</th>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="checkbox" id="seg-1-choice" name="seg1" value="0-500">
+                                        <input type="checkbox" id="seg-1-choice" name="seg1" value="1">
                                         <label>0-500$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-2-choice" name="seg2" value="500-1M">
+                                        <input type="checkbox" id="seg-2-choice" name="seg2" value="2">
                                         <label>500$-1M$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-3-choice" name="seg3" value="1M-2M">
+                                        <input type="checkbox" id="seg-3-choice" name="seg3" value="3">
                                         <label>1M$-2M$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-4-choice" name="seg4" value="2M-5M">
+                                        <input type="checkbox" id="seg-4-choice" name="seg4" value="4">
                                         <label>2M$-5M$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-5-choice" name="seg5" value="5M-10M">
+                                        <input type="checkbox" id="seg-5-choice" name="seg5" value="5">
                                         <label>5M$-10M$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-6-choice" name="seg6" value="10M-40M">
+                                        <input type="checkbox" id="seg-6-choice" name="seg6" value="6">
                                         <label>10M$-40M$</label>
                                     </td>
                                     <td>
-                                        <input type="checkbox" id="seg-7-choice" name="seg7" value="40M >">
+                                        <input type="checkbox" id="seg-7-choice" name="seg7" value="7">
                                         <label>> 40M$ </label>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>Secteur</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="rend-1-choice" name="rend" value="CONSTRUCTION">
-                                                <label>CONSTRUCTION</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="dev-1-choice" name="dev" value="RENOVATION">
-                                                <label>RENOVATION</label>
-                                            </td>
-                                </tr>
-                                <tr>
-                                    <th>Sous Secteurs</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="resid-1-choice" name="residentiel" value="Residentiel">
-                                                <label>Residentiel</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Commer-2-choice" name="commercial" value="Commercial">
-                                                <label>Commercial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Bure-3-choice" name="bureaux" value="Bureaux">
-                                                <label>Bureaux</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="mix-4-choice" name="mixte" value="Mixte">
-                                                <label>Mixte</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-pat-5-choice" name="rod_pat" value="ROD_PATRIMONIAL">
-                                                <label>Rod Patrimonial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="renovation-6-choice" name="renovation" value="Renovation">
-                                                <label>Renovation</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="construction-7-choice" name="construction" value="Construction">
-                                                <label>Construction</label>
-                                            </td>
-                                </tr>
-                                <tr>
-                                    <th>Brand</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="rod-pharma-1-choice" name="rod_pharma" value="ROD_PHARMACIES">
-                                                <label>Rod Pharmacies</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-event-2-choice" name="rod_event" value="ROD_EVENTSPACES">
-                                                <label>Rod Eventspaces</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-fnb-3-choice" name="rod_fnb" value="ROD_FNB">
-                                                <label>Rod FNB</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-med-4-choice" name="rod_med" value="ROD_MEDICAL">
-                                                <label>Rod Medical</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-reta-5-choice" name="rod_reta" value="ROD_RETAIL">
-                                                <label>Rod Retail</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-spo-spa-6-choice" name="rod_spo_spa" value="ROD_SPORT_SPACES">
-                                                <label>Rod Sport Spaces</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-hot-7-choice" name="rod_hot" value="ROD_HOTELS">
-                                                <label>Rod Hotels</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-resort-8-choice" name="rod_resort" value="ROD_RESORTS">
-                                                <label>Rod Resorts</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-indu-logi-9-choice" name="rod_indu_logi" value="ROD_INDUSTRIAL_LOGISTICS">
-                                                <label>Rod Industrial Logistics</label>
-                                            </td>  
-                                            <td>
-                                                <input type="checkbox" id="rod-senior-10-choice" name="rod_senior" value="ROD SENIORS">
-                                                <label>Rod Seniors</label>
-                                            </td>  
-                                    </tr>
                             </table>
                         </div>
                         </div>
@@ -298,36 +207,80 @@
                         <table  id="DataTable_segment" class='table display dataTable nowrap ' cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>City </th>
-                                    <th>company </th> 
-                                    <th>ID </th>
-                                    <th>Salutation</th>
-                                    <th>Salutation Email</th>
-                                    <th>Last Name</th>
-                                    <th>First Name</th> 
-                                    <th>Sexe</th>
-                                    <th>Title</th>
-                                    <th>Preferred Language</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Mobile</th>
-                                    <th>Addresse</th>
-                                    <th>Country</th>
-                                    <th>Region</th>
-                                    <th>Source</th>
-                                    <th>Segment 1</th>
-                                    <th>Segment 2</th>
-                                    <th>Segment 3</th>
-                                    <th>Segment 4</th>
-                                    <th>Segment 5</th>
-                                    <th>Segment 6</th>
-                                    <th>Segment 7</th>
-                                    <th>Brand 1</th>
-                                    <th>Brand 2</th>
-                                    <th>Brand 3</th>
-                                    <th>Secteur 1</th>
-                                    <th>Solvabilité</th>
+                                <th></th>
+                                <th>Reference</th>
+                                <th>No</th>
+                                <th>STATUT</th>
+                                <th>Priorité call</th>
+                                <th>ACTIF</th>
+                                <th>DOSSIER NOM</th>
+                                <th>date dernier contact</th>
+                                <th>REF</th>
+                                <th>REF_old</th>
+                                <th>TITRE FR</th>
+                                <th>TITRE NL</th>
+                                <th>COMMUNE immoweb</th>
+                                <th>COMMUNE</th>
+                                <th>PROVINCE</th>
+                                <th>REGION</th>
+                                <th>PAYS</th>
+                                <th>PRIX</th>
+                                <th>Région ordre dans liste2</th>
+                                <th>Secteur ordre dans liste2</th>
+                                <th>SECTEUR FR</th>
+                                <th>SECTEUR NL</th>
+                                <th>REGLE LC</th>
+                                <th>BROKERS CONSIGNE</th>
+                                <th>stop</th>
+                                <th>DESCRIPTION FR</th>
+                                <th>DESCRIPTION NL</th>
+                                <th>DESCRIPTION EN</th>
+                                <th>detail FR</th>
+                                <th>detail NL</th>
+                                <th>BLACKLIST</th>
+                                <th>NOM DOSSIER</th>
+                                <th>COMPTE</th>
+                                <th>VAT</th>
+                                <th>CLIENT</th>
+                                <th>MAIL</th>
+                                <th>MAIL2</th>
+                                <th>GSM</th>
+                                <th>TEL</th>
+                                <th>TEL2</th>
+                                <th>DURÉE CONTRAT (MOIS)</th>
+                                <th>DEBUT CONTRAT</th>
+                                <th>FIN CONTRAT</th>
+                                <th>TYPE CONTRAT</th>
+                                <th>% COMISSION</th>
+                                <th>LANGUAGE</th>
+                                <th>Gmaps</th>
+                                <th>WHISE</th>
+                                <th>WHISE OK</th>
+                                <th>mot clé</th>
+                                <th>TITRE ZOHO SELECT</th>
+                                <th>dans zoho select</th>
+                                <th>CIBLAGE RENDEMENT</th>
+                                <th>CIBLAGE PROMOTION</th>
+                                <th>GROS</th>
+                                <th>CIBLAGE</th>
+                                <th>ciblage prox</th>
+                                <th>04/10/2021 consignes RC</th>
+                                <th>10/11/2021 consignes RC ciblages etc</th>
+                                <th>09/07/2021 consignes RC</th>
+                                <th>Suite 09/07/2021 consignes RC2</th>
+                                <th>Suite 09/07/2021 consignes RC3</th>
+                                <th>Remarques </th>
+                                <th>Date</th>
+                                <th>Gestionnaire de compte </th>
+                                <th>24/11/2021 consignes RC</th>
+                                <th>PUBLICATION RESEAUX SOCIAUX</th>
+                                <th>CONSIGNES RC 17/01/2022</th>
+                                <th>SECTEUR</th>
+                                <th>RENOVATION Type</th>
+                                <th>CONSTRUCTION Type</th>
+                                <th>ROD INDUSTRIAL LOGISTICS</th>
+                                <th>NOTE LAILA</th>
+                                <th>ID_Seg</th>
                                 </tr>
                             </thead>
                         </table>
@@ -433,77 +386,84 @@
                         },
                     order: [[ 1, 'asc' ]],
                     "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Acheteur.php",
+                        "url":"serverSide/SrvS_Find_Actif.php",
                         dataSrc : ""
                     },
                   columns : [
                     {"data":""},
-                    {"data":"City"},
-                    {"data":"company"}, 
-                    {"data":"ID",'visible' : false},
-                    {"data":"Salutation"},
-                    {"data":"Salutation_Email"},
-                    {"data":"Last_Name"},
-                    {"data":"First_Name"},
-                    {"data":"Sexe"},
-                    {"data":"Title"},
-                    {"data":"Preferred_Language"},
-                    {"data":"Email"},
-                    {"data":"Phone"},
-                    {"data":"Mobile"},
-                    {"data":"Address"},
-                    {"data":"Country"},
-                    {"data":"Region"},
-                    {"data":"Source"},
-                    {"data":"Segment_1", render: function(data, type, row) {
-                            if (row.Segment_1 == 1) {
-                                return "0-500";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Segment_2", render: function(data, type, row) {
-                            if (row.Segment_2 == 1) {
-                                return "500-1M";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Segment_3", render: function(data, type, row) {
-                            if (row.Segment_3 == 1) {
-                                return "1M-2M";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Segment_4", render: function(data, type, row) {
-                            if (row.Segment_4 == 1) {
-                                return "2M-5M";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Segment_5", render: function(data, type, row) {
-                            if (row.Segment_5 == 1) {
-                                return "5M-10M";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Segment_6", render: function(data, type, row) {
-                            if (row.Segment_6 == 1) {
-                                return "10M-40M";
-                            }
-                            else{
-                                return "No data";
-                            }
-                        },'visible' : false},
-                    {"data":"Segment_7", render: function(data, type, row) {
-                            if (row.Segment_7 == 1) {
-                                return "40M >";
-                            }
-                            return "No data";
-                        },'visible' : false},
-                    {"data":"Brand_1",'visible' : false},
-                    {"data":"Brand_2",'visible' : false},
-                    {"data":"Brand_3",'visible' : false},
-                    {"data":"Secteur"/* ,'visible' : false */},
-                    {"data":"Solvabilite"},
+                    {"data":"Reference"},
+                    {"data":"No"},
+                    {"data":"STATUT"},
+                    {"data":"Priorité call"},
+                    {"data":"ACTIF"},
+                    {"data":"DOSSIER NOM"},
+                    {"data":"date dernier contact"},
+                    {"data":"REF"},
+                    {"data":"REF_old"},
+                    {"data":"TITRE FR"},
+                    {"data":"TITRE NL"},
+                    {"data":"COMMUNE immoweb"},
+                    {"data":"COMMUNE"},
+                    {"data":"PROVINCE"},
+                    {"data":"REGION"},
+                    {"data":"PAYS"},
+                    {"data":"PRIX"},
+                    {"data":"Région ordre dans liste2"},
+                    {"data":"Secteur ordre dans liste2"},
+                    {"data":"SECTEUR FR"},
+                    {"data":"SECTEUR NL"},
+                    {"data":"REGLE LC"},
+                    {"data":"BROKERS CONSIGNE"},
+                    {"data":"stop"},
+                    {"data":"DESCRIPTION FR"},
+                    {"data":"DESCRIPTION NL"},
+                    {"data":"DESCRIPTION EN"},
+                    {"data":"detail FR"},
+                    {"data":"detail NL"},
+                    {"data":"BLACKLIST"},
+                    {"data":"NOM DOSSIER"},
+                    {"data":"COMPTE"},
+                    {"data":"VAT"},
+                    {"data":"CLIENT"},
+                    {"data":"MAIL"},
+                    {"data":"MAIL2"},
+                    {"data":"GSM"},
+                    {"data":"TEL"},
+                    {"data":"TEL2"},
+                    {"data":"DURÉE CONTRAT (MOIS)"},
+                    {"data":"DEBUT CONTRAT"},
+                    {"data":"FIN CONTRAT"},
+                    {"data":"TYPE CONTRAT"},
+                    {"data":"% COMISSION"},
+                    {"data":"LANGUAGE"},
+                    {"data":"Gmaps"},
+                    {"data":"WHISE"},
+                    {"data":"WHISE OK"},
+                    {"data":"mot clé"},
+                    {"data":"TITRE ZOHO SELECT"},
+                    {"data":"dans zoho select"},
+                    {"data":"CIBLAGE RENDEMENT"},
+                    {"data":"CIBLAGE PROMOTION"},
+                    {"data":"GROS"},
+                    {"data":"CIBLAGE"},
+                    {"data":"ciblage prox"},
+                    {"data":"04/10/2021 consignes RC"},
+                    {"data":"10/11/2021 consignes RC ciblages etc"},
+                    {"data":"09/07/2021 consignes RC"},
+                    {"data":"Suite 09/07/2021 consignes RC2"},
+                    {"data":"Suite 09/07/2021 consignes RC3"},
+                    {"data":"Remarques "},
+                    {"data":"Date"},
+                    {"data":"Gestionnaire de compte "},
+                    {"data":"24/11/2021 consignes RC"},
+                    {"data":"PUBLICATION RESEAUX SOCIAUX"},
+                    {"data":"CONSIGNES RC 17/01/2022"},
+                    {"data":"SECTEUR"},
+                    {"data":"RENOVATION Type"},
+                    {"data":"CONSTRUCTION Type"},
+                    {"data":"ROD INDUSTRIAL LOGISTICS"},
+                    {"data":"NOTE LAILA"},
+                    {"data":"ID_Seg",'visible' : true},
                     ],		
             } );
            
@@ -514,13 +474,10 @@
             let seg_5_col = 'e';
             let seg_6_col = 'e';
             let seg_7_col = 'e';
-
-            let secteur_1_col = 'e';
-            let secteur_2_col = 'e';
             
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_1_col = 18;
+                    seg_1_col = 73;
                     table.draw();
                 }else {
                     seg_1_col = 'e';
@@ -529,9 +486,8 @@
             });
             $('#seg-2-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_2_col = 19;
+                    seg_2_col = 73;
                     table.draw();
-                    console.log(table.page.info());
                 } else {
                     seg_2_col = 'e';
                     table.draw();
@@ -539,7 +495,7 @@
             });
             $('#seg-3-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_3_col = 20;
+                    seg_3_col = 73;
                     table.draw();
                 } else {
                     seg_3_col = 'e';
@@ -548,7 +504,7 @@
             });
             $('#seg-4-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_4_col = 21;
+                    seg_4_col = 73;
                     table.draw();
                 } else {
                     seg_4_col = 'e';
@@ -557,7 +513,7 @@
             });
             $('#seg-5-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_5_col = 22;
+                    seg_5_col = 73;
                     table.draw();
                 } else {
                     seg_5_col = 'e';
@@ -566,7 +522,7 @@
             });
             $('#seg-6-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_6_col = 23;
+                    seg_6_col = 73;
                     table.draw();
                 } else {
                     seg_6_col = 'e';
@@ -575,28 +531,10 @@
             });
             $('#seg-7-choice').click(function(){
                 if($(this).is(':checked')){
-                    seg_7_col = 24;
+                    seg_7_col = 73;
                     table.draw();
                 } else {
                     seg_7_col = 'e';
-                    table.draw();
-                }
-            });
-            $('#rend-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_1_col = 28;
-                    table.draw();
-                } else {
-                    secteur_1_col = 'e';
-                    table.draw();
-                }
-            });
-            $('#dev-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_2_col = 28;
-                    table.draw();
-                } else {
-                    secteur_2_col = 'e';
                     table.draw();
                 }
             });
@@ -618,8 +556,6 @@
                 seg_5_col = 'e';
                 seg_6_col = 'e';
                 seg_7_col = 'e';
-                secteur_1_col = 'e';
-                secteur_2_col = 'e';
                 table.search( '' );
                 table.columns().search( '' );
                 table.draw();
@@ -627,21 +563,14 @@
 
             $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
                 return (
-                    searchData[seg_1_col] === '0-500'
-                    || searchData[seg_2_col] === '500-1M'
-                    || searchData[seg_3_col] === '1M-2M'
-                    || searchData[seg_4_col] === '2M-5M'
-                    || searchData[seg_5_col] === '5M-10M'
-                    || searchData[seg_6_col] === '10M-40M'
-                    || searchData[seg_7_col] === '40M >'
+                    searchData[seg_1_col] === '1'
+                    || searchData[seg_2_col] === '2'
+                    || searchData[seg_3_col] === '3'
+                    || searchData[seg_4_col] === '4'
+                    || searchData[seg_5_col] === '5'
+                    || searchData[seg_6_col] === '6'
+                    || searchData[seg_7_col] === '7'
                     || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
-                );
-            });
-            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
-                return (
-                    searchData[secteur_1_col] === 'CONSTRUCTION'
-                    || searchData[secteur_2_col] === 'RENOVATION'
-                    || (secteur_1_col === 'e' && secteur_2_col === 'e' )
                 );
             });
 
@@ -669,25 +598,25 @@
             $('#Btn_suivant').click( function () {
                 
                 let string_segment = '';
-                if($('#seg-1-choice:checked').is(':checked')){
+                if($('#seg-1-choice:checked').val() == '0-500'){
                     string_segment += "'1',";
                 }
-                if($('#seg-2-choice:checked').is(':checked')){
+                if($('#seg-2-choice:checked').val() == '500-1M'){
                     string_segment += "'2',";
                 }
-                if($('#seg-3-choice:checked').is(':checked')){
+                if($('#seg-3-choice:checked').val() == '1M-2M'){
                     string_segment += "'3',";
                 }
-                if($('#seg-4-choice:checked').is(':checked')){
+                if($('#seg-4-choice:checked').val() == '2M-5M'){
                     string_segment += "'4',";
                 }
-                if($('#seg-5-choice:checked').is(':checked')){
+                if($('#seg-5-choice:checked').val() == '5M-10M'){
                     string_segment += "'5',";
                 }
-                if($('#seg-6-choice:checked').is(':checked')){
+                if($('#seg-6-choice:checked').val() == '10M-40M'){
                     string_segment += "'6',";
                 }
-                if($('#seg-7-choice:checked').is(':checked')){
+                if($('#seg-7-choice:checked').val() == '40M >'){
                     string_segment += "'7',";
                 }
                /* console.log(string_segment.slice(0, -1));

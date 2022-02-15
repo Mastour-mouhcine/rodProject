@@ -61,9 +61,6 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-        .dataTables_filter {
-display: none;
-}
        div.dt-button-collection .dt-button {
            
         
@@ -488,6 +485,7 @@ $(document).ready(function(){
             "paging": true,
             "bDeferRender": true,
             "bProcessing": true,
+            "bFilter": false
             // "processing": true,
         "language": {
             processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><span class="sr-only">Loading...</span> '},

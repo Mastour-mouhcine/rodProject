@@ -433,7 +433,7 @@
                         },
                     order: [[ 1, 'asc' ]],
                     "ajax" : {
-                        "url":"serverSide/SrvS_Seg_Acheteur.php",
+                        "url":"serverSide/SrvS_Seg_Achteur.php",
                         dataSrc : ""
                     },
                   columns : [

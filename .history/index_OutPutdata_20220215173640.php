@@ -61,9 +61,6 @@
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
     <style>
-        .dataTables_filter {
-display: none;
-}
        div.dt-button-collection .dt-button {
            
         
