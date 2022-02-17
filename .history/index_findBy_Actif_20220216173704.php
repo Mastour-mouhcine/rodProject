@@ -525,8 +525,7 @@
             let seg_5_col = 'e';
             let seg_6_col = 'e';
             let seg_7_col = 'e';
-            let secteur_1_col = 'e';
-            let secteur_2_col = 'e';
+            
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
                     seg_1_col = 73;
@@ -590,24 +589,7 @@
                     table.draw();
                 }
             });
-            $('#rend-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_1_col = 68;
-                    table.draw();
-                } else {
-                    secteur_1_col = 'e';
-                    table.draw();
-                }
-            });
-            $('#dev-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_2_col = 68;
-                    table.draw();
-                } else {
-                    secteur_2_col = 'e';
-                    table.draw();
-                }
-            });
+
             $('#clear-choices').on("click", function () {
                 $('#seg-1-choice').prop('checked',false);
                 $('#seg-2-choice').prop('checked',false);
@@ -623,8 +605,6 @@
                 seg_5_col = 'e';
                 seg_6_col = 'e';
                 seg_7_col = 'e';
-                secteur_1_col = 'e';
-                secteur_2_col = 'e';
                 table.search( '' );
                 table.columns().search( '' );
                 table.draw();
@@ -642,13 +622,7 @@
                     || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
                 );
             });
-            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
-                return (
-                    searchData[secteur_1_col] === 'CONSTRUCTION'
-                    || searchData[secteur_2_col] === 'RENOVATION'
-                    || (secteur_1_col === 'e' && secteur_2_col === 'e' )
-                );
-            });
+
             $('#DataTable_segment tbody').on( 'click', 'tr', function () {
                 $(this).toggleClass('selected');
             } );

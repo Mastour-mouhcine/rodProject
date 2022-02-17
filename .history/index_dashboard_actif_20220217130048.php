@@ -8,16 +8,7 @@
 <html lang="en">
 
 <head>
-    <style>
-        .container{
-        text-align: center;
-        
-        width: 300px;
-        height: 200px;
-        padding-top: 100px;
-        }
-       
-        </style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,9 +16,6 @@
 
     <title >Rodschinson</title>
     <link rel = "icon" href ="img/LogoMain.jpg" type = "image/x-icon">
-    <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-    <link href="css/style001.css" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -58,6 +46,23 @@
             background: url('img/angle-arrow-double-down.png') no-repeat center center;
             background-size: 15px;
         }
+        .card-body {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        }
     </style>
 </head>
 
@@ -79,32 +84,25 @@
 
                 <!-- Page Heading -->
                 <div class="mb-2" style="display: flex; justify-content: flex-start; align-items: center">
-                     <div style="display: flex;">
+                    <div style="display: flex;">
                         <a href="index001.php"><img src="img/rod_logo.png"></a>
                         <h1 class="h3 text-gray-800">Rodschinson</h1>
                      </div>
                 </div>
-                <div class="container">
+                
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    <!-- <br>  <button id="Btn_Acceuil" class="btn btn-success" >Page d'accueil</button></br> -->
-
                     <div class="card-header py-3" style="display: flex; justify-content: space-between; align-items: center">
                         <div>
-                           
+                            <h6 class="m-0 font-weight-bold text-primary">Visualisation du tableau de bord</h6>
                         </div>
-                        
-                    <!-- </div> -->
-                    <div class="card-body" id="excel_data">
-                        <a href="index_acheteur.php" class="myButton">Chercher par Acheteurs</a>
-                        <a href="index_findBy_Actif.php" class="myButton">Chercher par Actifs</a>
-                        <a href="index_dashboard_actif.php" class="myButton"> Tableau de Bord</a>
-                        <!-- <button onclick="window.location.href='index_OutPutdata.php'"  class="button button2"> <i class="fas fa-database"></i> DATA ALL(Par Division Rods)</button> -->
-                   <!-- <button onclick="window.location.href='index_OutPutdata001.php'" class="button button3"> <i class="fas fa-database"></i>DATA ALL (Unite par Numero de telephone)</button> -->
+                            <!-- <button id="Btn_Acceuil" class="btn btn-success">Page d'accueil</button> -->
                     </div>
-
+                    <div class="card-body" id="x">
+                        <iframe class="responsive-iframe"
+                            src="https://app.powerbi.com/reportEmbed?reportId=dced28a2-f54e-47d9-8dd8-e43c9e39c34a&autoAuth=true&ctid=09092c3f-ce16-4223-9075-69a73d8afa6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtZXVyb3BlLWItcHJpbWFyeS1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D"></iframe>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <!-- End of Main Content -->
@@ -141,18 +139,13 @@
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
-
-<!-- <script type="module" src="js/excelFunctions.js"></script> -->
-
-
-<!-- Page level custom scripts -->
-<script>
-
-</script>
-
 </body>
 <script type="text/javascript">
 
+    $('#Btn_Acceuil').click(function () {
+        
+         location.href = "index001.php"; 
+    });
 </script>
 
 </html>

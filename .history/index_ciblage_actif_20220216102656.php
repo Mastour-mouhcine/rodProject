@@ -536,19 +536,11 @@ div.container {
             dom: "Bfrtip",
             buttons: [
                 {
-                    extend: "edit",
-                    editor: editor,
-                    text: "Modifier",
-                    formTitle: "Modifier l'enregistrementfier ",
-                    formButtons: ["Modifier"],
-                },
-                {
-                    extend: "remove",
-                    editor: editor,
-                    text: "Supprimer",
-                    formTitle: "Supprimer l'enregistrement",
-                    formButtons: ["Supprimer"],
-                    formMessage: "Etes-vous sûr de vouloir supprimer la ligne",
+                extend: "edit",
+                editor: editor,
+                text: "Modifier",
+                formTitle: "Modifier l'enregistrementfier ",
+                formButtons: ["Modifier"],
                 },
             ],
         });

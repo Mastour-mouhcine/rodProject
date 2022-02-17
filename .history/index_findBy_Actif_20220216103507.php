@@ -196,51 +196,6 @@
                                         <label>> 40M$ </label>
                                     </td>
                                 </tr>
-                                <th>Secteur</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="rend-1-choice" name="rend" value="CONSTRUCTION">
-                                                <label>CONSTRUCTION</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="dev-1-choice" name="dev" value="RENOVATION">
-                                                <label>RENOVATION</label>
-                                            </td>
-                                </tr>
-                                <tr>
-                                    <th>Sous Secteurs</th>
-                                </tr>
-                                <tr>     
-                                             <td> 
-                                                <input type="checkbox" id="resid-1-choice" name="residentiel" value="Residentiel">
-                                                <label>Residentiel</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Commer-2-choice" name="commercial" value="Commercial">
-                                                <label>Commercial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="Bure-3-choice" name="bureaux" value="Bureaux">
-                                                <label>Bureaux</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="mix-4-choice" name="mixte" value="Mixte">
-                                                <label>Mixte</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="rod-pat-5-choice" name="rod_pat" value="ROD_PATRIMONIAL">
-                                                <label>Rod Patrimonial</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="renovation-6-choice" name="renovation" value="Renovation">
-                                                <label>Renovation</label>
-                                            </td>
-                                            <td>
-                                                <input type="checkbox" id="construction-7-choice" name="construction" value="Construction">
-                                                <label>Construction</label>
-                                            </td>
-                                </tr>
                             </table>
                         </div>
                         </div>
@@ -525,8 +480,7 @@
             let seg_5_col = 'e';
             let seg_6_col = 'e';
             let seg_7_col = 'e';
-            let secteur_1_col = 'e';
-            let secteur_2_col = 'e';
+            
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
                     seg_1_col = 73;
@@ -590,24 +544,7 @@
                     table.draw();
                 }
             });
-            $('#rend-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_1_col = 68;
-                    table.draw();
-                } else {
-                    secteur_1_col = 'e';
-                    table.draw();
-                }
-            });
-            $('#dev-1-choice').click(function(){
-                if($(this).is(':checked')){
-                    secteur_2_col = 68;
-                    table.draw();
-                } else {
-                    secteur_2_col = 'e';
-                    table.draw();
-                }
-            });
+
             $('#clear-choices').on("click", function () {
                 $('#seg-1-choice').prop('checked',false);
                 $('#seg-2-choice').prop('checked',false);
@@ -623,8 +560,6 @@
                 seg_5_col = 'e';
                 seg_6_col = 'e';
                 seg_7_col = 'e';
-                secteur_1_col = 'e';
-                secteur_2_col = 'e';
                 table.search( '' );
                 table.columns().search( '' );
                 table.draw();
@@ -642,13 +577,7 @@
                     || (seg_1_col === 'e' && seg_2_col === 'e' && seg_3_col === 'e' && seg_4_col === 'e' && seg_5_col === 'e' && seg_6_col === 'e' && seg_7_col === 'e')
                 );
             });
-            $.fn.dataTable.ext.search.push(function( settings, searchData, index, rowData, counter ) {
-                return (
-                    searchData[secteur_1_col] === 'CONSTRUCTION'
-                    || searchData[secteur_2_col] === 'RENOVATION'
-                    || (secteur_1_col === 'e' && secteur_2_col === 'e' )
-                );
-            });
+
             $('#DataTable_segment tbody').on( 'click', 'tr', function () {
                 $(this).toggleClass('selected');
             } );
@@ -706,7 +635,7 @@
                 localStorage.setItem("Result_Seg_5", JSON.parse(JSON.stringify(string_segment_5))); 
                 localStorage.setItem("Result_Seg_6", JSON.parse(JSON.stringify(string_segment_6))); 
                 localStorage.setItem("Result_Seg_7", JSON.parse(JSON.stringify(string_segment_7))); 
-                window.open("index_findBy_Acheteur.php", '_self');
+                /*window.open("index_findBy_Acheteur.php", '_self'); */
             } );
         } );
 
