@@ -98,10 +98,12 @@
                     <div class="card-body" id="excel_data">
                         <a href="index_acheteur.php" class="myButton">Chercher par Acheteurs</a>
                         <a href="index_findBy_Actif.php" class="myButton">Chercher par Actifs</a>
-                        <a href="index_dashboard_actif.php" class="myButton"> Tableau de Bord</a>
                         <!-- <button onclick="window.location.href='index_OutPutdata.php'"  class="button button2"> <i class="fas fa-database"></i> DATA ALL(Par Division Rods)</button> -->
                    <!-- <button onclick="window.location.href='index_OutPutdata001.php'" class="button button3"> <i class="fas fa-database"></i>DATA ALL (Unite par Numero de telephone)</button> -->
                     </div>
+                    <div style=" justify-content: center; flex-direction: column; align-items: center; background: transparent">
+                    <a href="index_findBy_Actif.php" class="myButton"> Tableau de Bord</a>
+                   </div> 
 
                 </div>
             </div>

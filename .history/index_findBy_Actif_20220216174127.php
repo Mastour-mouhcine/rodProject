@@ -525,8 +525,7 @@
             let seg_5_col = 'e';
             let seg_6_col = 'e';
             let seg_7_col = 'e';
-            let secteur_1_col = 'e';
-            let secteur_2_col = 'e';
+            
             $('#seg-1-choice').click(function(){
                 if($(this).is(':checked')){
                     seg_1_col = 73;

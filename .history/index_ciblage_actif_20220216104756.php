@@ -536,19 +536,11 @@ div.container {
             dom: "Bfrtip",
             buttons: [
                 {
-                    extend: "edit",
-                    editor: editor,
-                    text: "Modifier",
-                    formTitle: "Modifier l'enregistrementfier ",
-                    formButtons: ["Modifier"],
-                },
-                {
-                    extend: "remove",
-                    editor: editor,
-                    text: "Supprimer",
-                    formTitle: "Supprimer l'enregistrement",
-                    formButtons: ["Supprimer"],
-                    formMessage: "Etes-vous sûr de vouloir supprimer la ligne",
+                extend: "edit",
+                editor: editor,
+                text: "Modifier",
+                formTitle: "Modifier l'enregistrementfier ",
+                formButtons: ["Modifier"],
                 },
             ],
         });
@@ -576,7 +568,7 @@ div.container {
             }
         });
         $.ajax({
-            url: 'serverSide/Mail-Conn-segmentation2.php',
+            //url: 'serverSide/Mail-Conn-segmentation2.php',
             success: function(data) {
                 requestCallback.requestComplete(true);
             }
@@ -586,7 +578,7 @@ div.container {
             success: function(data) {
                 requestCallback.requestComplete(true);
                 // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-                window.open("index_costumer_valid.php", '_self');
+               // window.open("index_costumer_valid.php", '_self');
                 
             } 
         });
@@ -696,7 +688,7 @@ div.container {
                     {"data":"24/11/2021 consignes RC"},
                     {"data":"PUBLICATION RESEAUX SOCIAUX"},
                     {"data":"BN"},
-                    {"data":"ID_Seg"},
+                    {"data":"ID_Seg",'visible' : false},
                                 ],	
                                 
                                 
