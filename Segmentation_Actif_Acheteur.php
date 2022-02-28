@@ -96,15 +96,14 @@
                         
                     <!-- </div> -->
                     <div class="card-body" id="excel_data">
-                        <a href="index_OutPutdata.php" class="myButton">DATA  ALL(Par DIVISION RODS)</a>
-                        <a href="index_OutPutdata001.php" class="myButton">DATA  ALL(Unicité par numéro de téléphone)</a>
-                   
+                        <a href="index_seg_achteur.php" class="myButton">Chercher par Acheteurs</a>
+                        <a href="" class="myButton">Chercher par Actifs</a>
                         <!-- <button onclick="window.location.href='index_OutPutdata.php'"  class="button button2"> <i class="fas fa-database"></i> DATA ALL(Par Division Rods)</button> -->
                    <!-- <button onclick="window.location.href='index_OutPutdata001.php'" class="button button3"> <i class="fas fa-database"></i>DATA ALL (Unite par Numero de telephone)</button> -->
                         
 
                     </div>
-                    <a href="index_OutPutdata002.php" class="myButton">Recherche Avancée</a>
+
                 </div>
             </div>
             </div>

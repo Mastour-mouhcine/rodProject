@@ -576,17 +576,17 @@ div.container {
             }
         });
         $.ajax({
-            //url: 'serverSide/Mail-Conn-segmentation2.php',
+            url: 'serverSide/Mail-Conn-segmentation2.php',
             success: function(data) {
                 requestCallback.requestComplete(true);
             }
         });
         $.ajax({
-            // url: 'serverSide/',
+            // url: 'serverSide/index_costumer_valid.php',
             success: function(data) {
                 requestCallback.requestComplete(true);
-                // JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
-               // window.open("index_costumer_valid.php", '_self');
+                JSalertAfterValidate("Succès", "Les emails ont été bien envoyées !","success","index_costumer_valid.php");
+               window.open("index_costumer_valid.php", '_self');
                 
             } 
         });

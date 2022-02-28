@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
-        header('Location: index.php');
-    } 
-?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,37 +20,20 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">  -->
         
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css">
+     <link href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" rel="stylesheet" >
+    <link href="https://cdn.datatables.net/searchbuilder/1.3.0/css/searchBuilder.dataTables.min.css" rel="stylesheet" >
+    <link href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" rel="stylesheet" >
 
 
      <!-- Swal Alert-->
     <!-- <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.css" />
-    <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script> 
-    -->    
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
-<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
-
-<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-
-    <!-- <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
-    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
-    
-    <link href="https://nightly.datatables.net/buttons/css/buttons.dataTables.css?_=c6b24f8a56e04fcee6105a02f4027462.css" rel="stylesheet" type="text/css" />
-    <script src="https://nightly.datatables.net/buttons/js/buttons.html5.js?_=c6b24f8a56e04fcee6105a02f4027462"></script>    
-    
-    <script src="https://nightly.datatables.net/buttons/js/dataTables.buttons.js?_=c6b24f8a56e04fcee6105a02f4027462"></script>    
-    <script src="https://nightly.datatables.net/buttons/js/buttons.colVis.js?_=c6b24f8a56e04fcee6105a02f4027462"></script>    -->
-
-      <!-- Datatable CSS -->
    
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css"/> -->
     
@@ -160,89 +137,8 @@ display: none;
 
                             <thead class="">
                             <tr>                              
+                                       
                             <th>DIVISION</th>
-                            <th>Salutation</th>
-                            <th>Salutaion email</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Sexe</th>
-                            <th>EMAIL</th>
-                            <th>Preferred Language</th>
-                            <th>Phone Account</th>
-                            <th>Mobile</th>
-                            <th>FAX</th>
-                            <th>Account Name</th>
-                            <th>Account Number</th>
-                            <th>Identifiant Source</th>
-                            <th>Pays</th>
-                            <th>Billing Code</th>
-                            <th>Billing City</th>
-                            <th>Billing Province</th>
-                            <th>Billing Street</th>
-                            <th>Trading Name</th>
-                            <th>RSZ1</th>
-                            <th>RSZ2</th>
-                            <th>RSZ3</th>
-                            <th>SECTION</th>
-                            <th>Description</th>
-                            <th>VAT Number</th>
-                            <th>Date d'immatriculation</th>
-                            <th>Site Internet</th>
-                            <th>Definition du score</th>
-                            <th>Score international</th>
-                            <th>Devise</th>
-                            <th>Chiffres d'affaires</th>
-                            <th>Total des immobilisations</th>
-                            <th>Total des actifs courants</th>
-                            <th>Total des passifs courants</th>
-                            <th>Fonds d'actionnaires</th>
-                            <th>Fonds de roulement</th>
-                            <th>Return on Total Assets Employed</th>
-                            <th>Ratio d'endettement total</th>
-                            <th>Ratio d'endettement</th>
-                            <th>Capital social</th>
-                            <th>Forme juridique</th>
-                            <th>Dirigeant 1 Nom</th>
-                            <th>Dirigeant 1 date de naissance</th>
-                            <th>Dirigeant 1 Fonction</th>
-                            <th>Dirigeant 1 Date de fonction</th>
-                            <th>Dirigeant 2 Nom</th>
-                            <th>Dirigeant 2 date de naissance</th>
-                            <th>Dirigeant 2 Fonction</th>
-                            <th>Dirigeant 2 Date de fonction</th>
-                            <th>Dirigeant 3 Nom</th>
-                            <th>Dirigeant 3 Fonction</th>
-                            <th>Dirigeant 3 Date de fonction</th>
-                            <th>Dirigeant 3 date de naissance</th>
-                            <th>Nom Fichier</th>
-                            <th>Date du Ficher</th>
-                            <th>Lien Vers le Fichier</th>
-                            <th>Région</th>
-                            <th>code nace principal</th>
-                            <th>Score de solvabilité</th>
-                            <th>Limite de crédit</th>
-                            <th>Catégorie juridique</th>
-                            <th>Employés</th>
-                            <th>Bénéfices</th>
-                            <th>Bénéfice avant impôts</th>
-                            <th>Total des passifs à long terme</th>
-                            <th>Ratio de liquidité général</th>
-                            <th>Marge bénéficiaire avant impôt</th>
-                            <th>Dirigeant 1 Prénom</th>
-                            <th>Dirigeant 2 Prénom</th>
-                            <th>Dirigeant 3 Prénom</th>
-                            <th>ID</th>
-                            <th>code(s) nace</th>
-                            <th>description(s) nace</th>
-                            <th>description(s) des activités autres</th>
-                            </tr>
-                            </thead>
-                            <tbody class="text-center">
-                            </tbody>
-                            <tfoot>
-                                <tr>                              
-                                     
-                                <th>DIVISION</th>
                                 <th>Salutation</th>
                                 <th>Salutaion email</th>
                                 <th>First Name</th>
@@ -317,15 +213,17 @@ display: none;
                                 <th>code(s) nace</th>
                                 <th>description(s) nace</th>
                                 <th>description(s) des activités autres</th>
-                      </tr>
-                            </tfoot>
+                            </tr>
+                            </thead>
+                            <tbody class="text-center">
+                            </tbody>
+                         
                          
                         </table>
                        
                         <!-- <div class="dataTables_info" id="empTable_info" role="status" aria-live="polite"><span id = "id_rowNumber"></span></div> -->
                     </div>
                   
-                <button type="button" class="btn btn-success" onClick="window.location.reload();">Clear Filter</button>
                 </div>
                 
 
@@ -374,8 +272,12 @@ display: none;
 <!-- <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script> -->
 <!-- <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script> -->
 
-<!-- <script src=""></script>
-
+ <script src="https://cdn.datatables.net/searchbuilder/1.3.0/js/dataTables.searchBuilder.min.js"></script>
+ <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
+ <script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+ <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
+ 
+<!--
 <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
  -->
@@ -388,8 +290,6 @@ display: none;
 </body>
 
 <script>
-  
- 
 $(document).ready(function(){
     // IfExistRowDataBase();
     $('#empTable tfoot th').each( function () {
@@ -631,16 +531,24 @@ $(document).ready(function(){
                 "visible": false
             }
         ],
-            dom: 'Bfrtip',            
-            //colReorder: true,
-           "buttons" : [
+        dom: 'QBfrtip',
+        columnDefs: [
+            {
+                render: (d) => parseInt(d, 10),
+                targets: 3
+            }
+        ],
+            // dom: 'Bfrtip',
+            // dom: 'PQlfrtip',
+        //            
+           buttons :[
+           
              {
                     extend: 'excelHtml5',
                     text: 'EXCEL',
                     title: '',
 				    filename: 'Data Target all',
-                //    "action": newexportaction,
-                   page:'all',
+                  
                 },
                 {
                     extend: 'csv',
@@ -654,22 +562,15 @@ $(document).ready(function(){
                  {
         extend: 'colvis',
                }], 
-            //    columns:[0,1,2,3],
+               searchPanes:{
+			cascadePanes: true,
+			viewTotal: true
+		},                  
         });
     });
    
     
- /*    const IfExistRowDataBase = () => {
-  let nbr_row;
-    $.ajax({
-      url: "serverSide/NumberOfRows.php",
-      success: function (result) {
-        nbr_row = result; 
-        $('#id_rowNumber').empty();
-        $('#id_rowNumber').append("Il y a  "+" "+result+" "+ "enregistrements filtrer");
-      },
-    });
-}; */
+ 
    
     const JSalertWait = (text) => {
             Swal.fire({
@@ -702,4 +603,3 @@ $(document).ready(function(){
    
 </script>
 </html>
-
